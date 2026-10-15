@@ -205,13 +205,13 @@ The same nine value-bearing classes re-counted with `grep`, explicit file list, 
 
 ### 7.3 · Redaction classes, re-driven over the new span
 
-**Instrument 1** (the same occurrence-counting script shape as § 2) was driven over **44 classes**. Every class in § 2 is included. **Added:** the persona name, nine further internal role names, the engaged swarm's name, the event name and one event-type word, three internal identifier forms, the internal amendment label, two internal path prefixes, the lane name, the subscription tier, the screenshot filename and folder, the preservation directory marker, **five offensive-workload transcript prefixes**, **three live-engagement transcript prefixes**, and this analysis's own session prefix.
+**Instrument 1** (the same occurrence-counting script shape as § 2) was driven over **44 classes**. Every class in § 2 is included. **Added:** the persona name, nine further internal role names, the engaged swarm's name, the engagement's name and one further engagement term, three internal identifier forms, the internal amendment label, two internal path prefixes, the lane name, the subscription tier, the screenshot filename and folder, the preservation directory marker, **five offensive-workload transcript prefixes**, **three live-engagement transcript prefixes**, and this analysis's own session prefix.
 
 > **All 43 value classes: `0` occurrences across the 10 content files. Present-literal control `safeguards`: 29 occurrences across 5 files.**
 
 **Aimed-corpus control, as in § 2(c):** the identical script was driven over a 16-file corpus where the literals really occur. That corpus is the framework's refusal-incident log, the two adjudications, two verbatim-turn records, the internal dossier, the auto-loaded carrier, and **a fabricated-hit probe held outside this repository**. The probe carries one invented instance of each class the real corpus cannot aim (the account holder's email, a request and message identifier value, this session's prefix, a token prefix, and a full UUID). ⭐ **All 44 classes returned nonzero there.** ⇒ **Every zero above comes from an aimed predicate.**
 
-**Instrument 2** (`grep -c`, explicit list, case-insensitive) covered nine value classes (email, username, home path, two identifier field names, request-identifier prefix, repository directory name, swarm name, event name). **All nine: `0`. Control `safeguards`: 25 lines.** (Occurrences and lines differ for the reason § 2 gives.)
+**Instrument 2** (`grep -c`, explicit list, case-insensitive) covered nine value classes (email, username, home path, two identifier field names, request-identifier prefix, repository directory name, swarm name, engagement name). **All nine: `0`. Control `safeguards`: 25 lines.** (Occurrences and lines differ for the reason § 2 gives.)
 
 **Instrument 3:** the plain 30-plus token run returns **`0`**. The hyphen-allowing variant returns **30**, made up of 28 cross-reference anchors (all `w-N--…` or `phase-7--…`), the public vendor support-article slug, and the prose phrase `re-measure-rather-than-inherit`. **No identifier and no token.**
 

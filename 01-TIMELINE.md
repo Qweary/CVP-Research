@@ -225,17 +225,17 @@ The specialist that adjudicated these arms ruled that **the framework may no lon
 
 ---
 
-## Phase 8 — a different workload, distilled (2026-10-03)
+## Phase 8 — a different workload, distilled
 
 **Added 2026-10-15. This phase is deliberately thin, by the account holder's own decision.** The underlying material is a live, authorised offensive-security engagement involving third parties. Only the lesson is published here, not the engagement.
 
-A separately deployed security swarm, not the framework itself, ran a live engagement and hit the same `[cyber]` category repeatedly, on both specialist sub-contexts and the parent session. A specialist pinned the tier **at primary text**: Opus 4.7 on 441 of 441 assistant records in one transcript and 686 of 690 in the other (the remaining four are client-synthetic records, not a tier). **The block-mirror events split six on Opus 4.7 and six on a Sonnet tier.** The account holder found Opus 4.7 the most consistent tier for the authorised work, and the engagement went well on it.
+A separately deployed security swarm, not the framework itself, ran a live engagement and hit the same `[cyber]` category repeatedly, on both specialist sub-contexts and the parent session. A specialist pinned the tier **at primary text**: Opus 4.7 on 441 of 441 assistant records in one transcript and 686 of 690 in the other (the remaining four are client-synthetic records, not a tier). **The block-mirror events split six on Opus 4.7 and six on a Sonnet tier.**
 
-⇒ **The lesson, and it is the whole of what may be drawn: tier is a *frequency* axis, not an *exemption* axis.** Both tiers tripped. The swarm's own report says the classifier tripped *"regardless of model"* on some task shapes, which were resolved by routing the work to a different specialist rather than by switching tier.
+⇒ **The lesson, and it is the whole of what may be drawn: tier is a *frequency* axis, not an *exemption* axis.** Both tiers tripped. The swarm's own report says the classifier tripped *"regardless of model"* on some task shapes.
 
 **Bounds that travel with it.** This is the **unrelated offensive-tooling workload class** of [`02-EVIDENCE.md § 5`](02-EVIDENCE.md), where a stop is plausibly *correct*, and it must not be pooled with the framework-governance events. No artifact states whether that run was on the enrolled account, so **it says nothing about the verification programme.** It is not *"the framework works on Opus 4.7"*, and it is not a recommendation of that tier.
 
-**And one report from the same week, carried as a report.** On 2026-10-02 the account holder said, in a separate session, that they could not do work that had been possible at the end of the previous year, despite an active verification status. **That is a second independent report of the same shape, from a different workload.** It is not an arm.
+**And one report from the same week, carried as a report.** On 2026-10-02 the account holder said, in a separate session, that they could not do work that had been possible at the end of the previous year, despite an active verification status. **That is a second report of the same shape, from the same account holder on a different workload, and it carries the same bound as [OPEN-2](03-OPEN-QUESTIONS.md#open-2).** It is not an arm.
 
 ---
 

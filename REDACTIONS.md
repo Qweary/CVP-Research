@@ -138,7 +138,7 @@ So the following are carried in full, deliberately:
 
 **Each class declared here has a row in [`MANIFEST.md § 7`](MANIFEST.md).** That is the rule `MANIFEST § 6` item 5 set after a declared class turned out to have no instrument behind it.
 
-1. **The live engagement in [`01-TIMELINE.md` Phase 8](01-TIMELINE.md): everything except the distilled lesson.** That means the event, its organiser, the teams, the swarm's name, its transcripts and their prefixes, its operational content, and every task shape the swarm's own report names. **The account holder decided that only the distilled lesson enters this repository.** The lesson is stated by class: tier is a frequency axis, not an exemption axis.
+1. **The live engagement in [`01-TIMELINE.md` Phase 8](01-TIMELINE.md): everything except the distilled lesson.** That means the engagement's identity and date, every party to it, the swarm's name, its transcripts and their prefixes, its operational content, and every task shape the swarm's own report names. **The account holder decided that only the distilled lesson enters this repository.** The lesson is stated by class: tier is a frequency axis, not an exemption axis.
 2. **The organisation through which the account holder is pursuing a higher verification tier.** It is not named. It is a third party, and the fact that matters (a pursuit is under way and its outcome is undetermined) does not need the name.
 3. **The subscription tier**, again. It appears in the captured surfaces and is removed from Variant 4, exactly as from Variant 3.
 4. **The framework's persona name.** Phase 9 records that one tier answered in the persona the carrier configures. The name itself is internal convention and carries nothing a reader needs.
