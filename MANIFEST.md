@@ -201,7 +201,7 @@ The same nine value-bearing classes re-counted with `grep`, explicit file list, 
 
 ### 7.2 · Span
 
-**The 10 content files measure 2,026 lines and 221,876 bytes after every edit in this delta**, measured two ways (`wc -l -c` over an explicit ten-file list, and a Python pass) that agree to the digit. **This manifest is not one of the ten, so amending it cannot move that figure.** For comparison, the first commit's figure was 1,662 lines and 167,727 bytes.
+**The 10 content files measure 2,026 lines and 221,793 bytes after every edit in this delta, including the held-out-read edits E1–E10**, measured two ways (`wc -l -c` over an explicit ten-file list, and a Python pass) that agree to the digit. **This manifest is not one of the ten, so amending it cannot move that figure.** For comparison, the first commit's figure was 1,662 lines and 167,727 bytes.
 
 ### 7.3 · Redaction classes, re-driven over the new span
 
