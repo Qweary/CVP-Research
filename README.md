@@ -2,7 +2,7 @@
 
 **Field notes on a safety classifier that cannot be observed or reasoned with — and the one channel that does exist is a report, not an appeal.**
 
-Status: **open investigation. Not concluded.** Last updated 2026-10-01.
+Status: **open investigation. Not concluded.** Last updated 2026-10-15. First committed 2026-10-02.
 
 ---
 
@@ -22,6 +22,8 @@ It is published because the investigation produced two things worth more than th
 
 **It is not a live measurement of current classifier behaviour.** Every figure here is retrospective, derived from local transcript artifacts that already existed. **No probe has been run.** A protocol of ordered, costed, pre-registered arms exists and not one of its arms has been executed. Anything here describes what specific model tiers did on specific dates.
 
+> **Amended 2026-10-15: the two sentences above about probes were false when this repository was first committed** ([`CORRECTIONS.md § W-14`](CORRECTIONS.md#w-14--stale-at-first-commit-no-probe-has-been-run)). The re-authentication arm, its paired arm on a second tier, and a clean witness of the control tier had all run more than thirteen hours earlier. The material this repository was derived from had stopped on 2026-10-01. The arms are now in [`01-TIMELINE.md` Phases 7–9](01-TIMELINE.md), and the tier table is in [`02-EVIDENCE.md § 9`](02-EVIDENCE.md). **Every figure is still retrospective** in the sense that matters: it was measured from artifacts after the fact, never steered while running.
+
 **It is not a finished story.** The honest summary of where it stands is one short ratio:
 
 | | |
@@ -30,6 +32,13 @@ It is published because the investigation produced two things worth more than th
 | **Not established** | The mechanism on the newest tier · whether CVP is effective · which content triggers it · whether a fresh clone of the framework triggers it · what an unverified account experiences · whether the trigger is prompt *structure* or prompt *subject* · whether the vendor's own recommended remedy works · whether isolated sub-contexts are a safe harbour · where the detection floor is · whether there is an onset date. |
 
 That ratio is the state of the research. It is not a reason to say less; it is the reason the parts that *are* measured can be trusted.
+
+**Since first commit (added 2026-10-15), one row each:**
+
+| | |
+|---|---|
+| **Now established** | **The re-authentication arm was run, and the four words still blocked on Opus 5.5, Fable 5.1 and Fable 5**, in the outcome cell pre-registered *before the data* as uninterpretable. · **The control tier answers the four words** in the project directory, witnessed for the first time on 2026-10-02. · **The vendor's portal conditions verification on safety classifiers being enabled**, so verification is not an exemption from classification. · **On 2026-10-09, under a new tier-1 grant, Opus 5.5 and a tier never seen before answered the four words, while both Fable tiers blocked**, with the auto-loaded context byte-matched across all four. · **One tier's notice no longer lists "biology"**, on same-instrument evidence. |
+| **Still not established, and now harder** | Whether any grant reached the inference path. **Nothing on disk marks a credential epoch, so the re-authentication is unwitnessed in principle.** Why Opus 5.5 changed between 2026-10-01 and 2026-10-09: at least five factors moved and it is one run. And everything in the row above that was not touched: mechanism, trigger content, fresh clone, unverified account, remedy tier, onset. |
 
 ---
 
@@ -79,7 +88,7 @@ Then, in any order:
 | [`05-METHOD.md`](05-METHOD.md) | the transferable practice, and the failure that paid for each item |
 | [`01-TIMELINE.md`](01-TIMELINE.md) | the dated arc — every arm, what was predicted *before* the data, what it established and what it refuted |
 | [`02-EVIDENCE.md`](02-EVIDENCE.md) | every figure, with its provenance and its re-measurement status |
-| [`06-VENDOR-NOTICES.md`](06-VENDOR-NOTICES.md) | the vendor's own notice text, verbatim, across three model tiers — the only non-inferential material in the corpus |
+| [`06-VENDOR-NOTICES.md`](06-VENDOR-NOTICES.md) | the vendor's own notice text, verbatim, across three model tiers, plus a fourth variant added 2026-10-15. The only non-inferential material in the corpus |
 | [`SOURCES.md`](SOURCES.md) | the off-repo artifacts the evidence rests on, named but not reproduced |
 | [`REDACTIONS.md`](REDACTIONS.md) | what is deliberately absent from this repository, and why |
 | [`MANIFEST.md`](MANIFEST.md) | every file, its provenance, and the redaction classes it was checked against |

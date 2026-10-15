@@ -14,6 +14,8 @@
 
 **11 files total: 10 content files plus this manifest.** All Markdown; no binaries, no images, no archives, no scripts, no transcript captures.
 
+> **Amended 2026-10-15.** The figures in § 1 and § 2 are the first commit's, and they stand as that commit's record. **The update on branch `delta-2026-10-15` is measured separately in [§ 7](#-7--delta-2026-10-15-measured-separately).** The file count is unchanged. No file was added or removed.
+
 **Two spans, because this manifest is part of what it measures.** The 10 content files are **1,662 lines / 167,727 bytes**, measured after the last of the second round of amendments landed — a pass that opened 2026-10-01 and closed 2026-10-02, local. **The complete-set figure is deliberately not asserted:** it moves with every edit to *this* file, so any number for it would be stale by the time it was written. **Counts in § 2 are each stated against the span they were taken over.** ⭐ **That convention is why the figure above is quotable at all: this manifest is not one of the ten, so amending this manifest cannot move it.**
 
 ⛔ **AND THE PREVIOUS FIGURE WAS CORRECTED RATHER THAN UPDATED, WHICH IS A DIFFERENT CLAIM.** The figure first published here was **1,634 lines / 162,278 bytes**, described as *"stable."* **At the moment it was written the true span was 1,654 / 164,485 — short by 20 lines and 2,207 bytes — so it was wrong when written, not stale.** All ten content files and this manifest landed in a single commit, so no edit intervened to make a correct figure go out of date. ⇒ ⭐ **This is the generator this whole repository documents, committed by this file against itself: an instrument that was aimed, whose subject grew underneath it, still returning a plausible number — and nothing re-ran it, because nothing re-runs a number once it is written into prose.**
@@ -173,3 +175,57 @@ The same nine value-bearing classes re-counted with `grep`, explicit file list, 
 4. **It does not clear the repository for public visibility.** It clears the staged bytes for **a commit** — which, under the sequencing rule in `REDACTIONS.md`, is the same standard, because a commit is permanent. **Whether and when to flip visibility is the author's decision and nothing here anticipates it.**
 5. ⛔⛔ **It does not establish that this set's own statements about what it omits are true** — and this is the item that would have surfaced every one of the 2026-10-01 corrections. `REDACTIONS.md` names classes as absent that § 2 had no row for; **one of them was published four times, and one statement of absence in `README.md` was simply false as written.** ⇒ ⭐ **A claim of absence with no instrument behind it is an assertion, not a measurement. Any class `REDACTIONS.md` declares must have a row in § 2 or be marked unmeasured, so that a declared class without an instrument is visible as a gap rather than reading as a clearance.**
 6. ⚠ **It does not establish that a published piece drawing on this set has made every disclosure that piece may owe.** This set is an evidence repository; **obligations that attach to a byline — the author's own interests, relationships and standing in the subject matter — are the author's, are outside this set's scope, and are not assessed anywhere in it.** ⛔ **No instrument here looks for them, and the absence of a finding is not a finding of absence.**
+
+
+---
+
+## § 7 · Delta 2026-10-15, measured separately
+
+**Why a new section rather than edits to § 1 and § 2:** those sections are the first commit's attestation. **Rewriting them would destroy the record of what was cleared, and when.** This section attests to the update only.
+
+**Round disclosure:** the analysis that produced this delta held no prior round in its own context. **This is round 1, and saying so is the disclosure.**
+
+### 7.1 · What changed
+
+| file | change | primary source |
+|---|---|---|
+| `01-TIMELINE.md` | Phase 6 retitled and marked beside its original; **Phases 7, 8 and 9 added**, plus *"Where it stands, 2026-10-15"* | the refusal-incident log's tenth to sixteenth amendments; two adjudications by the safety-layer specialist; the account holder's verbatim turns; **the 2026-10-09 transcripts, re-measured at this hand** |
+| `02-EVIDENCE.md` | **§ 9 added**: the control-stimulus table (13 rows), predicates P7 and P8 | **re-measured from transcripts**, with a positive control that reproduces seven previously published rows exactly |
+| `03-OPEN-QUESTIONS.md` | dated amendments under the opening paragraph, OPEN-1, OPEN-2, OPEN-5, OPEN-6, OPEN-7, OPEN-8, and the tier-table heading. Every original sentence is kept | as above |
+| `06-VENDOR-NOTICES.md` | a note beside Variant 3's *"never written to disk"*; **Variant 4 added**; a note beside the comparison table | the account holder's verbatim capture (rendered); the 2026-10-09 transcript (on disk, re-measured; identifier stripped) |
+| `CORRECTIONS.md` | **W-14 to W-19 added.** W-1 to W-13 untouched | as above |
+| `SOURCES.md` | notes beside the preservation warning; new artifact rows; new record rows | as above |
+| `REDACTIONS.md` | **§ 9 added**, which declares six classes | the account holder's decision on engagement material, plus this analysis |
+| `README.md` | status date; a dated note beside *"No probe has been run"*; a *"Since first commit"* table; one reading-table description | as above |
+| `04-FINDING.md`, `05-METHOD.md` | **unchanged.** Their bounds still hold: the fresh-clone arm is still unrun, and nothing in the delta reaches the scoring instruments | — |
+
+### 7.2 · Span
+
+**The 10 content files measure 2,026 lines and 221,876 bytes after every edit in this delta**, measured two ways (`wc -l -c` over an explicit ten-file list, and a Python pass) that agree to the digit. **This manifest is not one of the ten, so amending it cannot move that figure.** For comparison, the first commit's figure was 1,662 lines and 167,727 bytes.
+
+### 7.3 · Redaction classes, re-driven over the new span
+
+**Instrument 1** (the same occurrence-counting script shape as § 2) was driven over **44 classes**. Every class in § 2 is included. **Added:** the persona name, nine further internal role names, the engaged swarm's name, the event name and one event-type word, three internal identifier forms, the internal amendment label, two internal path prefixes, the lane name, the subscription tier, the screenshot filename and folder, the preservation directory marker, **five offensive-workload transcript prefixes**, **three live-engagement transcript prefixes**, and this analysis's own session prefix.
+
+> **All 43 value classes: `0` occurrences across the 10 content files. Present-literal control `safeguards`: 29 occurrences across 5 files.**
+
+**Aimed-corpus control, as in § 2(c):** the identical script was driven over a 16-file corpus where the literals really occur. That corpus is the framework's refusal-incident log, the two adjudications, two verbatim-turn records, the internal dossier, the auto-loaded carrier, and **a fabricated-hit probe held outside this repository**. The probe carries one invented instance of each class the real corpus cannot aim (the account holder's email, a request and message identifier value, this session's prefix, a token prefix, and a full UUID). ⭐ **All 44 classes returned nonzero there.** ⇒ **Every zero above comes from an aimed predicate.**
+
+**Instrument 2** (`grep -c`, explicit list, case-insensitive) covered nine value classes (email, username, home path, two identifier field names, request-identifier prefix, repository directory name, swarm name, event name). **All nine: `0`. Control `safeguards`: 25 lines.** (Occurrences and lines differ for the reason § 2 gives.)
+
+**Instrument 3:** the plain 30-plus token run returns **`0`**. The hyphen-allowing variant returns **30**, made up of 28 cross-reference anchors (all `w-N--…` or `phase-7--…`), the public vendor support-article slug, and the prose phrase `re-measure-rather-than-inherit`. **No identifier and no token.**
+
+**Intra-repository anchor links:** every `file#anchor` link in the set was checked against the headings it targets. **Zero unresolved.**
+
+### 7.4 · Scope discipline in this delta
+
+- **The one sealed object in the framework's repository was not extracted, listed, read or copied, and no history command was run against any retired path.** ⛔ **This is a statement about acts, not a sweep result.**
+- **Transcripts were read field by field.** Model identifier, timestamps, client version, record types, billing fields, the byte length of two carrier attachments, and, for two blocked rows only, the vendor's notice string with its identifier value stripped by the script before anything was printed. **No transcript record was copied into this repository, whole or truncated. No typed content beyond the stimulus was read, and no model response text was read.**
+- **Engagement material: none read for this delta beyond the framework's own adjudication of it.** None is reproduced.
+- **Nothing in the framework's repository was modified.** No whole-tree copy was made. **This delta is one local commit on one local branch, and nothing was pushed.**
+
+### 7.5 · What this section does **not** establish
+
+1. **It does not establish that the delta is free of disclosure by implication.** Literal sweeps catch literals. ⛔⛔ **The rule this repository was built under (an independent held-out read by someone other than the author, before any push) applies to this delta in full, and that read has not happened.** The author's list of candidate sentences for that reader is outside this repository, in the delta report delivered with this branch.
+2. **It does not establish the account holder's report of the new verification process.** That process and its tier structure are carried as a report. **No vendor document about them was read by this analysis.**
+3. **It does not establish that the `SINGLE-SOURCE` figures in the delta are correct.** Those are the engagement's tier counts, the timing rule, the store-shrinkage count, the preservation checksums, and the 13-second switch.

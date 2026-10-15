@@ -131,3 +131,21 @@ So the following are carried in full, deliberately:
 - **Every structural measurement** — assembly sizes, the 16-block-versus-4-block system-prompt difference, the shared-parent retry structure, record-type censuses.
 - **The whole method, the pre-registrations, the reversals, and every self-audit.** Free of hazard and the most interesting material in the corpus.
 - **Every open question.** Not merely publishable — **protective.** Publishing the findings without them is the actual risk.
+
+---
+
+## § 9 · Classes added 2026-10-15
+
+**Each class declared here has a row in [`MANIFEST.md § 7`](MANIFEST.md).** That is the rule `MANIFEST § 6` item 5 set after a declared class turned out to have no instrument behind it.
+
+1. **The live engagement in [`01-TIMELINE.md` Phase 8](01-TIMELINE.md): everything except the distilled lesson.** That means the event, its organiser, the teams, the swarm's name, its transcripts and their prefixes, its operational content, and every task shape the swarm's own report names. **The account holder decided that only the distilled lesson enters this repository.** The lesson is stated by class: tier is a frequency axis, not an exemption axis.
+2. **The organisation through which the account holder is pursuing a higher verification tier.** It is not named. It is a third party, and the fact that matters (a pursuit is under way and its outcome is undetermined) does not need the name.
+3. **The subscription tier**, again. It appears in the captured surfaces and is removed from Variant 4, exactly as from Variant 3.
+4. **The framework's persona name.** Phase 9 records that one tier answered in the persona the carrier configures. The name itself is internal convention and carries nothing a reader needs.
+5. **Transcript prefixes from the live engagement**, and the analysing session's own prefix, for the same reasons as § 3.
+6. **The destination of the twelve-artifact preservation copy.** It is a path on the account holder's machine, and it appears in no document anywhere.
+
+**Two things a careful reader might expect to be redacted, and are not:**
+
+- **Tier names.** They are public product names, already printed in the vendor's own notice text. From 2026-10-15 they are needed to tell four tiers apart on one stimulus.
+- **The two portal requirements.** They are the conditions the vendor's portal displays for the programme, and they change what the programme *is*. ⚠ They also imply a fact about the account holder's own organisation: that 30-day data retention is enabled on it. **That implication is flagged for the account holder rather than decided here.**

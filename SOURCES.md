@@ -35,6 +35,8 @@ These files are **client working state**, not a curated export. Each one interle
 3. **The store demonstrably changes while being measured.** Three sweeps on one day returned **712**, **718** and **721** files. It is live working state, not a record.
 4. **The highest-value artifact in the store has never been read by anyone.** See the last section of this file.
 
+> **Amended 2026-10-15.** **Fact 2 is refuted in part:** the notice is written to disk when the session produces any further record after the stop ([`CORRECTIONS.md § W-15`](CORRECTIONS.md#w-15--refuted-in-part-this-class-of-notice-is-never-written-to-disk)). The remedy menu is still on screen only. **Fact 3 got worse:** on 2026-10-01 the store held 700 files against 718 the day before, a net loss despite additions. **The warning was acted on before this repository was first committed.** Twelve baseline artifacts were copied by name outside any repository, with matching checksums ([`CORRECTIONS.md § W-19`](CORRECTIONS.md#w-19--superseded-all-unpreserved)). The destination is deliberately recorded nowhere. **Everything added after those twelve is not covered by that copy**, including the 2026-10-09 rows.
+
 ---
 
 ## The primary artifacts
@@ -54,6 +56,20 @@ Cited by 8-character transcript-filename prefix. These are local filename fragme
 
 **One sub-context transcript in that last group carries the older tier's notice containing the verification-programme sentence** — the primary-source evidence quoted in [`06-VENDOR-NOTICES.md`](06-VENDOR-NOTICES.md). **It is cited for the vendor's own words only, and for nothing else about that engagement.**
 
+### Primary artifacts added 2026-10-15
+
+Same convention: 8-character prefixes, local filename fragments that address nothing remotely. **Every figure taken from these is re-measured at this hand unless marked otherwise in [`02-EVIDENCE.md § 9`](02-EVIDENCE.md).**
+
+| prefix | date (UTC) | what it is | preserved? |
+|---|---|---|---|
+| `5a33e50a` | 2026-10-01 | Opus 5.5, four words, blocked, **before** the re-login. Not in any earlier analysis round | in the store; preservation status not established |
+| `80410c26` · `bd6a4385` · `eeedbac2` | 2026-10-01 | **Arm 0c, Arm 1, and the unregistered Fable 5 row**, with all three stimuli inside 51 seconds, after one reported re-login | same |
+| `a3263157` | 2026-10-01 | Opus 5.5, four words, blocked, **sixteen hours before the clean control.** The row that refutes *"the condition lapsed"* | same |
+| `72f4c20d` | 2026-10-02 | **Opus 5 answers `4.`**, the first witnessed baseline on the control stimulus | same |
+| `0225a080` · `8574eb55` · `d08ebadd` · `e4990bf1` | 2026-10-09 | **The four-tier re-run under the tier-1 grant:** Opus 5.5 answered, Fable 5.1 blocked, Mythos 5.1 answered, Fable 5 blocked | **not preserved**, and not covered by the twelve-file copy |
+
+**Not cited, by design:** transcripts from the live offensive engagement in [`01-TIMELINE.md` Phase 8](01-TIMELINE.md). Their tier and event counts are **`SINGLE-SOURCE`**, taken from one specialist's adjudication. **Their prefixes, location and content are excluded, on the account holder's decision that only the distilled lesson enters this repository.**
+
 ---
 
 ## The written records this repository draws on
@@ -68,6 +84,9 @@ Cited by 8-character transcript-filename prefix. These are local filename fragme
 | **The record of the account holder's own turns, verbatim** | **The authoritative home for every quotation of theirs in this repository.** Quoted from there and nowhere else — a second copy is a second thing that can drift, and this investigation has already paid for that once. |
 | **The framework's layered safety-model reference document** | The inferential prior. **Descriptive class — it binds nothing, it dates itself, and every claim in it is inferential.** |
 | **The framework's shared-knowledge store** | Where the shell word-splitting hazard is recorded as measured. |
+| **Added 2026-10-15: two further adjudications by the same safety-layer specialist.** The first covers Arms 0c and 1 and holds the internal tier table (about 560 lines). The second covers the control-tier arm (about 490 lines) | Source of the uninterpretable-cell ruling, the credential-epoch finding, the disclosure ruling, the request-identifier timing rule, and the cost correction. **Their figures are re-measured in [`02-EVIDENCE.md § 9`](02-EVIDENCE.md) wherever this analysis could reach them.** |
+| **Added 2026-10-15: seven further amendments to the refusal-incident log entry**, the tenth through the sixteenth | The spine, continued. The fifteenth and sixteenth cover the live engagement and are drawn on **for the distilled lesson only**. |
+| **Added 2026-10-15: the account holder's later turns, verbatim**, in their authoritative home | The portal reading, the re-run report, and the decision that engagement material stays out of this repository. **The 2026-10-08 report of the new process and the tier-1 grant is held in the framework's working notes, not in a verbatim turn record.** It is carried here as a report. |
 
 **Two of the most important of those were untracked working-tree files at the time this evidence was compiled, including the authoritative home for the account holder's own words.** Flagged here because **a derived document that defers to a source is only as durable as that source's tracked status**, and a reader auditing this repository later may find that the thing it defers to has moved.
 

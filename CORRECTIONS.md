@@ -181,3 +181,79 @@ Nobody can fail to maintain a thing that is not there — which is why nine days
 **Where the three probably came from, offered as a reading and not as a fact:** stop artifacts of *some* class exist on **four** model tiers in the local store — but **across two distinct workloads**, and the attribution bound at [`02-EVIDENCE.md § 5`](02-EVIDENCE.md) forbids pooling them. A four-tier figure and a two-tier figure are both true **of different predicates**, and a summary that carries neither predicate lands somewhere between them.
 
 **Caught by reading this repository's own headline against its own body before publishing — which is the check, and it is the only reason this entry exists.** The error ran in the direction that *flattered* the finding, which is the direction this investigation has repeatedly recorded as the one that does not get checked: *a number that flatters your case gets checked; one that doesn't, doesn't.* **This one was flattering and was nearly not checked.**
+
+---
+
+# Added 2026-10-15
+
+**Six entries, W-14 to W-19, added beside the thirteen above.** None of the thirteen is edited. Three of the six correct this repository itself rather than the investigation it describes, and they are listed first, because the error that flatters the person correcting it is the one least likely to be written down.
+
+---
+
+## W-14 · STALE AT FIRST COMMIT: "no probe has been run"
+
+**This repository said, in three places, that a protocol of pre-registered arms existed and *"not one of its arms has been executed"*:** the README (*"No probe has been run"*), the opening of [`03-OPEN-QUESTIONS.md`](03-OPEN-QUESTIONS.md), and the last bullet of [`01-TIMELINE.md` Phase 6](01-TIMELINE.md).
+
+**False when it was committed.** Arms 0, 0b, 0c and 1 had all run, plus an unregistered Fable 5 row, by 2026-10-01T03:52Z, and the first clean witness of the control tier had run at 2026-10-02T05:36Z. **This repository was first committed at 2026-10-02T19:15Z.**
+
+**The cause is not a hidden fact. It is a span.** The evidence here was derived from an internal dossier whose records stopped on 2026-10-01. The independent readings this set received before its first commit (recorded at the head of [`MANIFEST.md`](MANIFEST.md)) checked the set against itself and against that dossier, **not against the record that kept growing beside it.** ⇒ **This is the generator [`MANIFEST.md § 1`](MANIFEST.md) records against its own byte count, one level up:** an instrument that was aimed correctly, whose subject grew underneath it, still returning a plausible answer. It also runs in the direction this investigation keeps flagging as the one that goes unchecked. *"Nothing has been run"* sounds like caution, and **a cautious-sounding claim has no complainant either.**
+
+**The original sentences are left standing, with dated notes beside them.** What happened in the arms is in [`01-TIMELINE.md` Phase 7](01-TIMELINE.md).
+
+---
+
+## W-15 · REFUTED IN PART: "this class of notice is never written to disk"
+
+**Published in [`06-VENDOR-NOTICES.md`](06-VENDOR-NOTICES.md) (Variant 3, and the *"not applicable"* cell in its comparison table) and in [`SOURCES.md`](SOURCES.md) (*"One of the two notice classes is never written to disk at all"*).**
+
+**Refuted in part.** The same event the Variant 3 capture shows, at 2026-10-01T01:52Z, **also has an on-disk notice record**, and the two differ in four fields (single-source, measured by the specialist that adjudicated the arms). Blocks on the newest tier at 03:26Z and 13:22Z carry on-disk notices with `Details: [cyber]` and a request identifier. The two blocked rows on 2026-10-09 each carry an on-disk notice with a request identifier line (**re-measured here: one line each; values not read into any document**).
+
+**What decides it is timing, not notice class.** Sessions that produced any further record after the stop acquired the on-disk notice. Sessions whose stop was their last record did not. The 2026-10-09 notices landed **86 minutes** after their stops.
+
+**What survives, and it matters as much as the refutation:** **the rendered surface and the on-disk record are two instruments, and neither one is complete.** The screen carries the two-option remedy menu, which the disk lacks. The disk carries the request identifier, the policy URL, the sentence *"Claude Code can't respond to … with \<tier\>"* and the *"Double press esc"* sentence, which the screen lacks. ⇒ **Comparing a rendered capture with an on-disk record compares instruments as well as dates or tiers.** The internal record made exactly that error on a "copy changed in nine days" table, and three of its six rows turned out to be instrument-boundary artifacts with zero time elapsed. The comparison table in `06-VENDOR-NOTICES.md` compares tiers, not dates. **The rows its author re-confirmed on same-instrument evidence are the false-positive enumeration and the programme sentence, and both vary by tier.**
+
+---
+
+## W-16 · AMENDED, NOT WITHDRAWN: W-13's "two tiers"
+
+**[W-13](#w-13--this-repositorys-own-source-summary-overstated-a-tier-count) is correct over the evidence this repository carried, and it stands.** But that evidence had a span (see [W-14](#w-14--stale-at-first-commit-no-probe-has-been-run)), and by 2026-10-01T03:52Z, **three** tiers had blocked the four-word prompt in the project directory: Fable 5.1, Opus 5.5 and Fable 5. That was already true when W-13 was written.
+
+⇒ **The internal summary's *"three"* and this repository's *"two"* were each true of a different span, and neither carried its span.** That is the W-13 lesson, applied to W-13.
+
+**And on 2026-10-09 the count stopped being monotone.** Opus 5.5 *answered* the same four words in the same directory, while both Fable tiers blocked again. ⇒ **A tier count for this condition is not a property. It is an observation with a date, and has to be written as one.**
+
+---
+
+## W-17 · SUPERSEDED: "the newest-tier artifact carries no token accounting"
+
+**Published in [`03-OPEN-QUESTIONS.md § OPEN-1`](03-OPEN-QUESTIONS.md#open-1)** (*"There is no token accounting of any kind in the newest-tier artifact. Seven billing field names each occur zero times."*) and in [`SOURCES.md`](SOURCES.md) (*"no token accounting"*).
+
+**True when it was measured, and no longer true.** The client appended a billing record to that transcript **after** the measurement. **Re-measured here: zero output tokens for the newest tier, 230,727 cache-creation tokens, $1.876.** The three post-login arms acquired billing the same way, and all three read zero output tokens.
+
+⇒ **A negative claim about an artifact is a claim about the artifact at a moment**, because this store appends to files after they look finished. It is [`05-METHOD.md § 3`](05-METHOD.md) applied to time rather than space: a search's span includes *when* you looked.
+
+**What this does to OPEN-1 is less than it looks.** The measurement OPEN-1 asked for has arrived, and it lands on the branch OPEN-1 said stays ambiguous: **zero billed output while the harness string says generation was "stopped."** Either the block is pre-generation, or a cancelled stream is not billed as output. The adjudicating party re-labelled these rows *pre-generation* at **moderate** confidence, not high, for exactly that reason. **This analysis does not raise it.**
+
+---
+
+## W-18 · WITHDRAWN BY ITS AUTHOR, AND NOW MEASURED: "biology beside cyber" as the signature of a subject suite
+
+**[`03-OPEN-QUESTIONS.md § OPEN-7`](03-OPEN-QUESTIONS.md#open-7) gives two supports as decisive for classifying the block as subject-side.** The first is that the vendor lists its false positives as **domains**, *"coding, cybersecurity, and biology"*, and that *biology* sitting beside *cyber* is the mark of a subject-safeguard suite.
+
+**The party that made that argument withdrew it before this repository was first committed**, on the ground that the false-positive list varies by **tier**: it reads *"…and biology"* on Fable 5.1, *"cybersecurity work"* on Opus 4.8, and *"non-cybersecurity work"* on Opus 5.5. **That party then recorded whether the Fable copy had also changed over time as undetermined, because no later Fable notice existed on disk to compare against.**
+
+**One exists now.** Same tier, same instrument (on disk to on disk), first and second date: Fable 5.1 on 2026-09-21 reads *"legitimate coding, cybersecurity, and biology tasks"*. **Fable 5.1 on 2026-10-09 reads *"legitimate coding and cybersecurity tasks."*** Re-measured here. **The word is gone from the same tier's copy.**
+
+⇒ **The first decisive support for OPEN-7 is withdrawn.** The second support, that the prompt is structurally null, is untouched. **This analysis does not re-rate the subject-side classification. It records that the classification now stands on less than OPEN-7 says.**
+
+**Bound:** one tier, one notice per date, and the client version also changed in between (`2.1.278` → `2.1.295`). This is a fact about the copy, not about a classifier.
+
+---
+
+## W-19 · SUPERSEDED: "all unpreserved"
+
+**[`SOURCES.md`](SOURCES.md) marks every primary artifact *"All unpreserved"*, and [`MANIFEST.md § 4`](MANIFEST.md) records preservation as an undecided question.**
+
+**Superseded before the first commit.** On 2026-10-01, after measuring that the store had **lost** files (700 against 718 a day earlier, a net loss despite additions), twelve baseline artifacts were copied **by name** outside any repository, with matching checksums on all twelve (single-source). **The destination is deliberately not recorded in any document**, this one included.
+
+**And one apparent loss that is not one:** the empty-directory transcript cited in `SOURCES.md` does not live under the project's transcript folder. It lives under the folder for the empty directory where it ran. **It was verified present by this analysis**, and its absence from a sweep of the project folder is a fact about the sweep.

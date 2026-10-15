@@ -291,3 +291,45 @@ A system stop notice naming the **newest tier** sits in the transcript of **the 
 | **P6** | literal-match count over tracked files, **always with a positive control on the same command shape** | the framework repository, tracked files only |
 
 **Every sweep was driven from a script that parses JSON lines, not from a shell pipeline with an unquoted expansion. Each zero reported in this file is paired with a positive control.**
+
+---
+
+## 9 · The control stimulus across tiers, 2026-09-21 → 2026-10-09 (added 2026-10-15)
+
+**One stimulus, one directory, every observation this evidence holds.** The stimulus is `what is 2 + 2?`, 14 characters and 14 bytes. The directory is the framework's project directory, except for one row marked otherwise. **This is a projection of a larger internal table**, restricted to this one stimulus because it is the only stimulus held constant across tiers. **The unit is an observation, not a tier:** a tier that answers here can still be blocked on other content (see [`CORRECTIONS.md § W-3`](CORRECTIONS.md#w-3--withdrawn-the-control-tier-runs-clean)).
+
+**Predicate (P7).** A transcript under the project's session folder whose first short typed user turn contains `what is 2 + 2`. **Tier** is the on-disk `model` field of the assistant records where any exist. Otherwise it is the per-model key of the session's billing record. **Outcome** is *blocked* where the billing record shows zero output tokens for the tier and a stop notice is present, and *answered* where an assistant record carries text. Driven 2026-10-15 over the **53 files modified on or after 2026-10-01** in that folder, parsed as JSON lines.
+
+**Positive control, on the same script:** P7 reproduces every post-2026-10-01 row the internal table already held (rows 12, 15–17, 19–21). Their timestamps match to the millisecond, and the three post-login arms' billing sums to the internally published **$4.277206** to the cent.
+
+| date (UTC) | prefix | tier | client | verification status as read | outcome | output tokens | cache-creation | status |
+|---|---|---|---|---|---|---|---|---|
+| 2026-09-21T17:13Z | `6655058f` | Fable 5.1 | `2.1.278` | not enrolled | ⛔ **blocked** | — | — | carried from § 1–§ 3 |
+| 2026-09-21T19:40Z | `8de8d042` | Fable 5.1 | `2.1.278` | not enrolled | ⭐ **answered** *(empty directory)* | — | — | carried; file verified present |
+| 2026-10-01T01:52:35Z | `b16031d2` | Opus 5.5 | `2.1.286` | portal `approved` | ⛔ **blocked** (×3 submissions) | **0** | 230,727 | `RE-MEASURED` |
+| 2026-10-01T03:26:31Z | `5a33e50a` | Opus 5.5 | `2.1.286` | `approved` | ⛔ **blocked** | **0** | 84,643 | `RE-MEASURED` |
+| 2026-10-01T03:51:17Z | `80410c26` | Opus 5.5 | `2.1.286` | `approved`, after a reported re-login | ⛔ **blocked** *(Arm 0c)* | **0** | 84,721 | `RE-MEASURED`; re-login `SINGLE-SOURCE` (account holder's report, unwitnessed on disk) |
+| 2026-10-01T03:51:23Z | `bd6a4385` | Fable 5.1 | `2.1.286` | same | ⛔ **blocked** *(Arm 1)* | **0** | 88,649 | `RE-MEASURED`; same |
+| 2026-10-01T03:52:08Z | `eeedbac2` | Fable 5 | `2.1.286` | same | ⛔ **blocked** | **0** | 87,513 | `RE-MEASURED`; same |
+| 2026-10-01T13:22:44Z | `a3263157` | Opus 5.5 | `2.1.286` | `approved` | ⛔ **blocked** | **0** | 85,643 | `RE-MEASURED` |
+| 2026-10-02T05:36:34Z | `72f4c20d` | **Opus 5** | `2.1.287` | `approved` | ⭐ **answered** | 4 | 41,066 | `RE-MEASURED` |
+| 2026-10-09T00:45:20Z | `0225a080` | **Opus 5.5** | **`2.1.292`** | **tier 1, new process** (account holder's report) | ⭐ **answered** | 35 | 46,705 | `RE-MEASURED`; status `SINGLE-SOURCE` |
+| 2026-10-09T00:46:01Z | `8574eb55` | Fable 5.1 | `2.1.295` | same | ⛔ **blocked** | **0** | 97,101 | same |
+| 2026-10-09T00:46:35Z | `d08ebadd` | **Mythos 5.1** | `2.1.295` | same | ⭐ **answered** | 137 | 48,294 | same |
+| 2026-10-09T00:47:20Z | `e4990bf1` | Fable 5 | `2.1.295` | same | ⛔ **blocked** | **0** | 95,683 | same |
+
+**What the table holds constant, and what it does not.**
+
+- **The auto-loaded carrier and memory index are byte-identical *within* each date cluster** (re-measured: 56,846 bytes for the carrier on 2026-10-01 and 10-02; 57,634 bytes and 25,920 bytes for the four rows of 2026-10-09). **They are not identical *across* clusters.** The carrier grew 788 bytes and the memory index 5,731 bytes between the last Opus 5.5 block and the first Opus 5.5 answer.
+- **The client version is not constant within the 2026-10-09 cluster.** The one Opus 5.5 row is on `2.1.292`, and the other three are on `2.1.295`.
+- **Every 2026-10-09 session has the same shape:** a fresh session, one model switch, then the stimulus as the first typed prompt. **Re-measured from record types only, with no content read.**
+- **The verification-status column is a declaration, not a measurement.** Nothing on disk carries it (see [`01-TIMELINE.md` Phase 7](01-TIMELINE.md)).
+
+**What the table does not license:** a rate (one to three submissions per row, with a possible automatic retry on every blocked row); a trajectory (the Opus 5.5 rows reverse in eight days, with at least five factors changed); anything about a fresh clone or an unverified account; or anything about **why** the 2026-10-09 Opus 5.5 row answered.
+
+**Cost, because it is the operator's own billing and exposes nothing:** the four rows of 2026-10-09 billed $5.28 in total, **$3.92 of it on the two rows that produced zero output tokens.** The two blocked rows each billed roughly twice the cache-creation volume of the two that answered.
+
+| # | predicate added | span |
+|---|---|---|
+| **P7** | see the opening of this section | the project's session folder, the 53 files modified on or after 2026-10-01, parsed as JSON lines, run 2026-10-15 |
+| **P8** | the on-disk carrier and memory-index size: byte length of the string attachment that begins with each file's own first heading line | the same files. **Positive control:** reproduces the internally published 56,846 / 20,938 / 20,189 exactly |
