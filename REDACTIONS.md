@@ -101,7 +101,7 @@ The machine and client this evidence comes from have been used for **unrelated e
 
 | class | treatment |
 |---|---|
-| **The framework's name, structure, file layout, and the fact that it is a security-domain multi-agent framework with an offensive-security specialist library** | **Carried by description; the name itself is not.** The framework is described, not named — see [`MANIFEST.md § 4`](MANIFEST.md) — **and the description must be given, because the true-positive half of the central finding is unintelligible without it.** |
+| **The framework's name, structure, file layout, and the fact that it is a general-purpose multi-agent framework that does a great deal of security work, with an offensive-security specialist library** *(reworded 2026-10-18; [W-22](CORRECTIONS.md#w-22--softened-it-really-is-a-security-framework))* | **Carried by description; the name itself is not.** The framework is described, not named — see [`MANIFEST.md § 4`](MANIFEST.md) — **and the description must be given, because the true-positive half of the central finding is unintelligible without it.** |
 | **Short lines from internal analysis carrying a method finding** | **Carried.** These are citations and they are the best material in the corpus. |
 | **The single passage at the centre of [`04-FINDING.md`](04-FINDING.md)** | **Described, not quoted.** The two short fragments that constitute it are not reproduced. The decision to quote them is explicitly left to the repository's author, with the grounds on both sides set out in that file. **This is the one place where the weaker option was chosen deliberately rather than by default.** |
 | **Internal role names, ticket identifiers, record filenames** | **Removed throughout.** They expose nothing, but using them makes a write-up read as internal documentation to a reader who has no key for them. Parties are attributed by role instead — which is also clearer, and which preserves the part that *is* evidence: **who reached a conclusion, because in several cases a party's leading hypothesis was killed by a measurement that same party commissioned.** |
@@ -126,7 +126,7 @@ The machine and client this evidence comes from have been used for **unrelated e
 
 So the following are carried in full, deliberately:
 
-- **All token accounting**, including dollar amounts. It is one account's own billing on its own account, it is **the decisive instrument in the entire corpus**, and it exposes nothing.
+- **All token accounting**, including dollar amounts, which are API-rate equivalents rather than charges (the account is on a subscription plan; amended 2026-10-18, [W-23](CORRECTIONS.md#w-23--reframed-dollar-figures-are-api-rate-equivalents-not-spend)). It is one account's own usage accounting, it is **the decisive instrument in the entire corpus**, and it exposes nothing.
 - **All three variants of the vendor's notice text**, with per-event identifiers stripped and nothing else. See [`06-VENDOR-NOTICES.md`](06-VENDOR-NOTICES.md) for why reproducing them is fair.
 - **Every structural measurement** — assembly sizes, the 16-block-versus-4-block system-prompt difference, the shared-parent retry structure, record-type censuses.
 - **The whole method, the pre-registrations, the reversals, and every self-audit.** Free of hazard and the most interesting material in the corpus.
@@ -139,7 +139,7 @@ So the following are carried in full, deliberately:
 **Each class declared here has a row in [`MANIFEST.md § 7`](MANIFEST.md).** That is the rule `MANIFEST § 6` item 5 set after a declared class turned out to have no instrument behind it.
 
 1. **The live engagement in [`01-TIMELINE.md` Phase 8](01-TIMELINE.md): everything except the distilled lesson.** That means the engagement's identity and date, every party to it, the swarm's name, its transcripts and their prefixes, its operational content, and every task shape the swarm's own report names. **The account holder decided that only the distilled lesson enters this repository.** The lesson is stated by class: tier is a frequency axis, not an exemption axis.
-2. **The organisation through which the account holder is pursuing a higher verification tier.** It is not named. It is a third party, and the fact that matters (a pursuit is under way and its outcome is undetermined) does not need the name.
+2. **The volunteer organisations the account holder works with toward a higher verification tier.** None is named. They are third parties, and the facts that matter (higher tiers need an organisation with an EIN/TIN, these organisations have none, and the outcome is undetermined) do not need names. *(Amended 2026-10-18: first written as one organisation; [W-21](CORRECTIONS.md#w-21--amended-the-new-process-is-public-and-it-was-the-account-holders-third-enrolment-not-their-first).)*
 3. **The subscription tier**, again. It appears in the captured surfaces and is removed from Variant 4, exactly as from Variant 3.
 4. **The framework's persona name.** Phase 9 records that one tier answered in the persona the carrier configures. The name itself is internal convention and carries nothing a reader needs.
 5. **Transcript prefixes from the live engagement**, and the analysing session's own prefix, for the same reasons as § 3.
@@ -149,3 +149,17 @@ So the following are carried in full, deliberately:
 
 - **Tier names.** They are public product names, already printed in the vendor's own notice text. From 2026-10-15 they are needed to tell four tiers apart on one stimulus.
 - **The two portal requirements.** They are the conditions the vendor's portal displays for the programme, and they change what the programme *is*. ⚠ They also imply a fact about the account holder's own organisation: that 30-day data retention is enabled on it. **That implication is flagged for the account holder rather than decided here.**
+
+---
+
+## § 10 · Classes added 2026-10-18
+
+**Each class declared here has a row in [`MANIFEST.md § 8`](MANIFEST.md).**
+
+1. **The proof of concept's network identifiers.** Every IP address, hostname, username, key and key fingerprint, the forwarded port's host-side details, and the router's make, model and firmware. [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md) uses placeholders such as `<host-b>` and `<tunnel-user>`. **The method itself is shown in full**, on the account holder's decision: show everything, blank the identifiers.
+2. **The bridge's source and the framework's run tooling.** Described by pattern, not published. The framework is the account holder's own work.
+3. **The probe text, the rubric text, every model reply, and every per-probe verdict.** The result is published as counts only.
+4. **The internal names of the agent roles that built and ran the proof of concept**, under the same rule as § 6.
+5. **The name of the collegiate cyber competition** in the account holder's report of the previous year's enrolment. [`01-TIMELINE.md` Phase 10](01-TIMELINE.md#phase-10--three-enrolments-as-the-account-holder-reports-them) gives the class only.
+
+**Not redacted, deliberately:** the model names, the Ollama version and its default port, the tunnel's restrictions, the host's hardware and OS, the acceptance checks, and the fact that the account is on a subscription plan. The subscription **tier** stays redacted as in § 9 item 3; the plan type is stated because the cost convention needs it.

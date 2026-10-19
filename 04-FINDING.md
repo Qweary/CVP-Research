@@ -12,12 +12,14 @@
 
 | | what it is | plausible classifier verdict | why it cannot be honestly cured |
 |---|---|---|---|
-| **1 · Subject** | The security domain: offensive-security specialist templates, red-team automation packages, an entire shipped portfolio of them. | **A true positive.** | **It really is a security framework. Making it look like less of one is a lie about the repository.** |
+| **1 · Subject** | Security work, which is much of what the framework is used for: offensive-security specialist templates, red-team automation packages, a shipped portfolio of them, and the carefully logged artifacts of that work. | **A true positive.** | **Much of the framework's work is security work, and its records show it. Hiding that would misdescribe the repository.** *(Reworded 2026-10-18; [W-22](CORRECTIONS.md#w-22--softened-it-really-is-a-security-framework).)* |
 | **2 · Governance** | The machinery for *constraining* its own agents — gates, deny-predicates, seals, overrides, hooks — **and the prose that documents them.** | **Plausibly a false positive.** | **Curing it means documenting your own safety controls *less* — which makes the framework both less safe and less honest.** |
 
 ⇒ **The more carefully the framework documents its own guardrails, the more it reads like a guardrail-defeat manual.**
 
 **A framework that wrote nothing about its gates would score lower and be worse.**
+
+**Added 2026-10-18, in the account holder's terms.** The framework is a general-purpose multi-agent framework, not only a security framework. It does a lot of security work, and it documents its controls and has enforcement mechanisms so that the work is done responsibly. **That documentation of responsible-research controls appears to be exactly what scores.** See [`CORRECTIONS.md § W-22`](CORRECTIONS.md#w-22--softened-it-really-is-a-security-framework).
 
 ---
 
@@ -98,6 +100,8 @@ The top-level system prompt's own refusal list names *"detection evasion"* verba
 ### 7 · The first profile is a true positive, and that is not a complaint
 
 > **You cannot honestly cure a true positive on subject by making the subject less visible. Any edit that made this framework look less like a security framework would be a lie about the repository.**
+>
+> *Amended 2026-10-18.* The account holder calls the second sentence slightly disingenuous: the framework is a general-purpose framework that does a lot of security work, not only a security framework. **The supported form:** *an edit that hid how much security work the framework does, or how carefully it documents the controls on that work, would misdescribe the repository.* [W-22](CORRECTIONS.md#w-22--softened-it-really-is-a-security-framework).
 
 **The safeguard is over-broad about the *consequence*, not mistaken about the *domain*.** This is why the framework recorded, and kept, a rule forbidding itself from editing any file in order to score lower — not out of deference, but because **obfuscation is the wrong answer to a correct classification.**
 
@@ -138,3 +142,5 @@ The last one is the interesting one, and **it was not a reaction to any of this 
 > **What survives is narrower and still real:** *a sub-context faces a smaller assembly and was measured clean on this corpus on the occasion it was measured.* **What does not survive is *a sub-context is immune.*** All eight observed sub-context artifacts are in a different workload entirely.
 
 **And it makes an upstream report unusually strong.** This is a **precise, dated, reproducible instance of a specific false-positive class — an agent framework flagged for documenting its own safety controls** — stated with measurements rather than complaints, and the notices persist **per-event request identifiers**, which turns a report into a ticket rather than an anecdote. Those identifiers are deliberately not published here; see [`REDACTIONS.md`](REDACTIONS.md).
+
+**Added 2026-10-18: the upstream report was made.** The account holder sent many `/feedback` reports, several a day for one to two weeks, about stops under an `active` verification status and about the framework not working on the newest models ([`01-TIMELINE.md` Phase 10](01-TIMELINE.md#phase-10--three-enrolments-as-the-account-holder-reports-them)).

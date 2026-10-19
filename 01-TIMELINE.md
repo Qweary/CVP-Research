@@ -60,9 +60,9 @@
 
 ### The measurement that settled the mechanism
 
-> **Zero output tokens. 246,333 cache-creation and 147,846 cache-read tokens billed. $4.96 spent. Six attempts in 183 seconds. A smaller model generating normally in the same session at the same moment.**
+> **Zero output tokens. 246,333 cache-creation and 147,846 cache-read tokens billed. $4.96 at API rates. Six attempts in 183 seconds. A smaller model generating normally in the same session at the same moment.**
 
-All four figures re-measured; provenance in [`02-EVIDENCE.md § 1`](02-EVIDENCE.md).
+All four figures re-measured; provenance in [`02-EVIDENCE.md § 1`](02-EVIDENCE.md). *(Amended 2026-10-18: this line first read "$4.96 spent". The account is on a subscription plan, and $4.96 is the client's API-rate equivalent; [W-23](CORRECTIONS.md#w-23--reframed-dollar-figures-are-api-rate-equivalents-not-spend).)*
 
 ⇒ **An input-side classifier block, not a refusal.** A disposition refusal is prose, and prose is output tokens. The trained-disposition limb of the framework's own three-layer model is **refuted** for this event.
 
@@ -216,7 +216,7 @@ The protocol tabled all four outcome cells for the pair (0c, Arm 1) **before any
 
 1. **The notice *is* written to disk, on a timing rule.** Every session that produced any further record after its stop notice acquired an on-disk notice carrying `Details: [cyber]` and a per-event request identifier. Every session whose stop notice was its last record did not. **3 for 3 in both directions** (single-source). ⇒ **On a block, capture the screen *and* leave the session open for about thirty seconds.** Neither instrument is sufficient: the screen carries the remedy menu the disk lacks, and the disk carries the request identifier and three sentences the screen lacks. See [`CORRECTIONS.md § W-15`](CORRECTIONS.md#w-15--refuted-in-part-this-class-of-notice-is-never-written-to-disk).
 2. **Billing arrived after the measurement, for every blocked artifact here.** The newest-tier artifact that [`03-OPEN-QUESTIONS.md § OPEN-1`](03-OPEN-QUESTIONS.md#open-1) describes as carrying *"no token accounting of any kind"* now carries it: **zero output tokens, 230,727 cache-creation tokens, $1.876.** See [`CORRECTIONS.md § W-17`](CORRECTIONS.md#w-17--superseded-the-newest-tier-artifact-carries-no-token-accounting).
-3. **The four words were not cheap.** The three post-login arms billed **$4.277206** (re-measured here, including the small title-generation model), against an internal protocol budget of about $3 that had been published as *"~$2.4 spent."* The per-probe cost on the first affected tier had roughly doubled in nine days, from $0.88 to $1.79, with cache-creation tokens rising from 43,678 to 88,649. **At that date, lifetime spend on `what is 2 + 2?` was $8.42 across seven sessions** (single-source).
+3. **The four words were not cheap.** The three post-login arms billed **$4.277206** (re-measured here, including the small title-generation model), against an internal protocol budget of about $3 that had been published as *"~$2.4 spent."* The per-probe cost on the first affected tier had roughly doubled in nine days, from $0.88 to $1.79, with cache-creation tokens rising from 43,678 to 88,649. **At that date, the lifetime API-rate cost of `what is 2 + 2?` was $8.42 across seven sessions** (single-source). *(Amended 2026-10-18: "lifetime spend" reworded; every figure in this item is an API-rate equivalent on a subscription plan, [W-23](CORRECTIONS.md#w-23--reframed-dollar-figures-are-api-rate-equivalents-not-spend).)*
 4. **The transcript store was shrinking.** 700 files on 2026-10-01 against 718 the day before, a net loss despite additions. **Twelve baseline artifacts were then copied, by name, outside any repository** (single-source; the destination is deliberately not recorded anywhere). This matters more than any probe, because the artifacts from before enrolment are **the only unverified-account measurements this framework will ever hold of its own corpus.** Nobody un-enrols.
 
 ### The framework's own disclosure ruling changed
@@ -245,6 +245,13 @@ A separately deployed security swarm, not the framework itself, ran a live engag
 
 **What the account holder reports, and it is a report, not a document this analysis has read.** The vendor released a new verification process with enrolment and a **four-tier** structure. The account holder was approved for **tier 1**. On the account holder's reading of the vendor's communication, tier 1 lifts restrictions **for defensive work only, on the newer models**, and permissions the account held before continue unaffected. They are pursuing a higher tier through an organisation; the outcome is undetermined.
 
+> **Amended 2026-10-18, beside the original rather than over it.** The account holder has corrected two things in the paragraph above.
+>
+> - **The grant is tier 2 (defensive), not tier 1.** Tier 1 is the standard level every account has without the programme. Tier 2 is the defensive tier. **Anything above it requires an organisation with an EIN/TIN and a manual review by the vendor.** The account holder misread the tier number at the time. See [`CORRECTIONS.md § W-20`](CORRECTIONS.md#w-20--corrected-the-account-holders-verification-tier-is-2-defensive-not-1).
+> - **The pursuit of a higher tier is not through one organisation.** The account holder works with volunteer organisations that have no EIN, is working with them toward a higher tier, and wants to keep using a personal account. None is named.
+>
+> **The structure is public.** Third-party coverage dates its announcement to **2026-10-06** and describes three verification tiers above the standard level: defensive, red-team (open to organisations only) and specialised. That is consistent with the four levels the account holder reports. **The vendor's own announcement was not read for this repository**; the coverage is listed in [`SOURCES.md`](SOURCES.md). The approval date, 2026-10-08, is the account holder's report. The vendor's notice to them says that permissions on past models stay as they are. See [`CORRECTIONS.md § W-21`](CORRECTIONS.md#w-21--amended-the-new-process-is-public-and-it-was-the-account-holders-third-enrolment-not-their-first) and [Phase 10](#phase-10--three-enrolments-as-the-account-holder-reports-them).
+
 **Then they ran the control stimulus on four tiers, one fresh session each, two minutes in all.** Each session is: open, switch model, type `what is 2 + 2?`. **Every figure below is re-measured at this hand from the transcripts**, field by field, with the tier taken from the on-disk model record rather than from the banner:
 
 | time (UTC, 2026-10-09) | tier | client | outcome | output tokens | cache-creation billed | cost |
@@ -267,9 +274,9 @@ A separately deployed security swarm, not the framework itself, ran a live engag
 
 ### What it does not establish. This is the longer list, and it is meant to be.
 
-- ⛔ **It does not show that tier 1 relieved Opus 5.5.** At least five things changed between row 20 (blocked, 2026-10-01) and this row: **the verification grant, the client version (`2.1.286` → `2.1.292`), eight days of elapsed time inside the vendor's estimated drift half-life, an auto-loaded carrier 788 bytes larger, and a memory index 5,731 bytes larger.** It is also `n = 1`.
-- ⛔ **It does not show that tier 1 fails to reach the Fable tiers.** Tier 1 is described as a lift for *defensive* work, and four neutral words are neither defensive nor offensive. **Nothing here shows whether the grant is in force on any surface.** The epoch problem from Phase 7 still applies: nothing on disk marks it.
-- ⛔ **It says nothing about a fresh clone** ([OPEN-4](03-OPEN-QUESTIONS.md#open-4)) **or about an unverified account** ([OPEN-6](03-OPEN-QUESTIONS.md#open-6)). An answer on a tier-1 account is exactly the case OPEN-6 warns about: relief for the account holder hides the condition from the one person best placed to see it.
+- ⛔ **It does not show that tier 2 relieved Opus 5.5.** *(corrected 2026-10-18 from "tier 1"; [W-20](CORRECTIONS.md#w-20--corrected-the-account-holders-verification-tier-is-2-defensive-not-1))* At least five things changed between row 20 (blocked, 2026-10-01) and this row: **the verification grant, the client version (`2.1.286` → `2.1.292`), eight days of elapsed time inside the vendor's estimated drift half-life, an auto-loaded carrier 788 bytes larger, and a memory index 5,731 bytes larger.** It is also `n = 1`.
+- ⛔ **It does not show that tier 2 fails to reach the Fable tiers.** *(corrected 2026-10-18 from "tier 1"; [W-20](CORRECTIONS.md#w-20--corrected-the-account-holders-verification-tier-is-2-defensive-not-1))* Tier 2 is described as a lift for *defensive* work, and four neutral words are neither defensive nor offensive. **Nothing here shows whether the grant is in force on any surface.** The epoch problem from Phase 7 still applies: nothing on disk marks it.
+- ⛔ **It says nothing about a fresh clone** ([OPEN-4](03-OPEN-QUESTIONS.md#open-4)) **or about an unverified account** ([OPEN-6](03-OPEN-QUESTIONS.md#open-6)). An answer on a tier-2 account *(corrected 2026-10-18)* is exactly the case OPEN-6 warns about: relief for the account holder hides the condition from the one person best placed to see it.
 - ⛔ **It is not the pre-registered +2-week re-run.** That was due around 2026-10-14. This ran early, and the verification grant now sits between it and the baseline, so it cannot serve that purpose.
 - ⛔ **No trial count.** The harness line *"continuing once with that noted"* appears on both blocked rows, which may mean one automatic retry per submission.
 
@@ -279,6 +286,52 @@ A separately deployed security swarm, not the framework itself, ran a live engag
 
 - **Three tiers have blocked the four-word prompt in the project directory on at least one occasion:** Fable 5.1, Opus 5.5, and Fable 5, all on or before 2026-10-01. Opus 5 answered it on 2026-10-02. On 2026-10-09, **Opus 5.5 and Mythos 5.1 answered and both Fable tiers blocked.** Every one of those statements carries its date, because the Opus 5.5 row reversed in eight days for reasons nobody can separate.
 - **The re-authentication arm has run.** It landed in the cell pre-registered as uninterpretable, and the cell is now uninterpretable for a second reason that is unobservable on this client: nothing on disk marks a credential epoch.
-- **The account is now on a tier-1 grant under a new process.** Whether that grant is in force on any surface, or explains anything above, is unmeasured.
+- **The account is now on a tier-2 (defensive) grant under a new process.** *(corrected 2026-10-18 from "tier 1"; [W-20](CORRECTIONS.md#w-20--corrected-the-account-holders-verification-tier-is-2-defensive-not-1))* Whether that grant is in force on any surface, or explains anything above, is unmeasured.
 - **Still unrun:** the fresh-clone arm ([OPEN-4](03-OPEN-QUESTIONS.md#open-4)), the one-file-at-a-time arm ([OPEN-3](03-OPEN-QUESTIONS.md#open-3)), the vendor's recommended fallback tier on the framework corpus ([OPEN-8](03-OPEN-QUESTIONS.md#open-8)), the reduced-assembly arm, and the +6-week re-run (around 2026-11-11).
-- **Planned next, and not done:** the account holder's intended close for this line of work is a **proof of concept that routes an action a cloud model restricts to a self-hosted local model** on a consumer GPU. The hardware session has not happened. **Nothing in this repository describes that work as built, tested, or working.**
+- **Planned next, and not done:** the account holder's intended close for this line of work is a **proof of concept that routes an action a cloud model restricts to a self-hosted local model** on a consumer GPU. The hardware session has not happened. **Nothing in this repository describes that work as built, tested, or working.** *(Superseded 2026-10-18: Version 1 was built and ran on 2026-10-19 UTC. See [Phase 11](#phase-11--version-1-of-the-local-routing-proof-of-concept), [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md) and [`CORRECTIONS.md § W-24`](CORRECTIONS.md#w-24--superseded-nothing-in-this-repository-describes-that-work-as-built). The sentences are left as written.)*
+
+---
+
+## Phase 10 · three enrolments, as the account holder reports them
+
+**Added 2026-10-18. Everything in this phase is the account holder's own report, given in writing on 2026-10-18**, except where another source is named. A date appears only where the account holder or an artifact gives one. No gap is filled in.
+
+| when | what the account holder reports | what else bears on it |
+|---|---|---|
+| **the previous year** | Enrolled in the vendor's Cyber Verification Program for their work on a collegiate cyber competition. | nothing in this repository |
+| **this year** (no date given) | Re-checking the agent tooling they had used the year before, they ran into restrictions. Looking into why work that had been possible the year before no longer was, they found that a newer form of the programme had come into force in between. They had not noticed, because they had done no direct agentic red-teaming for a few months. | [Phase 8](#phase-8--a-different-workload-distilled)'s 2026-10-02 report has the same shape |
+| **2026-09-30** (local) | Enrolled in that newer form. **The first approval.** The portal read `active`. Improvement was minimal, and there was none on the newest models. | [Phase 7](#phase-7--the-arms-ran-before-this-repository-was-first-committed), Arm 0 (the portal showed no date); the blocks after enrolment in Phases 7 and 9 |
+| **the following one to two weeks** | Sent feedback with the client's `/feedback` command: **many reports, several a day.** They covered the stops under an `active` status and the framework not working on the newest models. | No copy is held in this repository, and no count was recorded |
+| **2026-10-06** | The tiered programme was announced. | third-party coverage, listed in [`SOURCES.md`](SOURCES.md) |
+| **2026-10-08** | Re-enrolled in the tiered programme, which asked for considerably more information than either earlier form. **The second approval: tier 2 (defensive).** Higher tiers need an organisation with an EIN/TIN and a manual vendor review. The vendor's notice says permissions on past models stay as they are. | Phase 9; [`CORRECTIONS.md § W-20`](CORRECTIONS.md#w-20--corrected-the-account-holders-verification-tier-is-2-defensive-not-1) |
+
+**On the past-models notice, in the account holder's words:** it is *"helpful because of my security work, but not a reliable long term solution to the problem I faced."*
+
+**On the feedback reports and the new programme.** The account holder has wondered whether the volume of reports might have helped prompt the new programme. **That is the account holder's speculation, offered as speculation.** Nothing in this repository bears on it in either direction, and no causal claim is made.
+
+**On re-authentication.** The account holder reports fully logging out and back in **during and throughout testing, the 2026-10-09 run of Phase 9 included.** It is carried as a report, for the reason Phase 7 gives: nothing on disk marks a credential epoch, so no instrument here can witness it. **If the report holds**, the two Fable blocks of 2026-10-09 did not run on a credential minted before the tier-2 grant, so the stale-credential reading of [OPEN-2](03-OPEN-QUESTIONS.md#open-2) does not explain them. **It still does not show that the grant reached the inference path.** Tier 2 is a lift for defensive work, and four neutral words call on neither defensive nor offensive work.
+
+**What this changes elsewhere in the repository**, each recorded in [`CORRECTIONS.md § W-21`](CORRECTIONS.md#w-21--amended-the-new-process-is-public-and-it-was-the-account-holders-third-enrolment-not-their-first):
+
+1. Phase 7's *"the account holder states they first applied that day"* refers to the form of the programme then current. It was the account holder's second enrolment overall.
+2. The pre-2026-09-30 artifacts are **pre-enrolment for the then-current programme only.** The account still held an enrolment in an earlier form of the programme. Whether that earlier enrolment had any effect in September 2026 is unknown, so *"unverified-account measurements"* (Phase 7 item 4, [OPEN-6](03-OPEN-QUESTIONS.md#open-6)) is stronger than the evidence.
+3. **The account holder did report upstream**, which this repository had not recorded either way.
+
+---
+
+## Phase 11 · Version 1 of the local-routing proof of concept
+
+**Added 2026-10-18. Run 2026-10-19, 02:50Z to 04:41Z.** The full method and the result counts are in [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md). This is the short form.
+
+- **The route.** A model host with a consumer GPU sits on its own segregated network segment. Ollama listens on its loopback interface only, on port 11434. The workstation reaches it through an SSH tunnel whose account can forward that one port and do nothing else, and an MCP bridge on the workstation exposes the local model to the agent session, with no fallback provider. **A human reviews and executes every proposed action. Nothing is automated in Version 1.**
+- **The run.** Seven local models, 16 probes each, one sample per probe. **104 sends were answered by the model host.** Two models passed the pre-registered acceptance rule, two failed it, and three were INCOMPLETE. Two cloud raters agreed at Cohen's kappa 0.867 (n = 77).
+- **Where the classifier fired.** **Ten halts, all on the cloud rating side, all after a local reply had arrived. None on the local side.** The blind second rater, reading the same replies from files, was never halted.
+- **The bound that matters most.** The raters were cloud models, so **every probe and reply was visible to the cloud provider.** *Local* says where the text was generated, not who could read it.
+
+---
+
+## Where it stands, 2026-10-18
+
+- **The account holds a tier-2 (defensive) grant** under the tiered programme, by their report. Whether it is in force on any surface, or explains anything above, is unmeasured.
+- **Version 1 of the local-routing proof of concept exists and has run once.** It answers the requests the hosted service stops, on hardware the account holder owns, with a human executing every action.
+- **Still unrun:** the fresh-clone arm ([OPEN-4](03-OPEN-QUESTIONS.md#open-4)), the one-file-at-a-time arm ([OPEN-3](03-OPEN-QUESTIONS.md#open-3)), the vendor's recommended fallback tier on the framework corpus ([OPEN-8](03-OPEN-QUESTIONS.md#open-8)), the reduced-assembly arm, and the +6-week re-run (around 2026-11-11).

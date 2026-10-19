@@ -15,6 +15,8 @@
 **11 files total: 10 content files plus this manifest.** All Markdown; no binaries, no images, no archives, no scripts, no transcript captures.
 
 > **Amended 2026-10-15.** The figures in § 1 and § 2 are the first commit's, and they stand as that commit's record. **The update on branch `delta-2026-10-15` is measured separately in [§ 7](#-7--delta-2026-10-15-measured-separately).** The file count is unchanged. No file was added or removed.
+>
+> **Amended 2026-10-18.** Delta 2, on branch `delta-2026-10-18`, adds **one content file**, `07-LOCAL-ROUTING-POC.md`. The set is now **12 files: 11 content files plus this manifest.** It is measured separately in [§ 8](#-8--delta-2026-10-18-measured-separately).
 
 **Two spans, because this manifest is part of what it measures.** The 10 content files are **1,662 lines / 167,727 bytes**, measured after the last of the second round of amendments landed — a pass that opened 2026-10-01 and closed 2026-10-02, local. **The complete-set figure is deliberately not asserted:** it moves with every edit to *this* file, so any number for it would be stale by the time it was written. **Counts in § 2 are each stated against the span they were taken over.** ⭐ **That convention is why the figure above is quotable at all: this manifest is not one of the ten, so amending this manifest cannot move it.**
 
@@ -229,3 +231,67 @@ The same nine value-bearing classes re-counted with `grep`, explicit file list, 
 1. **It does not establish that the delta is free of disclosure by implication.** Literal sweeps catch literals. ⛔⛔ **The rule this repository was built under (an independent held-out read by someone other than the author, before any push) applies to this delta in full, and that read has not happened.** The author's list of candidate sentences for that reader is outside this repository, in the delta report delivered with this branch.
 2. **It does not establish the account holder's report of the new verification process.** That process and its tier structure are carried as a report. **No vendor document about them was read by this analysis.**
 3. **It does not establish that the `SINGLE-SOURCE` figures in the delta are correct.** Those are the engagement's tier counts, the timing rule, the store-shrinkage count, the preservation checksums, and the 13-second switch.
+
+---
+
+## § 8 · Delta 2026-10-18, measured separately
+
+**Same rule as § 7: the earlier sections are earlier attestations and are not rewritten.** This section attests to delta 2 only.
+
+**Round disclosure:** the analysis that produced this delta held no prior round in its own context. **This is round 1, and saying so is the disclosure.**
+
+### 8.1 · What changed
+
+| file | change | primary source |
+|---|---|---|
+| `07-LOCAL-ROUTING-POC.md` | **New.** The local-routing proof of concept, Version 1: method in full, results as counts only, the bounds | the build's evidence record, its reviewed runbooks and its run log (counts and record types only; no probe, reply or verdict text read) |
+| `01-TIMELINE.md` | a dated amendment beside Phase 9's report paragraph; the tier corrected in Phase 9's list and in *"Where it stands, 2026-10-15"*, with markers; the PoC bullet marked superseded; **Phases 10 and 11 added**, plus *"Where it stands, 2026-10-18"*; two cost phrases reworded with markers | the account holder's written answers of 2026-10-18; public coverage of the tiered programme |
+| `02-EVIDENCE.md` | a dollar-figure convention; the tier corrected in § 9's table; the cost sentence reframed; a re-authentication note | as above |
+| `03-OPEN-QUESTIONS.md` | the tier corrected in five lines with markers; a 2026-10-18 amendment under OPEN-2; OPEN-6's characterisation softened and its *"unverified"* bounded | as above |
+| `04-FINDING.md` | the subject cell of the finding table softened; the account holder's point added under the table; a note beside bound 7's quotation; the upstream report recorded | as above |
+| `05-METHOD.md` | one cost figure marked as an API-rate equivalent | as above |
+| `CORRECTIONS.md` | **W-20 to W-24 added.** W-1 to W-19 untouched | as above |
+| `SOURCES.md` | the tier corrected in one row; two record rows; a public-coverage subsection | as above |
+| `REDACTIONS.md` | § 6 row softened; § 8 cost line reframed; § 9 item 2 made plural and generic; **§ 10 added**, which declares five classes | the account holder's decisions D1 to D3 of 2026-10-18 |
+| `README.md` | status date; the tier corrected; the first profile reworded; a *"Since 2026-10-15"* table; a fourth number convention; the reading table; one scope note | as above |
+
+### 8.2 · Span
+
+**The 11 content files measure 2,373 lines and 264,536 bytes after every edit in this delta**, measured two ways (`wc -l -c` over an explicit eleven-file list, and a Python pass) that agree to the digit. `07-LOCAL-ROUTING-POC.md` alone is 13,949 bytes. For comparison, § 7.2's figure for the ten content files was 2,026 lines and 221,793 bytes. **This manifest is not one of the eleven.**
+
+### 8.3 · Redaction classes, driven over the new span
+
+**Driven 2026-10-18 over the 12 files, this manifest included, as an explicit list, counting occurrences.** Every class below returned **`0`**:
+
+- the framework's name, its short form as a whole word, and the internal role names of the agents that built and ran the proof of concept (six checked individually, as whole words, case-sensitive);
+- the lane's internal prefix, the local re-tag, the original community publisher's handle, the two host account names, the router's make and model, the host's interface names;
+- the competition's name and two further terms specific to it, and the engaged swarm's name;
+- the account holder's username and email, any email-shaped string, any MAC-shaped string, any key-fingerprint prefix, and any plain run of 30 or more token characters;
+- **any dotted-quad IPv4 address**, and the two private-range prefixes most likely here.
+
+**Positive controls on the same command shapes:** `safeguards` returns 29 occurrences over the 11 content files, and 35 with this manifest included. The IPv4 pattern fires on a fabricated dotted-quad address held outside this repository. The role-name and framework-name predicates fire on the framework's own instruction file, and the lane prefix fires 32 times on the build's evidence record. ⇒ **Every zero above comes from an aimed predicate.**
+
+**One expected non-zero, accounted for:** the string `/home/` occurs once, in § 2(c) of this manifest, where it describes a fabricated probe class. No path is carried.
+
+**Em-dashes.** This repository has never held a no-em-dash standard (403 occurrences across the 12 files, every one of them in text older than this delta). **The new file and every sentence this delta added carry none.** The four em-dashes on changed lines are in the unchanged remainder of those lines.
+
+**Intra-repository anchor links:** 104 checked against the headings they target. **Zero unresolved.**
+
+### 8.4 · Decisions taken since § 4
+
+- **Whether to name the framework:** taken by the account holder on 2026-10-18. **It is not named.** It is described as a general-purpose multi-agent framework.
+- **Whether to keep the portal requirements** ([`REDACTIONS.md § 9`](REDACTIONS.md)): taken. **Kept.** Phase 8's sentence *"No artifact states whether that run was on the enrolled account"* is kept with them.
+- **How much of the proof of concept's network to show:** taken. Everything except the identifiers in [`REDACTIONS.md § 10`](REDACTIONS.md) item 1, and no open hardening item on that network is described.
+
+### 8.5 · Scope discipline in this delta
+
+- **The one sealed object in the framework's repository was not extracted, listed, read or copied, and no history command was run against any retired path.** ⛔ **A statement about acts, not a sweep result.**
+- **No transcript was read for this delta.** The proof of concept's run log was read by record type and count fields only. **No probe text, rubric text, reply text or per-probe verdict was read.**
+- **Nothing in the framework's repository was modified.** No whole-tree copy was made. **This delta is one local commit on one local branch, and nothing was pushed.**
+
+### 8.6 · What this section does **not** establish
+
+1. **It does not establish that the delta is free of disclosure by implication.** The held-out read this repository's rule requires has not happened for delta 2. The candidate sentences are listed in the delta report delivered with this branch, outside the repository.
+2. **It does not establish the account holder's reports.** The tier, the enrolment history, the re-authentication and the feedback reports are carried as reports. The tiered structure is carried from third-party coverage; the vendor's own announcement was not read.
+3. **It does not establish the proof of concept's counts independently.** They are transcribed from the build's evidence record and cross-checked only for the send total, which the run log's per-block counts reproduce (104).
+

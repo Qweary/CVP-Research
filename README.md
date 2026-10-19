@@ -2,7 +2,7 @@
 
 **Field notes on a safety classifier that cannot be observed or reasoned with — and the one channel that does exist is a report, not an appeal.**
 
-Status: **open investigation. Not concluded.** Last updated 2026-10-15. First committed 2026-10-02.
+Status: **open investigation. Not concluded.** Last updated 2026-10-18. First committed 2026-10-02.
 
 ---
 
@@ -37,8 +37,15 @@ That ratio is the state of the research. It is not a reason to say less; it is t
 
 | | |
 |---|---|
-| **Now established** | **The re-authentication arm was run, and the four words still blocked on Opus 5.5, Fable 5.1 and Fable 5**, in the outcome cell pre-registered *before the data* as uninterpretable. · **The control tier answers the four words** in the project directory, witnessed for the first time on 2026-10-02. · **The vendor's portal conditions verification on safety classifiers being enabled**, so verification is not an exemption from classification. · **On 2026-10-09, under a tier-1 grant the account holder reports, Opus 5.5 and a tier never seen before answered the four words, while both Fable tiers blocked**, with the auto-loaded context byte-matched across all four. · **One tier's notice no longer lists "biology"**, on same-instrument evidence. |
+| **Now established** | **The re-authentication arm was run, and the four words still blocked on Opus 5.5, Fable 5.1 and Fable 5**, in the outcome cell pre-registered *before the data* as uninterpretable. · **The control tier answers the four words** in the project directory, witnessed for the first time on 2026-10-02. · **The vendor's portal conditions verification on safety classifiers being enabled**, so verification is not an exemption from classification. · **On 2026-10-09, under a tier-2 (defensive) grant the account holder reports *(corrected 2026-10-18 from "tier 1"; [W-20](CORRECTIONS.md#w-20--corrected-the-account-holders-verification-tier-is-2-defensive-not-1))*, Opus 5.5 and a tier never seen before answered the four words, while both Fable tiers blocked**, with the auto-loaded context byte-matched across all four. · **One tier's notice no longer lists "biology"**, on same-instrument evidence. |
 | **Still not established, and now harder** | Whether any grant reached the inference path. **Nothing on disk marks a credential epoch, so the re-authentication is unwitnessed in principle.** Why Opus 5.5 changed between 2026-10-01 and 2026-10-09: at least five factors moved and it is one run. And everything in the row above that was not touched: mechanism, trigger content, fresh clone, unverified account, remedy tier, onset. |
+
+**Since 2026-10-15 (added 2026-10-18), one row each:**
+
+| | |
+|---|---|
+| **Now established** | **Version 1 of the local-routing proof of concept ran on 2026-10-19 (UTC).** A model on a second machine, reached through an SSH tunnel and an MCP bridge, answered **104** probe sends; the cloud safety classifier halted **10** times, **every time on the cloud rating side and never on the local side.** Every proposed action is human-reviewed and human-executed. See [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md). · **The account holder's verification standing is tier 2 (defensive), not tier 1**, and the tiered structure is public. · **The enrolment history, as the account holder reports it:** three enrolments, two approvals, and one to two weeks of several feedback reports a day in between ([`01-TIMELINE.md` Phase 10](01-TIMELINE.md#phase-10--three-enrolments-as-the-account-holder-reports-them)). |
+| **Still not established** | Whether any grant reached the inference path: the account holder reports logging out and back in throughout testing, and nothing on disk can witness it. Whether the feedback reports had anything to do with the new programme. Everything in the rows above that was not touched. |
 
 ---
 
@@ -48,7 +55,7 @@ Stated with its bounds attached, and the bounds are not decoration — see [`04-
 
 > **The framework has two distinct harm profiles, and they resist repair for opposite reasons.**
 >
-> The first is its **subject**: it is a security framework, with an offensive-security specialist library and red-team automation packages. A classifier flagging that is **plausibly correct**, and no honest edit makes it less true.
+> The first is its **subject matter**: the framework is general-purpose, but much of the work done with it is security work, so its tree holds an offensive-security specialist library, red-team automation packages, and the carefully logged artifacts of that work. A classifier flagging that is **plausibly correct**, and no honest edit makes it less true. *(Reworded 2026-10-18; [W-22](CORRECTIONS.md#w-22--softened-it-really-is-a-security-framework).)*
 >
 > The second is its **governance machinery**: the gates, deny-predicates, override paths, seals and hooks that constrain its own agents — and, critically, **the prose that documents them.** On one scoring model, the single most "evasion-dense" passage in the file every user of the framework auto-loads is that file's own prose about when its enforcement gate does and does not fire.
 >
@@ -89,6 +96,7 @@ Then, in any order:
 | [`01-TIMELINE.md`](01-TIMELINE.md) | the dated arc — every arm, what was predicted *before* the data, what it established and what it refuted |
 | [`02-EVIDENCE.md`](02-EVIDENCE.md) | every figure, with its provenance and its re-measurement status |
 | [`06-VENDOR-NOTICES.md`](06-VENDOR-NOTICES.md) | the vendor's own notice text, verbatim, across three model tiers, plus a fourth variant added 2026-10-15. The only non-inferential material in the corpus |
+| [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md) | **added 2026-10-18:** the local-routing proof of concept, Version 1. The method in full and the results as counts only |
 | [`SOURCES.md`](SOURCES.md) | the off-repo artifacts the evidence rests on, named but not reproduced |
 | [`REDACTIONS.md`](REDACTIONS.md) | what is deliberately absent from this repository, and why |
 | [`MANIFEST.md`](MANIFEST.md) | every file, its provenance, and the redaction classes it was checked against |
@@ -105,6 +113,8 @@ Then, in any order:
 
 **3. Characters and bytes are not interchangeable, and both are stated where it matters.** In one stimulus set, two structurally distinct prompts have different character counts and *identical* byte counts, so in bytes they collapse into one figure.
 
+**4. Added 2026-10-18: every dollar figure is an API-rate equivalent, not money spent.** The account is on a subscription plan. The client records, for each turn, what that usage would cost at API rates, and that field is the source of every `$` figure in this repository. The account holder tracks it because it is a useful measure. Where the text says tokens were *billed* or names a *billing record*, it means the client's per-turn usage accounting, not a per-token charge. See [`CORRECTIONS.md § W-23`](CORRECTIONS.md#w-23--reframed-dollar-figures-are-api-rate-equivalents-not-spend).
+
 ---
 
 ## Terminology
@@ -119,7 +129,7 @@ Internal role names, ticket identifiers and record filenames have been removed t
 
 ## Scope and provenance
 
-All observations are from **one account, one machine, one framework, in September 2026.** The framework's repository is private; this repository carries derived and redacted evidence only, never captures of source material. The vendor's notice text is product copy rendered on screen to any user who hits the condition, quoted here because it is the only place in the whole corpus where the vendor describes its own safeguard in its own words.
+All observations are from **one account, one machine, one framework, in September 2026.** *(Amended 2026-10-18: the arms ran into October 2026, and the proof of concept in [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md) adds a second machine, which hosts the local model.)* The framework's repository is private; this repository carries derived and redacted evidence only, never captures of source material. The vendor's notice text is product copy rendered on screen to any user who hits the condition, quoted here because it is the only place in the whole corpus where the vendor describes its own safeguard in its own words.
 
 **On that point, and it is not a concession:** the notice text *itself* states that the safeguards are *"intentionally broad,"* that they *"can sometimes flag legitimate coding, cybersecurity, and biology tasks,"* and — on the newest tier — that *"We're improving these safeguards to reduce the amount of incorrectly flagged messages."* One tier's notice instructs the reader, in terms, to apply to the Cyber Verification Program. **Nothing here is a disclosure of something the vendor denies.** It is a precise, dated, reproducible instance of a false-positive class the vendor has named and says it is working on.
 

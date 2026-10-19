@@ -20,7 +20,7 @@ It fired in the predicted direction. ⇒ **It is the first arm in the sequence c
 
 - **Write the prediction down before you look, and write down what result would mean you are wrong.**
 - **A probe that can only confirm you is a null experiment.**
-- **Say the cost.** Each arm here was costed — roughly $0.70–0.90 per probe; the six-attempt cluster totalled $4.96. **A costed arm gets run; an uncosted one gets discussed.**
+- **Say the cost.** Each arm here was costed — roughly $0.70–0.90 per probe; the six-attempt cluster totalled $4.96 (API-rate equivalents on a subscription plan; amended 2026-10-18, [W-23](CORRECTIONS.md#w-23--reframed-dollar-figures-are-api-rate-equivalents-not-spend)). **A costed arm gets run; an uncosted one gets discussed.**
 
 ---
 

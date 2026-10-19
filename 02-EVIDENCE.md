@@ -11,6 +11,8 @@
 
 **Measurement precaution.** Every sweep below was driven from a script that parses JSON lines, **not** from a shell pipeline with an unquoted expansion. On the shell used here, an unquoted expansion used as a file list **silently collapses to one argument and returns a well-formed integer that is wrong.** Where a count is `0`, a **positive control on the same command shape** is reported beside it — because a positive control fires on the failing idiom too, where a null control cannot.
 
+**Dollar figures (added 2026-10-18).** Every `cost` and `$` figure in this file is the client's own per-turn cost field, which prices usage at API rates. **The account is on a subscription plan, so these are API-rate equivalents, not charges.** *Billed* and *billing record* name the client's usage accounting. See [`CORRECTIONS.md § W-23`](CORRECTIONS.md#w-23--reframed-dollar-figures-are-api-rate-equivalents-not-spend).
+
 **Artifacts are cited by 8-character transcript-filename prefix.** These are local filename fragments; they address nothing remotely. Full paths are deliberately not published — see [`REDACTIONS.md`](REDACTIONS.md).
 
 ---
@@ -313,7 +315,7 @@ A system stop notice naming the **newest tier** sits in the transcript of **the 
 | 2026-10-01T03:52:08Z | `eeedbac2` | Fable 5 | `2.1.286` | same | ⛔ **blocked** | **0** | 87,513 | `RE-MEASURED`; same |
 | 2026-10-01T13:22:44Z | `a3263157` | Opus 5.5 | `2.1.286` | `approved` | ⛔ **blocked** | **0** | 85,643 | `RE-MEASURED` |
 | 2026-10-02T05:36:34Z | `72f4c20d` | **Opus 5** | `2.1.287` | `approved` | ⭐ **answered** | 4 | 41,066 | `RE-MEASURED` |
-| 2026-10-09T00:45:20Z | `0225a080` | **Opus 5.5** | **`2.1.292`** | **tier 1, new process** (account holder's report) | ⭐ **answered** | 35 | 46,705 | `RE-MEASURED`; status `SINGLE-SOURCE` |
+| 2026-10-09T00:45:20Z | `0225a080` | **Opus 5.5** | **`2.1.292`** | **tier 2 (defensive), new process** (account holder's report) *(corrected 2026-10-18 from "tier 1"; [W-20](CORRECTIONS.md#w-20--corrected-the-account-holders-verification-tier-is-2-defensive-not-1))* | ⭐ **answered** | 35 | 46,705 | `RE-MEASURED`; status `SINGLE-SOURCE` |
 | 2026-10-09T00:46:01Z | `8574eb55` | Fable 5.1 | `2.1.295` | same | ⛔ **blocked** | **0** | 97,101 | same |
 | 2026-10-09T00:46:35Z | `d08ebadd` | **Mythos 5.1** | `2.1.295` | same | ⭐ **answered** | 137 | 48,294 | same |
 | 2026-10-09T00:47:20Z | `e4990bf1` | Fable 5 | `2.1.295` | same | ⛔ **blocked** | **0** | 95,683 | same |
@@ -327,7 +329,9 @@ A system stop notice naming the **newest tier** sits in the transcript of **the 
 
 **What the table does not license:** a rate (one to three submissions per row, with a possible automatic retry on every blocked row); a trajectory (the Opus 5.5 rows reverse in eight days, with at least five factors changed); anything about a fresh clone or an unverified account; or anything about **why** the 2026-10-09 Opus 5.5 row answered.
 
-**Cost, because it is the operator's own billing and exposes nothing:** the four rows of 2026-10-09 billed $5.28 in total, **$3.92 of it on the two rows that produced zero output tokens.** The two blocked rows each billed roughly twice the cache-creation volume of the two that answered.
+**Cost, at API-rate equivalent on a subscription plan ([W-23](CORRECTIONS.md#w-23--reframed-dollar-figures-are-api-rate-equivalents-not-spend)), because it exposes nothing:** the four rows of 2026-10-09 billed $5.28 in total, **$3.92 of it on the two rows that produced zero output tokens.** The two blocked rows each billed roughly twice the cache-creation volume of the two that answered.
+
+**Added 2026-10-18.** The account holder reports logging out and back in before the 2026-10-09 run as well ([`01-TIMELINE.md` Phase 10](01-TIMELINE.md#phase-10--three-enrolments-as-the-account-holder-reports-them)). The verification-status column is unchanged by that: it is still a declaration, and nothing on disk marks a credential epoch.
 
 | # | predicate added | span |
 |---|---|---|

@@ -257,3 +257,62 @@ Nobody can fail to maintain a thing that is not there — which is why nine days
 **Superseded before the first commit.** On 2026-10-01, after measuring that the store had **lost** files (700 against 718 a day earlier, a net loss despite additions), twelve baseline artifacts were copied **by name** outside any repository, with matching checksums on all twelve (single-source). **The destination is deliberately not recorded in any document**, this one included.
 
 **And one apparent loss that is not one:** the empty-directory transcript cited in `SOURCES.md` does not live under the project's transcript folder. It lives under the folder for the empty directory where it ran. **It was verified present by this analysis**, and its absence from a sweep of the project folder is a fact about the sweep.
+
+---
+
+# Added 2026-10-18
+
+**Five entries, W-20 to W-24, added beside the nineteen above.** None of the nineteen is edited. Four of the five come from the account holder's own written corrections of 2026-10-18, and one records work this repository had described as not done. **Where a corrected sentence sits in this repository's own voice, its dated amendments included, it now reads correctly and carries a dated marker, and the original wording is preserved here. Where it sits in a quotation, or in a record of what was reported at the time, it is left as written and annotated beside it.**
+
+---
+
+## W-20 · CORRECTED: the account holder's verification tier is 2 (defensive), not 1
+
+**Published as *"tier 1"* in fourteen places across six files.** In [`01-TIMELINE.md`](01-TIMELINE.md): Phase 9's report paragraph (*"The account holder was approved for **tier 1**. On the account holder's reading of the vendor's communication, tier 1 lifts restrictions **for defensive work only, on the newer models**"*), all three bullets of Phase 9's *"does not establish"* list that name a tier, and *"Where it stands, 2026-10-15"* (*"The account is now on a tier-1 grant under a new process"*). The README's *"Since first commit"* row (*"under a tier-1 grant the account holder reports"*). [`02-EVIDENCE.md § 9`](02-EVIDENCE.md) (*"tier 1, new process"*). Five lines of [`03-OPEN-QUESTIONS.md`](03-OPEN-QUESTIONS.md): the over-claim table, OPEN-2 twice, OPEN-5 and OPEN-6. [`SOURCES.md`](SOURCES.md), twice.
+
+**Phase 9's report paragraph and SOURCES' record row are left as written, with a dated note beside each, because they record what was reported at the time.** Every other place now reads tier 2 and carries a marker.
+
+**Corrected by the account holder, in writing, on 2026-10-18:** *"I have tier 2 (defensive), which is at least one tier above the tier one standard that non-CVP accounts get. To get above the defensive approval, you need to be part of an organization that has an EIN/TIN and undergoes manual review/verification/approval."* The original was their own misreading, and they say so.
+
+**What the correction changes:** the tier number only. Every statement about what the grant does and does not establish stands, because it never depended on the number. A defensive lift is still a lift that four neutral words do not call on.
+
+---
+
+## W-21 · AMENDED: the new process is public, and it was the account holder's third enrolment, not their first
+
+**Four claims, each amended on the account holder's report of 2026-10-18 and on public coverage:**
+
+1. **"A report, not a document this analysis has read."** The tiered structure is public. Third-party coverage, listed in [`SOURCES.md`](SOURCES.md), describes three verification tiers above the standard level. **The vendor's own announcement is still unread here**, so the structure is now carried as public reporting, not as a vendor statement.
+2. **The date.** [`03-OPEN-QUESTIONS.md § OPEN-2`](03-OPEN-QUESTIONS.md#open-2) said the vendor *"introduced"* the process on 2026-10-08. **Coverage dates the announcement to 2026-10-06.** 2026-10-08 is the approval date the account holder reports.
+3. **The enrolment history.** Phase 7 records that the account holder *"first applied"* on 2026-09-30. That was the first application to the form of the programme then current. **The account holder reports an enrolment the year before, in an earlier form**, and two approvals in 2026 (2026-09-30 and 2026-10-08). The full sequence is [`01-TIMELINE.md` Phase 10](01-TIMELINE.md#phase-10--three-enrolments-as-the-account-holder-reports-them). ⇒ **The pre-2026-09-30 artifacts are pre-enrolment for the then-current programme only**, and *"unverified-account measurements"* (Phase 7 item 4, OPEN-6) is stronger than the evidence.
+4. **"Through an organisation."** Phase 9 and [`REDACTIONS.md § 9`](REDACTIONS.md) item 2 described the pursuit of a higher tier as running through one organisation. **The account holder works with volunteer organisations that have no EIN**, toward a higher tier, and wants to keep a personal account. None is named, and the redaction list is amended to say no more than the timeline does.
+
+---
+
+## W-22 · SOFTENED: "it really is a security framework"
+
+**Published in [`04-FINDING.md`](04-FINDING.md)'s first table** (*"It really is a security framework. Making it look like less of one is a lie about the repository."*), in its bound 7 (*"Any edit that made this framework look less like a security framework would be a lie about the repository"*), in the README (*"The first is its **subject**: it is a security framework, with an offensive-security specialist library and red-team automation packages"*), in [`03-OPEN-QUESTIONS.md § OPEN-6`](03-OPEN-QUESTIONS.md#open-6) (*"This is a security-domain framework"*) and in [`REDACTIONS.md § 6`](REDACTIONS.md) (*"a security-domain multi-agent framework"*).
+
+**The account holder calls the first of these slightly disingenuous**: the framework *"is a lot more than just a security framework (its just that a lot of the work I do involves cybersecurity stuff, and so there is a lot of artifacts about these activities due to my responsible logging, etc)."*
+
+**The supported form:** a general-purpose multi-agent framework that does a lot of security work, documents its controls, and has enforcement mechanisms so that the work is done responsibly. **The account holder's further point sharpens the finding rather than weakening it:** making sure the framework documents those controls and enforces them is, in their words, *"pretty much exactly what caused the framework to stop working."* That is the second harm profile in [`04-FINDING.md`](04-FINDING.md), stated by the person who built it.
+
+**What does not change:** the first profile is still a plausible true positive. The security work is real, and hiding it would still misdescribe the repository.
+
+---
+
+## W-23 · REFRAMED: dollar figures are API-rate equivalents, not spend
+
+**Published as spend:** [`01-TIMELINE.md` Phase 3](01-TIMELINE.md) (*"$4.96 spent"*), Phase 7 item 3 (*"lifetime spend on `what is 2 + 2?` was $8.42"*), [`02-EVIDENCE.md § 9`](02-EVIDENCE.md) (*"Cost, because it is the operator's own billing"*), and [`REDACTIONS.md § 8`](REDACTIONS.md) (*"It is one account's own billing on its own account"*).
+
+**The account is on a subscription plan.** The client records an API-rate cost for every turn, and every dollar figure in this repository comes from that field. The account holder tracks it because it is a useful measure, and called *"spent"* *"a little disingenuous."* **The figures are unchanged. Their meaning is now stated:** each is what the usage would cost at API rates. A convention saying so is added to the README and to [`02-EVIDENCE.md`](02-EVIDENCE.md).
+
+**Not reworded, deliberately:** the internal record's own quoted phrase *"~$2.4 spent"* in Phase 7, because it is a quotation.
+
+---
+
+## W-24 · SUPERSEDED: "nothing in this repository describes that work as built"
+
+**Published in [`01-TIMELINE.md`](01-TIMELINE.md), *"Where it stands, 2026-10-15"*:** the proof of concept that routes a cloud-restricted action to a self-hosted local model *"has not happened. Nothing in this repository describes that work as built, tested, or working."*
+
+**True when written, and no longer true.** Version 1 was built and ran on 2026-10-19 (UTC). The method and the counts are in [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md), and the short form is [`01-TIMELINE.md` Phase 11](01-TIMELINE.md#phase-11--version-1-of-the-local-routing-proof-of-concept). **Version 1 is human-reviewed and human-executed, with no automation.** An autonomous version is named for later and is **not** built, so the original sentence still holds for that.
