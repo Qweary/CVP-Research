@@ -384,3 +384,67 @@ On the account holder's answers: the previous year's enrolment is described as *
 
 **Still owed before public visibility, unchanged:** the end-to-end run of `examples/` on the model host, and the merge to `main`.
 
+
+### 8.9 · End-to-end run of `examples/` on the model host, 2026-10-19
+
+**Base:** branch `delta-2026-10-18` at `a6cd2e4`. **Round disclosure:** round five on this objective, by the same analysis as § 8. **This analysis did not run anything on the model host.** The account holder ran the run at the machine on 2026-10-19, following a capture runbook kept outside this repository, and the results below are their report, recorded as counts. This section closes the end-to-end line that § 8.7 and § 8.8 list as still owed; those sections are not edited and stay as their rounds' record.
+
+**No address other than the loopback address is recorded in this section**, and no hostname, account name, key, fingerprint, prompt or reply.
+
+| field | result |
+|---|---|
+| run date | 2026-10-19. The UTC window is not recorded here |
+| `examples/` code tested | the three files as at `de2bb21`, unchanged through `a6cd2e4`. No local modification before the run was reported |
+| Ollama version on the host | not recorded here. The host ran Ollama with its default settings |
+| host firewall, on-link positive control | **PASS.** Logged blocks before: 0 / 0. The deliberate blocked attempt ended at its timeout (rc=124). Logged blocks after: 3 / 3. A TCP SYN that is dropped is retried until the timeout, so one attempt logs more than one block; the verdict rests on the log count rising from zero, not on its being exactly one |
+| host: listeners on 11434 not on `127.0.0.1` | **0.** Ollama listens on `127.0.0.1:11434` only |
+| tunnel account | created as the README says: no login shell, password locked, key only. The key line carries the README's restrictions (`restrict,port-forwarding,permitopen="127.0.0.1:11434",command="/bin/false"`) plus a `from=` restriction |
+| `sshd` | the README's `Match` block added. `sshd -t` rc=0 |
+| `sshd -T` values matching the README's five expected values | **5 of 5** (`allowtcpforwarding local`, `permitopen 127.0.0.1:11434`, `permitlisten none`, `forcecommand /bin/false`, `permittty no`) |
+| `sshd -T` with an address in the connection spec | run twice; the two outputs were identical, compared by hash |
+| `tunnel.sh open`, `status`, `close` | pass, pass, pass. Whether the PID file was removed after `close` is not recorded here |
+| `health` with the tunnel open | reachable; listed the host's models. The number listed is not recorded here |
+| `generate` calls | 1 sent, against a stock model; 1 returned text; 0 returned an error |
+| no-fallback check 1 (tunnel open, `health` returns the host's models) | **pass** |
+| no-fallback check 2 (host Ollama stopped) | **not run.** It was optional in the runbook |
+| no-fallback check 3 (tunnel closed) | `health`: **pass**, it returned the no-fallback error. `generate`: not recorded here. Whether an Ollama instance was running on the workstation's own 11434 at the time is not recorded here |
+| refusal controls on the workstation (`LOCAL_PORT=11434` refused by `tunnel.sh`; 11434 and a non-loopback `OLLAMA_TUNNEL_HOST` refused by the server) | not part of the reported run. Re-run in this round on the workstation, loopback only and with no tunnel opened: all three refused, rc=2 each |
+| deviations from `examples/README.md` needed to make it work | **2.** (1) The host's `sshd_config` already had an `AllowUsers` list, and the tunnel account had to be added to it before sshd would accept the key. (2) The first `tunnel.sh open` failed with `Permission denied (publickey)`, because the key had a passphrase and `tunnel.sh` runs ssh in batch mode; loading the key into `ssh-agent` fixed it |
+| edits to `examples/` as a result | **1 commit, this one.** The README now names both points: `AllowUsers` / `AllowGroups` in the sshd notes, and a key that is passphrase-less or loaded into `ssh-agent` |
+
+**Also in this commit, separately from the run:**
+
+| file | change |
+|---|---|
+| `examples/mcp_call.py` | **New.** A small terminal client for trying the server and for the no-fallback check without an agent client. It prints the reply and never runs it, and prints control and format characters as visible escapes. It is new code written for this repository, like the rest of `examples/` |
+| `examples/README.md` | the two deviations above; `mcp_call.py` in the file table, the prerequisites and the no-fallback check; a short *"The author's setup"* note giving two internal addresses beside the placeholders, which stay as the generic instructions |
+| `REDACTIONS.md` | § 10: the never-published values spelled out (public address forms and its /24, the home IPv6 prefix, dynamic DNS names, SSH host key fingerprints, SSID and BSSID, MAC addresses, hardware serials, UUIDs and WWNs, router firmware, any description of the router's NAT behaviour); the account holder's rulings of 2026-10-19 recorded; the *"Not added yet"* line and item 1 amended beside their original wording |
+| `07-LOCAL-ROUTING-POC.md` | one dated sentence in § 4 pointing here |
+
+**`mcp_call.py`, tested on the workstation, loopback only, against a stand-in server on `127.0.0.1` (no tunnel, no model host):** usage error rc=2; missing server rc=2; `health` rc=0; `generate` rc=0; listener stopped rc=1 with the no-fallback error; port 11434 rc=2 refused; non-loopback host rc=2 refused. The stand-in returned control and format characters in both a model name and the reply: **0** raw control characters reached the output, against **4** in the stand-in's raw reply (the positive control).
+
+**Span, after every edit in this round, measured two ways (`wc -l -c` over an explicit list, and a Python pass), agreeing to the digit:**
+
+| set | files | lines | bytes |
+|---|---|---|---|
+| content Markdown (the eleven, this manifest excluded) | 11 | 2,433 | 273,777 |
+| `examples/` (`README.md`, `local_ollama_mcp.py`, `mcp_call.py`, `tunnel.sh`) | 4 | 669 | 24,958 |
+| **everything tracked except this manifest** | **15** | **3,102** | **298,735** |
+
+**The four files changed in this round, besides this manifest:** `07-LOCAL-ROUTING-POC.md` 186 lines / 16,051 bytes · `REDACTIONS.md` 189 / 21,803 · `examples/README.md` 314 / 11,334 · `examples/mcp_call.py` 96 / 3,949. `local_ollama_mcp.py` and `tunnel.sh` are unchanged. § 8.8's figures are round four's and stay as that round's record.
+
+**Sweeps over all 16 tracked files, this manifest included, after this section was written:**
+
+| class | count |
+|---|---|
+| em-dashes | **9**, the same nine verbatim quotations as § 8.3 |
+| every disclosure class of the publication sweep (public address and its /24, global IPv4 and IPv6, obfuscated addresses, MAC, SSH host fingerprint, keys and tokens, dynamic DNS names, hidden characters, the framework's name and acronym, internal role names, the lane prefix, router firmware, UUIDs) | **0** each |
+| dotted-quad IPv4 addresses other than loopback | **2**, the two in *"The author's setup"* in `examples/README.md`, added on the account holder's ruling. Neither is publicly routable |
+| the router's model | 0. It is publishable, and this repository has no reason to print it |
+| the loopback address, as a whole dotted quad | 39 (40 as a plain substring: one occurrence ends a sentence and its full stop defeats the whole-address match) |
+
+**The publication sweep over git history** (`--all`, before this commit): every disclosure class 0; em-dashes 815, all in text older than the § 8.3 punctuation pass. **Positive controls:** the publication sweep's own positive fixture returns a hit in every class it can fire without the public address set; the address count fires on a fabricated line held outside this repository. The sweep ran without the real public address loaded, so the public-address classes are 0 by construction here; the account holder's re-run with it loaded is still owed before visibility. **Links:** 112 intra-repository anchor links, 0 unresolved.
+
+**Corrections count:** 26 entries, W-1 to W-26. No entry was added: nothing published was found to be wrong.
+
+**Still owed before public visibility:** the merge to `main`, and the account holder's sweep with the public address loaded. The optional no-fallback check 2 was not run.

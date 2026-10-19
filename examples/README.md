@@ -21,6 +21,13 @@ agent client
   the tunnel or the host is down, a call returns an error. It never answers
   from another model or another machine.
 
+### The author's setup
+
+The instructions below use placeholders. For comparison, in the author's own
+setup the model host is `192.168.10.50` and the workstation is
+`192.168.1.50`, on two internal subnets. Use your own addresses: these are
+given only so the placeholders have a concrete example beside them.
+
 ## Version 1: a human reviews and runs everything
 
 There is no automation here. The local model's reply comes back as text. A
@@ -34,6 +41,7 @@ interpreter, or another tool that acts on it.
 |---|---|
 | `local_ollama_mcp.py` | MCP server with two tools: `health` and `generate(model, prompt)` |
 | `tunnel.sh` | opens, closes, and checks the SSH forward, tracked by PID |
+| `mcp_call.py` | a small terminal client: starts the server, calls one tool, prints the result. For trying the server and for the no-fallback check without an agent client |
 
 ## Prerequisites
 
@@ -47,7 +55,9 @@ Workstation:
 - OpenSSH client and bash
 - Python 3.10 or newer
 - `pip install "mcp>=1.2" httpx`
-- an MCP-capable agent client
+- an MCP-capable agent client, or `mcp_call.py` in this folder to try the
+  server from a terminal first (same requirements line: `mcp>=1.2` brings
+  `anyio`)
 
 ## Setup on the model host
 
@@ -92,6 +102,11 @@ On the workstation, make a key used for nothing else:
 ```
 ssh-keygen -t ed25519 -f ~/.ssh/<tunnel-key> -C "ollama tunnel"
 ```
+
+`tunnel.sh` runs ssh with `BatchMode=yes`, so ssh cannot ask for a
+passphrase. Either make this key without one, or load it into `ssh-agent`
+(`ssh-add ~/.ssh/<tunnel-key>`) before `tunnel.sh open`. Otherwise the tunnel
+fails with `Permission denied (publickey)`.
 
 Put the public key in `/home/<tunnel-user>/.ssh/authorized_keys` on the model
 host, with restrictions on the same line. `restrict` turns off every kind of
@@ -160,6 +175,10 @@ Notes:
 - `ForceCommand /bin/false` means any attempt to get a shell or run a command
   ends at once. The tunnel uses `ssh -N`, which asks for no command, so
   forwarding still works.
+- If `sshd_config` already has an `AllowUsers` or `AllowGroups` line, sshd
+  refuses every account that line does not name, and that check comes before
+  the key. Add `<tunnel-user>` to it (or the account to a group it names),
+  then run `sshd -t` and the `-T` check again.
 - Keep a host firewall on the model host that allows inbound SSH from the
   workstation only.
 
@@ -257,7 +276,17 @@ Environment variables the server reads:
 
 ## Check that there is no fallback
 
-Do this once before you rely on it:
+Do this once before you rely on it. Any MCP client can make the calls. One
+way, with no agent client involved, is `mcp_call.py` in this folder:
+
+```
+OLLAMA_TUNNEL_PORT=<local-port> python3 mcp_call.py health
+OLLAMA_TUNNEL_PORT=<local-port> python3 mcp_call.py generate <model> "Say hello."
+```
+
+It prints the reply and never runs it. Control characters in the reply are
+printed as visible escapes such as `\x1b`, so a reply cannot drive your
+terminal.
 
 1. Tunnel open, `health` returns the host's models.
 2. Stop Ollama on the model host (`sudo systemctl stop ollama`). `health` and

@@ -156,7 +156,7 @@ So the following are carried in full, deliberately:
 
 **Each class declared here has a row in [`MANIFEST.md § 8`](MANIFEST.md).**
 
-1. **The proof of concept's network identifiers that someone outside the account holder's network could use.** Above all **the public IP address, which is never published**, and every key, key fingerprint, token, password or other secret. Also withheld, on separate decisions: hostnames, usernames, and the router's make, model and firmware. [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md) uses placeholders such as `<host-b>` and `<tunnel-user>`. **The method itself is shown in full**, on the account holder's decision: show everything, blank the identifiers. *(Amended 2026-10-19. First written as: "Every IP address, hostname, username, key and key fingerprint, the forwarded port's host-side details, and the router's make, model and firmware." The blanket rule on IP addresses is replaced by the standard below.)*
+1. **The proof of concept's network identifiers that someone outside the account holder's network could use.** Above all **the public IP address, which is never published**, and every key, key fingerprint, token, password or other secret. Also withheld, on separate decisions: hostnames, usernames, and the router's make, model and firmware. *(Amended 2026-10-19, round five: hostnames and the router's model are now publishable, and a hostname or account name carrying an internal label stays withheld; see the rulings at the end of this section. The firmware version stays withheld.)* [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md) uses placeholders such as `<host-b>` and `<tunnel-user>`. **The method itself is shown in full**, on the account holder's decision: show everything, blank the identifiers. *(Amended 2026-10-19. First written as: "Every IP address, hostname, username, key and key fingerprint, the forwarded port's host-side details, and the router's make, model and firmware." The blanket rule on IP addresses is replaced by the standard below.)*
 2. **The bridge's source and the framework's run tooling.** Described by pattern, not published. The framework is the account holder's own work.
 3. **The probe text, the rubric text, every model reply, and every per-probe verdict.** The result is published as counts only.
 4. **The internal names of the agent roles that built and ran the proof of concept**, under the same rule as § 6.
@@ -166,6 +166,24 @@ So the following are carried in full, deliberately:
 - **Never published:** the public IP address, and any key, token, password or other secret. These are usable from outside.
 - **Publishable:** values that exist only inside the account holder's own network and that nobody outside it can reach, such as internal addresses, the internal address layout and internal ports. They are publishable especially where they let a reader test or reproduce the proof of concept.
 - **The loopback address `127.0.0.1` is publishable** and is printed wherever the setup uses it.
-- **Not added yet:** no internal network address other than loopback appears in this repository. Whether to add any is a separate decision, and the standard above does not by itself add them.
+- **Not added yet:** no internal network address other than loopback appears in this repository. Whether to add any is a separate decision, and the standard above does not by itself add them. *(Amended 2026-10-19, round five: that decision is now taken. See the account holder's rulings below. Two internal addresses are added, in [`examples/README.md`](examples/README.md) only.)*
+
+**Never published, spelled out (added 2026-10-19, round five).** The list above names the public IP address and every secret. These further values are usable from outside the account holder's network, or lead to something that is, and none of them is published:
+
+- **the public IP address in any form** (dotted, dashed, reversed, decimal, hex, defanged, or inside an IPv6 address), **and its /24**, because a /24 narrows a home address to 256 candidates;
+- **the home IPv6 prefix**, and any globally routable IPv6 address on the home network, because each one carries the public prefix;
+- **dynamic DNS hostnames**, because a name that resolves to the public address is the public address;
+- **SSH host key fingerprints and host public keys**, because internet scan indexes can be searched by fingerprint;
+- **the Wi-Fi network name (SSID) and access point address (BSSID)**, because public wardriving databases map them to a street location;
+- **MAC addresses**, for the same reason, and because a MAC prefix names the hardware vendor;
+- **hardware serial numbers, UUIDs and WWNs** (disks, boards, GPUs, the system UUID and machine ID);
+- **the router's firmware version**;
+- **any specific description of the router's NAT behaviour.** It is not described anywhere in this repository, including here, and no value is published that would show it by inference.
+
+**The account holder's rulings of 2026-10-19:**
+
+- **Internal LAN addresses and hostnames are publishable.** In the account holder's words: *"publish the real LAN address and hostnames, they're internal only".*
+- **The router's model is publishable.** Its firmware version stays withheld, as listed above.
+- **A hostname or account name that carries an internal label stays withheld**, even though it is internal.
 
 **Not redacted, deliberately:** the model names, the Ollama version and its default port, the tunnel's restrictions, the host's hardware and OS, the acceptance checks, and the fact that the account is on a subscription plan. The subscription **tier** stays redacted as in § 9 item 3; the plan type is stated because the cost convention needs it.
