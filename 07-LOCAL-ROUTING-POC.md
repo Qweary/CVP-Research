@@ -47,7 +47,7 @@ Because Ollama listens on loopback only, nothing on any network can reach the mo
 An **SSH local port forward** from the workstation to the model host's loopback port 11434. The shape of the command, with every value blanked:
 
 ```
-ssh -N -L <local-port>:localhost:11434 <tunnel-user>@<host-b>
+ssh -N -L 127.0.0.1:<local-port>:127.0.0.1:11434 <tunnel-user>@<host-b>
 ```
 
 **The tunnel account can do nothing except forward that one port.** On the model host its SSH server settings are:

@@ -74,6 +74,11 @@ sudo systemctl restart ollama
 ss -ltnp | grep 11434        # expect 127.0.0.1:11434 only
 ```
 
+If you run Ollama in a container instead, do not publish the port with
+`-p 11434:11434`: that listens on every interface and Docker's own firewall
+rules can bypass a host firewall. Use `-p 127.0.0.1:11434:11434`, and run the
+same `ss` check.
+
 ### 2. Create the restricted tunnel account
 
 ```
@@ -107,8 +112,11 @@ sudo chmod 600 /home/<tunnel-user>/.ssh/authorized_keys
 ### 3. Restrict the account in sshd
 
 Add to the end of `/etc/ssh/sshd_config` (or a file in
-`/etc/ssh/sshd_config.d/`). The key file and this block both restrict the
-account, so a mistake in one is caught by the other.
+`/etc/ssh/sshd_config.d/`). The key file and this block overlap on purpose,
+but they are not two complete copies of each other: the key line cannot
+forbid remote (`-R`) forwarding, because `port-forwarding` turns both
+directions back on. Only this block (`AllowTcpForwarding local`,
+`PermitListen none`) stops that, so do not skip it.
 
 ```
 Match User <tunnel-user>
@@ -128,11 +136,21 @@ Match User <tunnel-user>
     ForceCommand /bin/false
 ```
 
-Check the syntax, then reload:
+Check the syntax, then check the settings that will actually apply to the
+tunnel account, then reload:
 
 ```
-sudo sshd -t && sudo systemctl reload ssh
+sudo sshd -t
+sudo sshd -T -C user=<tunnel-user>,host=<workstation>,addr=<workstation-ip> \
+    | grep -iE '^(allowtcpforwarding|permitopen|permitlisten|forcecommand|permittty) '
+sudo systemctl reload ssh
 ```
+
+Expect `allowtcpforwarding local`, `permitopen 127.0.0.1:11434`,
+`permitlisten none`, `forcecommand /bin/false`, `permittty no`. `sshd -t` only
+checks syntax. The `-T` check matters because sshd uses the first value it
+finds for each setting: an earlier `Match` block that also matches this user
+(for example a `Match all` in another file) silently wins over yours.
 
 Notes:
 
@@ -153,9 +171,11 @@ Get the model host's key fingerprint from the host's console (not over the
 network you are trying to trust), then:
 
 ```
-ssh-keyscan -t ed25519 <host-b> > /tmp/hostkey
-ssh-keygen -lf /tmp/hostkey       # compare with the fingerprint from the console
-cat /tmp/hostkey >> ~/.ssh/known_hosts
+hostkey=$(mktemp)
+ssh-keyscan -t ed25519 <host-b> > "$hostkey"
+ssh-keygen -lf "$hostkey"         # compare with the fingerprint from the console
+cat "$hostkey" >> ~/.ssh/known_hosts
+rm -f "$hostkey"
 ```
 
 `tunnel.sh` uses `StrictHostKeyChecking=yes`, so it refuses to connect to a
@@ -169,25 +189,32 @@ export TUNNEL_USER=<tunnel-user>
 export LOCAL_PORT=<local-port>
 export TUNNEL_KEY=~/.ssh/<tunnel-key>
 
-./tunnel.sh open      # starts ssh -N in the background, records its PID
+./tunnel.sh open      # starts ssh -N, waits until it is listening, records its PID
 ./tunnel.sh status
 ./tunnel.sh close     # kills that PID, removes the PID file
 ```
 
 The PID file lives in `$XDG_RUNTIME_DIR/ollama-tunnel/` (or
 `~/.cache/ollama-tunnel/`). `close` only kills the PID if it is still an
-`ssh` process.
+`ssh` process carrying this exact forward, so a recycled PID is left alone.
+`LOCAL_PORT` must be 1024 to 65535 and not 11434.
 
 What `open` runs, in full:
 
 ```
-ssh -N -L 127.0.0.1:<local-port>:127.0.0.1:11434 \
+ssh -F /dev/null -N -L 127.0.0.1:<local-port>:127.0.0.1:11434 \
     -i ~/.ssh/<tunnel-key> -o IdentitiesOnly=yes -o BatchMode=yes \
     -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=yes \
     -o ServerAliveInterval=30 -o ServerAliveCountMax=3 \
     -o ForwardAgent=no -o ForwardX11=no \
-    <tunnel-user>@<host-b> &
+    -l <tunnel-user> -- <host-b> &
 ```
+
+`-F /dev/null` ignores `~/.ssh/config`, so nothing there can add forwards, a
+proxy, or connection sharing. It also means `<host-b>` must be a real host
+name or address, not an alias from that file. The listening side is written
+as `127.0.0.1:<local-port>` so the forward is never reachable from the
+network, whatever `GatewayPorts` says.
 
 A quick check with the tunnel open:
 
@@ -217,9 +244,9 @@ Environment variables the server reads:
 
 | variable | required | meaning |
 |---|---|---|
-| `OLLAMA_TUNNEL_PORT` | yes | the workstation-side port of the tunnel |
+| `OLLAMA_TUNNEL_PORT` | yes | the workstation-side port of the tunnel; 11434 is refused |
 | `OLLAMA_TUNNEL_HOST` | no | a loopback IP, default `127.0.0.1`; anything else is refused |
-| `OLLAMA_TIMEOUT` | no | read timeout in seconds for `generate`, default 600 |
+| `OLLAMA_TIMEOUT` | no | read timeout in seconds for `generate`, 1 to 3600, default 600 |
 
 ## Using it
 
@@ -237,8 +264,9 @@ Do this once before you rely on it:
    `generate` must return an error.
 3. Start Ollama again, then `./tunnel.sh close`. Both tools must return an
    error, even if an Ollama instance is running on the workstation itself on
-   port 11434. The server only talks to `<local-port>`; pick a
-   `<local-port>` that is not 11434 so the two can never be confused.
+   port 11434. The server only talks to `<local-port>`, and both the server
+   and `tunnel.sh` refuse 11434 as `<local-port>`, so the two can never be
+   confused.
 
 ## Limits
 
@@ -247,4 +275,11 @@ Do this once before you rely on it:
 - The server does no authentication of its own. It relies on the tunnel and
   on the fact that it listens on stdio only. Any process on the workstation
   that can reach `127.0.0.1:<local-port>` can also use the tunnel while it is
-  open.
+  open, including processes of other users on the workstation. Close it when
+  you are done.
+- The tunnel carries the whole Ollama API, not just the two calls this server
+  makes. Anything that reaches `<local-port>` can also list, pull, copy,
+  create, and delete models on the model host. Your browser is a local
+  process too: Ollama's own origin and host checks are what keep a web page
+  away from this port, so do not widen them with `OLLAMA_ORIGINS=*` on the
+  model host.

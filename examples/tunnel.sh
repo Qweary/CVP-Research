@@ -14,13 +14,32 @@ set -eu
 : "${LOCAL_PORT:?set LOCAL_PORT to the workstation-side port}"
 : "${TUNNEL_KEY:?set TUNNEL_KEY to the tunnel account private key}"
 REMOTE_PORT=11434
+OPEN_TIMEOUT=15
+FORWARD="127.0.0.1:$LOCAL_PORT:127.0.0.1:$REMOTE_PORT"
+
+case "$LOCAL_PORT" in
+    *[!0-9]* | "") echo "LOCAL_PORT must be a number" >&2; exit 2 ;;
+esac
+if [ "$LOCAL_PORT" -lt 1024 ] || [ "$LOCAL_PORT" -gt 65535 ] || [ "$LOCAL_PORT" -eq "$REMOTE_PORT" ]; then
+    echo "LOCAL_PORT must be 1024-65535 and not $REMOTE_PORT" >&2
+    exit 2
+fi
 STATE_DIR="${XDG_RUNTIME_DIR:-$HOME/.cache}/ollama-tunnel"
 PID_FILE="$STATE_DIR/tunnel-$LOCAL_PORT.pid"
 
 is_our_ssh() {
-    # True only if the PID is alive and is an ssh process.
-    [ -n "${1:-}" ] && kill -0 "$1" 2>/dev/null &&
-        [ "$(ps -p "$1" -o comm= 2>/dev/null)" = "ssh" ]
+    # True only if the PID is alive and is an ssh process carrying this exact
+    # forward. Checking the arguments, not just the name, means a recycled PID
+    # that now belongs to some other ssh is never killed. Works on Linux and macOS.
+    [ -n "${1:-}" ] && kill -0 "$1" 2>/dev/null || return 1
+    case " $(ps -ww -p "$1" -o args= 2>/dev/null) " in
+        *ssh*" -L $FORWARD "*) return 0 ;;
+        *) return 1 ;;
+    esac
+}
+
+port_in_use() {
+    (exec 3<>"/dev/tcp/127.0.0.1/$LOCAL_PORT") 2>/dev/null
 }
 
 cmd_open() {
@@ -30,8 +49,16 @@ cmd_open() {
         echo "tunnel already open (pid $(cat "$PID_FILE"))"
         return 0
     fi
-    ssh -N \
-        -L "127.0.0.1:$LOCAL_PORT:127.0.0.1:$REMOTE_PORT" \
+    if port_in_use; then
+        echo "127.0.0.1:$LOCAL_PORT is already in use by something else" >&2
+        exit 1
+    fi
+    # -F /dev/null ignores ~/.ssh/config, so no config entry can add forwards,
+    # a proxy, or connection sharing. The host key must already be pinned in
+    # ~/.ssh/known_hosts (StrictHostKeyChecking=yes). "-l user -- host" keeps
+    # either value from being read as an ssh option.
+    ssh -F /dev/null -N \
+        -L "$FORWARD" \
         -i "$TUNNEL_KEY" \
         -o IdentitiesOnly=yes \
         -o BatchMode=yes \
@@ -41,13 +68,27 @@ cmd_open() {
         -o ServerAliveCountMax=3 \
         -o ForwardAgent=no \
         -o ForwardX11=no \
-        "$TUNNEL_USER@$TUNNEL_HOST" &
+        -l "$TUNNEL_USER" \
+        -- "$TUNNEL_HOST" &
     pid=$!
-    sleep 2
-    if ! is_our_ssh "$pid"; then
-        echo "tunnel failed to start (see ssh output above)" >&2
-        exit 1
-    fi
+    # Wait until ssh has authenticated and is listening, or has given up.
+    waited=0
+    while :; do
+        if ! kill -0 "$pid" 2>/dev/null; then
+            echo "tunnel failed to start (see ssh output above)" >&2
+            exit 1
+        fi
+        if port_in_use; then
+            break
+        fi
+        if [ "$waited" -ge "$OPEN_TIMEOUT" ]; then
+            kill "$pid" 2>/dev/null || true
+            echo "tunnel did not come up within ${OPEN_TIMEOUT}s; stopped it" >&2
+            exit 1
+        fi
+        sleep 1
+        waited=$((waited + 1))
+    done
     echo "$pid" > "$PID_FILE"
     echo "tunnel open: 127.0.0.1:$LOCAL_PORT -> $TUNNEL_HOST:127.0.0.1:$REMOTE_PORT (pid $pid)"
 }
@@ -62,7 +103,7 @@ cmd_close() {
         kill "$pid"
         echo "tunnel closed (pid $pid)"
     else
-        echo "pid $pid is not a running ssh process; removing stale PID file"
+        echo "pid $pid is not this tunnel's ssh process; removing stale PID file"
     fi
     rm -f "$PID_FILE"
 }

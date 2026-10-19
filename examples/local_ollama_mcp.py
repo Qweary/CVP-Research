@@ -19,8 +19,9 @@ Design rules:
 
 Configuration (environment variables):
   OLLAMA_TUNNEL_PORT  required. The workstation-side port of the SSH forward.
+                      11434 is refused (see the no-fallback rule above).
   OLLAMA_TUNNEL_HOST  optional. Loopback address, default 127.0.0.1.
-  OLLAMA_TIMEOUT      optional. Read timeout in seconds, default 600.
+  OLLAMA_TIMEOUT      optional. Read timeout in seconds, 1 to 3600, default 600.
 """
 
 import ipaddress
@@ -33,6 +34,7 @@ from mcp.server.fastmcp import FastMCP
 
 MODEL_NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._:/-]{0,127}$")
 MAX_PROMPT_CHARS = 200_000
+OLLAMA_DEFAULT_PORT = 11434
 
 
 def _config() -> tuple[str, float]:
@@ -43,12 +45,19 @@ def _config() -> tuple[str, float]:
             raise ValueError
     except ValueError:
         sys.exit(f"refusing OLLAMA_TUNNEL_HOST={host!r}: must be a loopback IP address")
-    if not port_raw.isdigit() or not 1 <= int(port_raw) <= 65535:
+    if not re.fullmatch(r"[0-9]{1,5}", port_raw) or not 1 <= int(port_raw) <= 65535:
         sys.exit("OLLAMA_TUNNEL_PORT must be set to the tunnel's local port (1-65535)")
+    if int(port_raw) == OLLAMA_DEFAULT_PORT:
+        # A local Ollama on this workstation would answer on 11434 when the
+        # tunnel is down, which is exactly the fallback this server must not have.
+        sys.exit(f"refusing OLLAMA_TUNNEL_PORT={OLLAMA_DEFAULT_PORT}: use a tunnel port "
+                 "that no local Ollama could be listening on")
     try:
         timeout = float(os.environ.get("OLLAMA_TIMEOUT", "600"))
     except ValueError:
-        sys.exit("OLLAMA_TIMEOUT must be a number of seconds")
+        timeout = -1.0
+    if not 1 <= timeout <= 3600:
+        sys.exit("OLLAMA_TIMEOUT must be a number of seconds from 1 to 3600")
     bracketed = f"[{host}]" if ":" in host else host
     return f"http://{bracketed}:{int(port_raw)}", timeout
 
@@ -71,7 +80,7 @@ def _request(method: str, path: str, read_timeout: float, **kwargs) -> dict:
         with _client(read_timeout) as client:
             resp = client.request(method, path, **kwargs)
             resp.raise_for_status()
-            return resp.json()
+            data = resp.json()
     except httpx.ConnectError as exc:
         raise RuntimeError(
             f"model host unreachable at {BASE_URL} (is the tunnel open?). "
@@ -84,6 +93,9 @@ def _request(method: str, path: str, read_timeout: float, **kwargs) -> dict:
         raise RuntimeError(f"Ollama returned HTTP {exc.response.status_code}: {body}") from exc
     except ValueError as exc:
         raise RuntimeError("Ollama returned a response that is not JSON") from exc
+    if not isinstance(data, dict):
+        raise RuntimeError("Ollama returned JSON that is not an object")
+    return data
 
 
 @mcp.tool()
