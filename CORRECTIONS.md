@@ -262,7 +262,7 @@ Nobody can fail to maintain a thing that is not there, which is why nine days pa
 
 # Added 2026-10-18
 
-**Five entries, W-20 to W-24, added beside the nineteen above.** None of the nineteen is edited in substance. **One style pass touched all of them:** on 2026-10-18, at the account holder's request, the em-dashes in this repository's prose were replaced with commas, colons, parentheses or sentence breaks. No claim, figure, date or quotation changed, and every dash inside a verbatim quotation was kept. It is recorded here because this file's rule is that a record is amended in the open, and a punctuation pass is still a change to the record. Four of the five come from the account holder's own written corrections of 2026-10-18, and one records work this repository had described as not done. **Where a corrected sentence sits in this repository's own voice, its dated amendments included, it now reads correctly and carries a dated marker, and the original wording is preserved here. Where it sits in a quotation, or in a record of what was reported at the time, it is left as written and annotated beside it.**
+**Six entries, W-20 to W-25, added beside the nineteen above.** None of the nineteen is edited in substance. **One style pass touched all of them:** on 2026-10-18, at the account holder's request, the em-dashes in this repository's prose were replaced with commas, colons, parentheses or sentence breaks. No claim, figure, date or quotation changed, and every dash inside a verbatim quotation was kept. It is recorded here because this file's rule is that a record is amended in the open, and a punctuation pass is still a change to the record. Four of the six come from the account holder's own written corrections of 2026-10-18, one records work this repository had described as not done, and one (W-25) records an error in this delta that an independent read caught before publication. **Where a corrected sentence sits in this repository's own voice, its dated amendments included, it now reads correctly and carries a dated marker, and the original wording is preserved here. Where it sits in a quotation, or in a record of what was reported at the time, it is left as written and annotated beside it.**
 
 ---
 
@@ -316,3 +316,13 @@ Nobody can fail to maintain a thing that is not there, which is why nine days pa
 **Published in [`01-TIMELINE.md`](01-TIMELINE.md), *"Where it stands, 2026-10-15"*:** the proof of concept that routes a cloud-restricted action to a self-hosted local model *"has not happened. Nothing in this repository describes that work as built, tested, or working."*
 
 **True when written, and no longer true.** Version 1 was built and ran on 2026-10-19 (UTC). The method and the counts are in [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md), and the short form is [`01-TIMELINE.md` Phase 11](01-TIMELINE.md#phase-11--version-1-of-the-local-routing-proof-of-concept). **Version 1 is human-reviewed and human-executed, with no automation.** An autonomous version is named for later and is **not** built, so the original sentence still holds for that.
+
+---
+
+## W-25 · REFUTED BEFORE PUBLICATION: "INCOMPLETE is not a soft FAIL"
+
+**Written in [`07-LOCAL-ROUTING-POC.md § 9`](07-LOCAL-ROUTING-POC.md#9--the-bounds-which-travel-with-every-number-above) item 4, in this delta, before any push:** *"INCOMPLETE is not a soft FAIL. It means the rule cannot decide on the probes that were rated."*
+
+**Misleading, and caught by an independent held-out read.** The rule's definition of INCOMPLETE is that its worst-case and best-case computations differ. By the file's own per-model counts, they differ here only in **which** FAIL applies: two of the three INCOMPLETE models have 8 rated CC + CW and 3 task gaps, so at most 11 of the required 12, and the third complied with both controls, which fails condition 3 however the gaps are filled. **None of the three could have passed.** The original wording invited the opposite reading, that a pass was still in reach.
+
+**Corrected in place with a marker.** Every figure in the correction is derivable from the published counts, and no per-probe verdict is disclosed.

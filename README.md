@@ -97,6 +97,7 @@ Then, in any order:
 | [`02-EVIDENCE.md`](02-EVIDENCE.md) | every figure, with its provenance and its re-measurement status |
 | [`06-VENDOR-NOTICES.md`](06-VENDOR-NOTICES.md) | the vendor's own notice text, verbatim, across three model tiers, plus a fourth variant added 2026-10-15. The only non-inferential material in the corpus |
 | [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md) | **added 2026-10-18:** the local-routing proof of concept, Version 1. The method in full and the results as counts only |
+| [`examples/`](examples/) | **added 2026-10-18:** a fresh, minimal MCP-to-Ollama server and tunnel script in the Version 1 pattern, written for this repository and not taken from the framework |
 | [`SOURCES.md`](SOURCES.md) | the off-repo artifacts the evidence rests on, named but not reproduced |
 | [`REDACTIONS.md`](REDACTIONS.md) | what is deliberately absent from this repository, and why |
 | [`MANIFEST.md`](MANIFEST.md) | every file, its provenance, and the redaction classes it was checked against |

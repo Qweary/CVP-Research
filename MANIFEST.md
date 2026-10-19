@@ -207,13 +207,13 @@ The same nine value-bearing classes re-counted with `grep`, explicit file list, 
 
 ### 7.3 · Redaction classes, re-driven over the new span
 
-**Instrument 1** (the same occurrence-counting script shape as § 2) was driven over **44 classes**. Every class in § 2 is included. **Added:** the persona name, nine further internal role names, the engaged swarm's name, the engagement's name and one further engagement term, three internal identifier forms, the internal amendment label, two internal path prefixes, the lane name, the subscription tier, the screenshot filename and folder, the preservation directory marker, **five offensive-workload transcript prefixes**, **three live-engagement transcript prefixes**, and this analysis's own session prefix.
+**Instrument 1** (the same occurrence-counting script shape as § 2) was driven over **44 classes**. Every class in § 2 is included. **Added:** the persona name, nine further internal role names, the engaged tooling's name, the engagement's name and one further engagement term, three internal identifier forms, the internal amendment label, two internal path prefixes, the lane name, the subscription tier, the screenshot filename and folder, the preservation directory marker, **five offensive-workload transcript prefixes**, **three live-engagement transcript prefixes**, and this analysis's own session prefix.
 
 > **All 43 value classes: `0` occurrences across the 10 content files. Present-literal control `safeguards`: 29 occurrences across 5 files.**
 
 **Aimed-corpus control, as in § 2(c):** the identical script was driven over a 16-file corpus where the literals really occur. That corpus is the framework's refusal-incident log, the two adjudications, two verbatim-turn records, the internal dossier, the auto-loaded carrier, and **a fabricated-hit probe held outside this repository**. The probe carries one invented instance of each class the real corpus cannot aim (the account holder's email, a request and message identifier value, this session's prefix, a token prefix, and a full UUID). ⭐ **All 44 classes returned nonzero there.** ⇒ **Every zero above comes from an aimed predicate.**
 
-**Instrument 2** (`grep -c`, explicit list, case-insensitive) covered nine value classes (email, username, home path, two identifier field names, request-identifier prefix, repository directory name, swarm name, engagement name). **All nine: `0`. Control `safeguards`: 25 lines.** (Occurrences and lines differ for the reason § 2 gives.)
+**Instrument 2** (`grep -c`, explicit list, case-insensitive) covered nine value classes (email, username, home path, two identifier field names, request-identifier prefix, repository directory name, tooling name, engagement name). **All nine: `0`. Control `safeguards`: 25 lines.** (Occurrences and lines differ for the reason § 2 gives.)
 
 **Instrument 3:** the plain 30-plus token run returns **`0`**. The hyphen-allowing variant returns **30**, made up of 28 cross-reference anchors (all `w-N--…` or `phase-7--…`), the public vendor support-article slug, and the prose phrase `re-measure-rather-than-inherit`. **No identifier and no token.**
 
@@ -265,7 +265,7 @@ The same nine value-bearing classes re-counted with `grep`, explicit file list, 
 
 - the framework's name, its short form as a whole word, and the internal role names of the agents that built and ran the proof of concept (six checked individually, as whole words, case-sensitive);
 - the lane's internal prefix, the local re-tag, the original community publisher's handle, the two host account names, the router's make and model, the host's interface names;
-- four further engagement-related terms, and the engaged swarm's name;
+- four further engagement-related terms, and the engaged tooling's name;
 - the account holder's username and email, any email-shaped string, any MAC-shaped string, any key-fingerprint prefix, and any plain run of 30 or more token characters;
 - **any dotted-quad IPv4 address**, and the two private-range prefixes most likely here.
 
@@ -298,4 +298,50 @@ On the account holder's answers: the previous year's enrolment is described as *
 1. **It does not establish that the delta is free of disclosure by implication.** The held-out read this repository's rule requires has not happened for delta 2. The candidate sentences are listed in the delta report delivered with this branch, outside the repository.
 2. **It does not establish the account holder's reports.** The tier, the enrolment history, the re-authentication and the feedback reports are carried as reports. The tiered structure is carried from third-party coverage; the vendor's own announcement was not read.
 3. **It does not establish the proof of concept's counts independently.** They are transcribed from the build's evidence record and cross-checked only for the send total, which the run log's per-block counts reproduce (104).
+
+### 8.7 · Held-out read 2, `examples/`, and the re-measure (2026-10-18, round three)
+
+**Base:** branch `delta-2026-10-18` at `de2bb21`, which carries `examples/` (commits `8907d9f` and `de2bb21`, written by a separate role and not edited here). This section and the edits below land in the commit after `de2bb21`.
+
+**Round disclosure:** round three on this objective, by the same analysis as § 8.
+
+**A second independent held-out read** of this branch and of the post it supports returned **CLEAR-WITH-EDITS**. Applied here, each old string verified to match exactly once:
+
+- **R-1 to R-6:** Phase 8 de-linked from any named tooling or dated week. Two sentences reworded, one paragraph moved into Phase 10's table (R-3, R-4), and the redaction descriptions in `REDACTIONS.md § 9` and § 7.3 / § 8.3 of this manifest made generic. One further mention in `REDACTIONS.md § 9` item 1 was made generic in the same way. The account holder's decision: **keep Phase 8**, with these edits.
+- **R-7:** two sentences removed from `07-LOCAL-ROUTING-POC.md § 2`.
+- **R-8:** the INCOMPLETE bound in 07 § 9 corrected ([`CORRECTIONS.md § W-25`](CORRECTIONS.md#w-25--refuted-before-publication-incomplete-is-not-a-soft-fail)).
+- **R-10:** the two flag counts added to 07 § 7.2.
+- **Recommended r-1 to r-3:** applied (Phase 11's INCOMPLETE note, video-memory figures, `examples/` in the README's reading table).
+- **Also:** OPEN-4 now states the scope of the one adjacent arm (Fable 5.1, empty directory, September), so a scoped sentence elsewhere reads consistently with this repository.
+
+**Span, measured two ways (`wc -l -c` over an explicit list, and a Python pass), agreeing to the digit:**
+
+| set | files | lines | bytes |
+|---|---|---|---|
+| content Markdown (the eleven, this manifest excluded) | 11 | 2,384 | 267,519 |
+| `examples/` (`README.md`, `local_ollama_mcp.py`, `tunnel.sh`) | 3 | 544 | 19,443 |
+| **everything tracked except this manifest** | **14** | **2,928** | **286,962** |
+
+**This manifest is excluded** for the reason § 1 gives: it moves with every edit to itself. § 8.2's figure is the round-one figure and stays as that round's record.
+
+**Sweeps over all 15 tracked files, this manifest included:**
+
+| class | count |
+|---|---|
+| the framework's name; its acronym as a whole word; ten internal role names (whole word, case-sensitive) | **0** |
+| four event- and tooling-related terms, any case (not spelled here, so that this table does not supply them) | **0** |
+| the lane prefix, the bridge's internal name, the account holder's handle, a key-fingerprint prefix, the router's model | **0** |
+| the two private-range prefixes most likely on a home network | **0 / 0** |
+| dotted-quad IPv4 addresses **other than the loopback address** | **0** |
+| the loopback address (expected: the workstation end of the tunnel) | 33 outside this manifest: 2 in 07 § 3, 31 in `examples/` |
+| em-dashes | **9**, all inside verbatim quotations, as listed in § 8.3 |
+| spaced en-dashes | 0 |
+
+**Positive controls:** the IPv4 pattern fires on a fabricated address; the role-name, acronym and framework-name predicates fire on the framework's own instruction file; `Ollama` returns 30 across the tree outside this manifest.
+
+**Links:** 106 intra-repository anchor links (this section adds one), **0 unresolved**; every relative file link, `examples/` included, resolves.
+
+**Corrections count:** 25 entries, W-1 to W-25.
+
+**Still owed before public visibility, and not this repository's to settle:** an end-to-end run of `examples/` on the model host (the account holder's decision OD-4), and the merge to `main`.
 

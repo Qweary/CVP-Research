@@ -128,6 +128,8 @@ The arm: materialise the framework's single auto-loaded carrier **alone** into a
 
 **No verdict about the framework's usability may be published before it runs.** The party that modelled it said so in terms: *"my round-3 verdict was written on the model this measurement overturned."*
 
+> **Amended 2026-10-18: what is known, and its scope.** One adjacent arm has run, and it is not this one. On 2026-09-21, a fresh session of **Fable 5.1** opened in an **empty** directory answered `what is 2 + 2?` and listed its tools cleanly, and was blocked on the turn that reached into the framework's configuration ([`01-TIMELINE.md` Phase 4](01-TIMELINE.md)). **For Fable 5.1 in September**, that shows a session can load and work until it reads the framework's files, and is then stopped. **It does not settle this item**, which asks about the carrier loaded at session start, and it does not generalise across models or dates: on 2026-10-09, Opus 5.5 and Mythos 5.1 answered the same four words in the project directory with the framework's carrier loaded ([Phase 9](01-TIMELINE.md)). Any statement drawn from the empty-directory arm carries its model and its month.
+
 ---
 
 ## OPEN-5

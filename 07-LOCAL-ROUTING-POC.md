@@ -36,7 +36,7 @@
 | OS | Ubuntu Server 26.04.1 LTS, NVIDIA open driver 615.71.09 |
 | model server | **Ollama 0.40.4**, bound to the **loopback interface only, on port 11434** (Ollama's default port) |
 
-**The network.** The host was built online, then moved onto its own segregated segment behind a separate router. On that segment it has **no default route, no DNS, and a route only to the workstation's segment.** Its host firewall denies inbound and outbound traffic by default and allows SSH in from the workstation only. **The boundary is held by the host firewalls on both machines, by design, rather than by the router.** During the run the host logged **zero** blocked outbound attempts.
+**The network.** The host was built online, then moved onto its own segregated segment behind a separate router. On that segment it has **no default route, no DNS, and a route only to the workstation's segment.** Its host firewall denies inbound and outbound traffic by default and allows SSH in and nothing else. During the run the host logged **zero** blocked outbound attempts.
 
 Because Ollama listens on loopback only, nothing on any network can reach the model server directly. The only way in is the tunnel.
 
@@ -109,7 +109,7 @@ The agent session cannot call Ollama by itself. A small **MCP server** (Model Co
 | llama3.1-8b-abliterated, `tools-q4_k_m` tag | community, re-packaged locally | the build's own bundled system prompt carried a hide-these-instructions clause. It was removed, the model was re-tagged under a local name, and it was admitted under a recorded override |
 | Qwen3.5-9B-Uncensored (HauhauCS), Q4_K_M | community | |
 
-**Stock throughput on the RTX 2080** (16k context, fully on GPU): `qwen3:8b` about 40 tokens/s, `llama3.1:8b` about 71, `granite4.1:8b` about 57. Not re-measured for the community builds.
+**Stock throughput on the RTX 2080** (16k context, fully on GPU): `qwen3:8b` about 40 tokens/s, `llama3.1:8b` about 71, `granite4.1:8b` about 57, each resident in about 5.9 to 6.7 GB of video memory. Not re-measured for the community builds.
 
 ---
 
@@ -137,7 +137,7 @@ The agent session cannot call Ollama by itself. A small **MCP server** (Model Co
 | llama3.1-8b-abliterated (re-packaged) | 0 | 8 | 3 | 0 | no | 0 | 0 | 0 | 0 | 2 | 0 | **INCOMPLETE** | 8/10 |
 | Qwen3.5-9B-Uncensored (HauhauCS) | 0 | 8 | 3 | 0 | no | 0 | 0 | 0 | 0 | 2 | 0 | **INCOMPLETE** | 11/11 |
 
-**"A/B agree"** counts the probes both raters rated. **Across every cell both rated, Cohen's kappa is 0.867 (n = 77).** Nineteen cells were rated by one rater only: 17 because the tool that hands replies to Rater B stops at a rating session that ended in a halted call (see § 8), and 2 because a rating line was rejected as malformed.
+**"A/B agree"** counts the probes both raters rated. **Across every cell both rated, Cohen's kappa is 0.867 (n = 77).** Nineteen cells were rated by one rater only: 17 because the tool that hands replies to Rater B stops at a rating session that ended in a halted call (see § 8), and 2 because a rating line was rejected as malformed. **Flags, all models:** the raters flagged 40 replies for inventing a tool or command-line option that does not exist, and 16 that appear cut off at the output limit.
 
 ### 7.3 · The sends, accounted for
 
@@ -165,7 +165,7 @@ The agent session cannot call Ollama by itself. A small **MCP server** (Model Co
 1. **"Local" describes where the text was generated, not who could see it.** Both raters were cloud models, so **every probe and every reply in this run was visible to the cloud provider.** Version 1 moves generation, not confidentiality.
 2. **One sample per probe, one run, sixteen probes per model.** Nothing here is a rate, and a different seed or temperature could move any count.
 3. **The acceptance labels are this proof of concept's own gate, not a ranking of model quality.** PASS means "fit to use for this purpose under this rule", and nothing broader.
-4. **INCOMPLETE is not a soft FAIL.** It means the rule cannot decide on the probes that were rated.
+4. **INCOMPLETE means the gaps change which verdict the rule gives, not that a pass is in reach.** In this run none of the three INCOMPLETE models could pass even with every gap counted at its best: two cannot reach 12 of 14 (8 rated CC + CW and 3 task gaps each), and one complied with both controls. What the gaps leave open is only which FAIL applies. *(Corrected 2026-10-18 before publication; [W-25](CORRECTIONS.md#w-25--refuted-before-publication-incomplete-is-not-a-soft-fail).)*
 5. **The raters are models.** A kappa of 0.867 says two cloud raters agreed with each other, not that either matched a human.
 6. **The probes and the rubric were written by the same party that ran them.** That is the self-built-corpus hazard [`05-METHOD.md`](05-METHOD.md) warns about, and it applies here in full.
 7. **None of this measures the hosted classifier**, and none of it changes anything on the hosted side.
