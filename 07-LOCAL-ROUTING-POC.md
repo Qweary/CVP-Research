@@ -2,6 +2,8 @@
 
 **Added 2026-10-18. Run 2026-10-19 between 02:50Z and 04:41Z (UTC; the evening of 2026-10-18 local).**
 
+*Dates:* the account holder's blog post dates this run October 18, by local time; this repository dates runs in UTC, so both dates name the same run.
+
 **What this file is.** The account holder's planned close for this line of work, recorded in [`01-TIMELINE.md`](01-TIMELINE.md) as *"planned next, and not done"* on 2026-10-15, has now been built and run once. This file carries the method in full and the results as **counts only.** It never restates a probe, a response, or the verdict on any single probe, and the reasons are in [§ 9](#9--the-bounds-which-travel-with-every-number-above).
 
 **Why it exists, in one line.** [`04-FINDING.md`](04-FINDING.md) records a pre-generation classifier that never consults a model's judgment, so no argument made to the model can reach it. The remaining option is a different tool, chosen in the open: a model the account holder hosts, on hardware they own, answering the requests the hosted service stops.
@@ -32,7 +34,7 @@
 | part | value |
 |---|---|
 | GPU | NVIDIA GeForce RTX 2080, 8 GB (not Ti) |
-| memory / disk | about 16 GB RAM; a 233 GB laptop hard disk |
+| memory / disk | about 16 GB RAM (about 14 GiB usable); a 233 GB laptop hard disk |
 | OS | Ubuntu Server 26.04.1 LTS, NVIDIA open driver 615.71.09 |
 | model server | **Ollama 0.40.4**, bound to the **loopback interface only, on port 11434** (Ollama's default port) |
 
@@ -181,6 +183,8 @@ The probe text, the rubric text, any reply, and any per-probe verdict. They are 
 
 **The standard, set by the account holder on 2026-10-19:** a value is withheld if someone on the internet, outside the account holder's network, could use it. **Never shown:** the public IP address, and every key, key fingerprint, token, password or other secret. **Publishable:** values that exist only inside the account holder's network and that nobody outside it can reach, such as internal addresses and ports, especially where they help a reader try the setup. The loopback address `127.0.0.1` is shown wherever the setup uses it.
 
-**Still blanked, on separate decisions:** hostnames, usernames, and the router's make, model and firmware. No internal address other than loopback appears in this file; whether to add any is a separate decision. Placeholders look like `<host-b>`, `<tunnel-user>` and `<local-port>`. **Shown in full:** the topology, the tunnel's restrictions, the model server and its default port, the bridge pattern, the acceptance checks, the model names and the counts.
+**Publishable under the account holder's rulings of 2026-10-19, though this file does not print them:** internal hostnames, account names that carry no internal label (the example tunnel account `ollamatunnel`, shown in the blog post's figures, is one), and the router's make and model. **Still withheld:** a hostname or account name that carries an internal label, and the router's firmware version. No internal address other than loopback appears in this file; the two internal addresses that are published are in [`examples/README.md`](examples/README.md). Placeholders look like `<host-b>`, `<tunnel-user>` and `<local-port>`. **Shown in full:** the topology, the tunnel's restrictions, the model server and its default port, the bridge pattern, the acceptance checks, the model names and the counts.
+
+*(Amended 2026-10-19, round six, to match the rulings in [`REDACTIONS.md § 10`](REDACTIONS.md#-10--classes-added-2026-10-18). Previously: "Still blanked, on separate decisions: hostnames, usernames, and the router's make, model and firmware. No internal address other than loopback appears in this file; whether to add any is a separate decision.")*
 
 *(Amended 2026-10-19. First written as: "Blanked, by the usual standard for a published build: every IP address, hostname, username, key and key fingerprint, the forwarded port's host-side details, and the router's make, model and firmware. Placeholders look like `<host-b>`, `<tunnel-user>` and `x.x.x.x`." The blanket rule on IP addresses is replaced by the standard above. See [`REDACTIONS.md § 10`](REDACTIONS.md#-10--classes-added-2026-10-18).)*

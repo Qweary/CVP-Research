@@ -407,7 +407,7 @@ On the account holder's answers: the previous year's enrolment is described as *
 | `generate` calls | 1 sent, against a stock model; 1 returned text; 0 returned an error |
 | no-fallback check 1 (tunnel open, `health` returns the host's models) | **pass** |
 | no-fallback check 2 (host Ollama stopped) | **not run.** It was optional in the runbook |
-| no-fallback check 3 (tunnel closed) | `health`: **pass**, it returned the no-fallback error. `generate`: not recorded here. Whether an Ollama instance was running on the workstation's own 11434 at the time is not recorded here |
+| no-fallback check 3 (tunnel closed) | `health`: **pass**, it returned the no-fallback error. `generate`: not recorded here. Whether an Ollama instance was running on the workstation's own 11434 at the time is not recorded here. *(Round six: none was; the published capture's first command shows no listener on the workstation's 11434.)* |
 | refusal controls on the workstation (`LOCAL_PORT=11434` refused by `tunnel.sh`; 11434 and a non-loopback `OLLAMA_TUNNEL_HOST` refused by the server) | not part of the reported run. Re-run in this round on the workstation, loopback only and with no tunnel opened: all three refused, rc=2 each |
 | deviations from `examples/README.md` needed to make it work | **2.** (1) The host's `sshd_config` already had an `AllowUsers` list, and the tunnel account had to be added to it before sshd would accept the key. (2) The first `tunnel.sh open` failed with `Permission denied (publickey)`, because the key had a passphrase and `tunnel.sh` runs ssh in batch mode; loading the key into `ssh-agent` fixed it |
 | edits to `examples/` as a result | **1 commit, this one.** The README now names both points: `AllowUsers` / `AllowGroups` in the sshd notes, and a key that is passphrase-less or loaded into `ssh-agent` |
@@ -418,7 +418,7 @@ On the account holder's answers: the previous year's enrolment is described as *
 |---|---|
 | `examples/mcp_call.py` | **New.** A small terminal client for trying the server and for the no-fallback check without an agent client. It prints the reply and never runs it, and prints control and format characters as visible escapes. It is new code written for this repository, like the rest of `examples/` |
 | `examples/README.md` | the two deviations above; `mcp_call.py` in the file table, the prerequisites and the no-fallback check; a short *"The author's setup"* note giving two internal addresses beside the placeholders, which stay as the generic instructions |
-| `REDACTIONS.md` | § 10: the never-published values spelled out (public address forms and its /24, the home IPv6 prefix, dynamic DNS names, SSH host key fingerprints, SSID and BSSID, MAC addresses, hardware serials, UUIDs and WWNs, router firmware, any description of the router's NAT behaviour); the account holder's rulings of 2026-10-19 recorded; the *"Not added yet"* line and item 1 amended beside their original wording |
+| `REDACTIONS.md` | § 10: the never-published values spelled out (public address forms and its /24, the home IPv6 prefix, dynamic DNS names, SSH host key fingerprints, SSID and BSSID, MAC addresses, hardware serials, UUIDs and WWNs, router firmware, any description of the router's configuration); the account holder's rulings of 2026-10-19 recorded; the *"Not added yet"* line and item 1 amended beside their original wording |
 | `07-LOCAL-ROUTING-POC.md` | one dated sentence in § 4 pointing here |
 
 **`mcp_call.py`, tested on the workstation, loopback only, against a stand-in server on `127.0.0.1` (no tunnel, no model host):** usage error rc=2; missing server rc=2; `health` rc=0; `generate` rc=0; listener stopped rc=1 with the no-fallback error; port 11434 rc=2 refused; non-loopback host rc=2 refused. The stand-in returned control and format characters in both a model name and the reply: **0** raw control characters reached the output, against **4** in the stand-in's raw reply (the positive control).
@@ -448,3 +448,28 @@ On the account holder's answers: the previous year's enrolment is described as *
 **Corrections count:** 26 entries, W-1 to W-26. No entry was added: nothing published was found to be wrong.
 
 **Still owed before public visibility:** the merge to `main`, and the account holder's sweep with the public address loaded. The optional no-fallback check 2 was not run.
+
+### 8.10 · Round six of this delta, 2026-10-19
+
+**Base:** branch `delta-2026-10-18` at `23712ce`. **Round disclosure:** round six on this objective, by the same analysis as § 8. Edits from an independent reader's third pass over the repository and the blog post; only the repository-side items are applied here.
+
+| file | change |
+|---|---|
+| `examples/README.md` | the `from=` value is now described as the source address the model host sees for the workstation's connection, which can differ from the workstation's own address, with two ways to read it on the host before adding the restriction; the firewall note points at that address |
+| `07-LOCAL-ROUTING-POC.md` | a one-line note under the run date: the blog post dates the run by local time, this repository by UTC; § 2 RAM given as installed and usable; § 10 brought in line with the 2026-10-19 rulings, previous wording kept beside it |
+| `REDACTIONS.md` | § 10: item 1 amended for account names with no internal label; the never-published line on the router reworded to "the router's configuration beyond its model"; a line recording that the example tunnel account `ollamatunnel` is publishable under the rulings |
+| `MANIFEST.md` | § 8.9: the `REDACTIONS.md` row reworded the same way; the no-fallback check 3 row notes that no listener was on the workstation's 11434 (the published capture shows it). Otherwise § 8.9 stands as round five's record |
+
+**Span, after every edit in this round, measured two ways (`wc -l -c` and a Python pass), agreeing to the digit:**
+
+| set | files | lines | bytes |
+|---|---|---|---|
+| content Markdown (the eleven, this manifest excluded) | 11 | 2,439 | 275,142 |
+| `examples/` | 4 | 680 | 25,780 |
+| **everything tracked except this manifest** | **15** | **3,119** | **300,922** |
+
+**Changed files, besides this manifest:** `07-LOCAL-ROUTING-POC.md` 190 lines / 16,924 bytes · `REDACTIONS.md` 191 / 22,295 · `examples/README.md` 325 / 12,156.
+
+**Sweeps** (all 16 tracked files, this manifest included, and git history with `--all`): every disclosure class 0; em-dashes 9 in the files (the same verbatim quotations) and 815 in history. Positive controls as in § 8.9. Links: every intra-repository anchor link resolves. The public-address re-run by the account holder is still owed before visibility.
+
+**Corrections count:** 26 entries, W-1 to W-26. No entry was added: nothing published was found to be wrong.

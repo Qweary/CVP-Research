@@ -117,7 +117,18 @@ forwarding back on, and `permitopen` limits it to one destination:
 restrict,port-forwarding,permitopen="127.0.0.1:11434",command="/bin/false",from="x.x.x.x" ssh-ed25519 AAAA...<public-key>... ollama tunnel
 ```
 
-`from="x.x.x.x"` is the workstation's address. Then fix ownership:
+`from="x.x.x.x"` must be the source address the model host actually sees
+for the workstation's connection. That can differ from the workstation's own
+address, for example when traffic between the two machines is routed or
+translated between subnets. Find it on the host before you add the
+restriction: open a session from the workstation by a route you already have
+(or add this key once without `from=`), then read the address on the host,
+either from the sshd log's `Accepted publickey for ... from <address>` line
+(`sudo journalctl -u ssh | grep Accepted`; the unit is `sshd` on some
+systems) or with `sudo ss -tn state established '( sport = :22 )'` while the
+session is open. Use that value. A wrong `from=` value fails with
+`Permission denied (publickey)`, the same message as the passphrase problem
+above, so check both. Then fix ownership:
 
 ```
 sudo chown <tunnel-user>:<tunnel-user> /home/<tunnel-user>/.ssh/authorized_keys
@@ -179,8 +190,8 @@ Notes:
   refuses every account that line does not name, and that check comes before
   the key. Add `<tunnel-user>` to it (or the account to a group it names),
   then run `sshd -t` and the `-T` check again.
-- Keep a host firewall on the model host that allows inbound SSH from the
-  workstation only.
+- Keep a host firewall on the model host that allows inbound SSH only from
+  the source address you found in step 2 of the host setup.
 
 ## Setup on the workstation
 
