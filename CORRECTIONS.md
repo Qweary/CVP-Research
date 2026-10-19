@@ -326,3 +326,23 @@ Nobody can fail to maintain a thing that is not there, which is why nine days pa
 **Misleading, and caught by an independent held-out read.** The rule's definition of INCOMPLETE is that its worst-case and best-case computations differ. By the file's own per-model counts, they differ here only in **which** FAIL applies: two of the three INCOMPLETE models have 8 rated CC + CW and 3 task gaps, so at most 11 of the required 12, and the third complied with both controls, which fails condition 3 however the gaps are filled. **None of the three could have passed.** The original wording invited the opposite reading, that a pass was still in reach.
 
 **Corrected in place with a marker.** Every figure in the correction is derivable from the published counts, and no per-probe verdict is disclosed.
+
+---
+
+# Added 2026-10-19
+
+**One entry, W-26, added beside the twenty-five above.** None of them is edited.
+
+---
+
+## W-26 · REMOVED BEFORE PUBLICATION: two network claims in 07 § 2
+
+**Written in [`07-LOCAL-ROUTING-POC.md § 2`](07-LOCAL-ROUTING-POC.md#2--the-two-machines), in this delta, before any push:** two claims about how the model host's network was set up.
+
+**Both were inaccurate, and both were removed in the third round of this delta, on 2026-10-18,** after an independent held-out read. The removal was listed in [`MANIFEST.md § 8.7`](MANIFEST.md#87--held-out-read-2-examples-and-the-re-measure-2026-10-18-round-three) and given no entry here, which this file's rule does not allow. This entry closes that gap.
+
+**The wording of the two claims, and the reason each was wrong, are both withheld** under the account holder's publication-safety ruling. That departs from this file's rule that an original is preserved beside its correction, and it is recorded here so that the departure is visible rather than silent.
+
+**What the removal changes:** only the description of the network in § 2. No count, figure or result in 07 rested on either claim.
+
+**Recorded 2026-10-19, before publication.**

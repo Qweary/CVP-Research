@@ -156,9 +156,16 @@ So the following are carried in full, deliberately:
 
 **Each class declared here has a row in [`MANIFEST.md § 8`](MANIFEST.md).**
 
-1. **The proof of concept's network identifiers.** Every IP address, hostname, username, key and key fingerprint, the forwarded port's host-side details, and the router's make, model and firmware. [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md) uses placeholders such as `<host-b>` and `<tunnel-user>`. **The method itself is shown in full**, on the account holder's decision: show everything, blank the identifiers.
+1. **The proof of concept's network identifiers that someone outside the account holder's network could use.** Above all **the public IP address, which is never published**, and every key, key fingerprint, token, password or other secret. Also withheld, on separate decisions: hostnames, usernames, and the router's make, model and firmware. [`07-LOCAL-ROUTING-POC.md`](07-LOCAL-ROUTING-POC.md) uses placeholders such as `<host-b>` and `<tunnel-user>`. **The method itself is shown in full**, on the account holder's decision: show everything, blank the identifiers. *(Amended 2026-10-19. First written as: "Every IP address, hostname, username, key and key fingerprint, the forwarded port's host-side details, and the router's make, model and firmware." The blanket rule on IP addresses is replaced by the standard below.)*
 2. **The bridge's source and the framework's run tooling.** Described by pattern, not published. The framework is the account holder's own work.
 3. **The probe text, the rubric text, every model reply, and every per-probe verdict.** The result is published as counts only.
 4. **The internal names of the agent roles that built and ran the proof of concept**, under the same rule as § 6.
+
+**The disclosure standard for network values, set by the account holder on 2026-10-19.** It replaces the blanket rule that every IP address is blanked. **The test is whether someone on the internet, outside the account holder's network, could use the value.**
+
+- **Never published:** the public IP address, and any key, token, password or other secret. These are usable from outside.
+- **Publishable:** values that exist only inside the account holder's own network and that nobody outside it can reach, such as internal addresses, the internal address layout and internal ports. They are publishable especially where they let a reader test or reproduce the proof of concept.
+- **The loopback address `127.0.0.1` is publishable** and is printed wherever the setup uses it.
+- **Not added yet:** no internal network address other than loopback appears in this repository. Whether to add any is a separate decision, and the standard above does not by itself add them.
 
 **Not redacted, deliberately:** the model names, the Ollama version and its default port, the tunnel's restrictions, the host's hardware and OS, the acceptance checks, and the fact that the account is on a subscription plan. The subscription **tier** stays redacted as in § 9 item 3; the plan type is stated because the cost convention needs it.

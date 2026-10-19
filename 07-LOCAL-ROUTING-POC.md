@@ -36,7 +36,7 @@
 | OS | Ubuntu Server 26.04.1 LTS, NVIDIA open driver 615.71.09 |
 | model server | **Ollama 0.40.4**, bound to the **loopback interface only, on port 11434** (Ollama's default port) |
 
-**The network.** The host was built online, then moved onto its own segregated segment behind a separate router. On that segment it has **no default route, no DNS, and a route only to the workstation's segment.** Its host firewall denies inbound and outbound traffic by default and allows SSH in and nothing else. During the run the host logged **zero** blocked outbound attempts.
+**The network.** The host was built online, then moved onto its own segregated segment behind a separate router. On that segment it has **no default route, no DNS, and a route only to the workstation's segment.** Its host firewall denies inbound and outbound traffic by default and allows SSH in and nothing else. During the run the host logged **zero** blocked outbound attempts. *(Two inaccurate claims removed from this paragraph 2026-10-18, before publication; [W-26](CORRECTIONS.md#w-26--removed-before-publication-two-network-claims-in-07--2).)*
 
 Because Ollama listens on loopback only, nothing on any network can reach the model server directly. The only way in is the tunnel.
 
@@ -179,4 +179,8 @@ The probe text, the rubric text, any reply, and any per-probe verdict. They are 
 
 ## 10 · Redactions in this file
 
-**Blanked, by the usual standard for a published build:** every IP address, hostname, username, key and key fingerprint, the forwarded port's host-side details, and the router's make, model and firmware. Placeholders look like `<host-b>`, `<tunnel-user>` and `x.x.x.x`. **Shown in full:** the topology, the tunnel's restrictions, the model server and its default port, the bridge pattern, the acceptance checks, the model names and the counts.
+**The standard, set by the account holder on 2026-10-19:** a value is withheld if someone on the internet, outside the account holder's network, could use it. **Never shown:** the public IP address, and every key, key fingerprint, token, password or other secret. **Publishable:** values that exist only inside the account holder's network and that nobody outside it can reach, such as internal addresses and ports, especially where they help a reader try the setup. The loopback address `127.0.0.1` is shown wherever the setup uses it.
+
+**Still blanked, on separate decisions:** hostnames, usernames, and the router's make, model and firmware. No internal address other than loopback appears in this file; whether to add any is a separate decision. Placeholders look like `<host-b>`, `<tunnel-user>` and `<local-port>`. **Shown in full:** the topology, the tunnel's restrictions, the model server and its default port, the bridge pattern, the acceptance checks, the model names and the counts.
+
+*(Amended 2026-10-19. First written as: "Blanked, by the usual standard for a published build: every IP address, hostname, username, key and key fingerprint, the forwarded port's host-side details, and the router's make, model and firmware. Placeholders look like `<host-b>`, `<tunnel-user>` and `x.x.x.x`." The blanket rule on IP addresses is replaced by the standard above. See [`REDACTIONS.md § 10`](REDACTIONS.md#-10--classes-added-2026-10-18).)*

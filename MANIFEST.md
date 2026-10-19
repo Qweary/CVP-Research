@@ -345,3 +345,42 @@ On the account holder's answers: the previous year's enrolment is described as *
 
 **Still owed before public visibility, and not this repository's to settle:** an end-to-end run of `examples/` on the model host (the account holder's decision OD-4), and the merge to `main`.
 
+### 8.8 · Round four of this delta, 2026-10-19
+
+**Base:** branch `delta-2026-10-18` at `e7b3f52`. **Round disclosure:** round four on this objective, by the same analysis as § 8. This round is new, scoped work on two of the account holder's rulings of 2026-10-19, not a redo of rounds one to three.
+
+| file | change |
+|---|---|
+| `CORRECTIONS.md` | **W-26 added**, under a new *"Added 2026-10-19"* heading: the two network claims removed in round three (R-7 in § 8.7) now have an entry, with their wording and the reason withheld under the account holder's publication-safety ruling. W-1 to W-25 untouched |
+| `07-LOCAL-ROUTING-POC.md` | a dated marker in § 2 pointing to W-26; § 10 restated to the new disclosure standard, the original wording kept beside it |
+| `REDACTIONS.md` | § 10 item 1 restated, the original wording kept beside it; **the disclosure standard for network values** added to § 10 |
+| `README.md` | the status date only |
+
+**The new standard, in one line:** a network value is withheld if someone outside the account holder's network could use it. The public IP address and every secret are never published; internal-only values are publishable; the loopback address is printed. **No internal address other than loopback was added in this round.** The full statement is [`REDACTIONS.md § 10`](REDACTIONS.md#-10--classes-added-2026-10-18).
+
+**Span, after every edit in this round, measured two ways (`wc -l -c` over an explicit list, and a Python pass), agreeing to the digit:**
+
+| set | files | lines | bytes |
+|---|---|---|---|
+| content Markdown (the eleven, this manifest excluded) | 11 | 2,415 | 271,272 |
+| `examples/` (unchanged since `de2bb21`) | 3 | 544 | 19,443 |
+| **everything tracked except this manifest** | **14** | **2,959** | **290,715** |
+
+**The four files changed in this round:** `07-LOCAL-ROUTING-POC.md` 186 lines / 15,758 bytes · `CORRECTIONS.md` 348 / 36,148 · `README.md` 139 / 19,976 · `REDACTIONS.md` 171 / 19,591. § 8.7's figures are round three's and stay as that round's record.
+
+**Sweeps over all 15 tracked files, this manifest included, after this section was written:**
+
+| class | count |
+|---|---|
+| em-dashes | **9**, the same nine verbatim quotations as § 8.3 |
+| dotted-quad IPv4 addresses that are publicly routable | **0** |
+| dotted-quad IPv4 addresses of any kind other than loopback | **0** |
+| the framework's name and its acronym as a whole word | **0** |
+| the lane prefix, any case | **0** |
+
+**Positive control:** the same script, run on a fabricated line held outside this repository that carries one em-dash, one public address, one private address, the lane prefix, the framework's name and its acronym, returns 1 for each class. **Links:** every intra-repository anchor link resolves, 0 unresolved.
+
+**Corrections count:** 26 entries, W-1 to W-26.
+
+**Still owed before public visibility, unchanged:** the end-to-end run of `examples/` on the model host, and the merge to `main`.
+
