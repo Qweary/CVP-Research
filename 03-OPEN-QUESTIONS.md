@@ -6,7 +6,7 @@
 
 ## Why this file ranks with the findings
 
-**The research is not concluded.** Every item below is genuinely open on the evidence available, and each is stated with what would settle it — so that a reader can see the shape of the remaining work rather than a hedge.
+**The research is not concluded.** Every item below is genuinely open on the evidence available, and each is stated with what would settle it, so that a reader can see the shape of the remaining work rather than a hedge.
 
 An honest open question, named as a specific thing to look for with a named consequence, is stronger material than a conclusion. It is the part a reader can act on, and it is what separates research from a complaint. The standing rule this investigation ran on was that *an instrument which cannot render the opposite verdict has not measured anything*; the corollary is that **a question whose answer is already assumed was never a question.**
 
@@ -28,21 +28,21 @@ An honest open question, named as a specific thing to look for with a named cons
 
 **Input-side or output-side on the newest tier? Two readings survive.**
 
-**What is settled:** on the first affected tier, the block is **input-side and pre-generation**, and it is settled by an instrument that cannot be read two ways — **zero output tokens across six full, billed ingestions**, each billing six figures of cache-creation tokens. A disposition refusal is prose; prose is output tokens; there were none. The model did not decline. It never spoke.
+**What is settled:** on the first affected tier, the block is **input-side and pre-generation**, and it is settled by an instrument that cannot be read two ways: **zero output tokens across six full, billed ingestions**, each billing six figures of cache-creation tokens. A disposition refusal is prose; prose is output tokens; there were none. The model did not decline. It never spoke.
 
 **What is not settled:** whether that diagnosis transfers to the newest tier, where the harness chrome is different.
 
 | evidence | points to |
 |---|---|
 | The harness's injected text: *"Your response **above** was **stopped** — the **rest of it** was withheld, and tool calls in it that **had not finished** did not run."* | **Mid-stream truncation**, i.e. output-side. A response that was *stopped* is a response that had *begun.* |
-| **But that text is the harness's own boilerplate** — byte-invariant across all 19 of its occurrences in the local store, carrying no model name, no category token, and no request identifier. | **It is not a measurement of any particular request.** |
+| **But that text is the harness's own boilerplate**: byte-invariant across all 19 of its occurrences in the local store, carrying no model name, no category token, and no request identifier. | **It is not a measurement of any particular request.** |
 | **The record structure:** every injected stop turn's parent pointer resolves to a record that exists inside the file, and no record anywhere in the chain references an assistant message object at all. The chain is *user prompt → attachments → system notice → injected user turn.* (Re-measured.) | **The same pre-generation block, in newer chrome.** Input-side. |
 | **There is no token accounting of any kind in the newest-tier artifact.** Seven billing field names each occur zero times. The one instrument that settled the earlier episode is simply absent. | **Nothing.** |
 | The support article linked from one tier's notice is titled *real-time cyber safeguards on Claude.* | **Suggestive of output-side, and suggestive only.** A support-article title is not a mechanism statement. |
 
 **The structure and the notice text point in opposite directions, and nothing in evidence breaks the tie.** The party that ruled on it rated the input-side reading *marginally favoured at low confidence* and said so in those terms.
 
-**What would settle it:** token accounting on a blocked turn at the newest tier. If a stopped stream bills output tokens, output-side is confirmed. If it bills none while the notice says generation began, then either a cancelled stream is not billed as output or the aggregate discards it — **and that ambiguity is itself unresolved.** Do not resolve this from the material in this repository.
+**What would settle it:** token accounting on a blocked turn at the newest tier. If a stopped stream bills output tokens, output-side is confirmed. If it bills none while the notice says generation began, then either a cancelled stream is not billed as output or the aggregate discards it, **and that ambiguity is itself unresolved.** Do not resolve this from the material in this repository.
 
 > **Amended 2026-10-15.** The settling measurement OPEN-1 names has arrived, and it lands on the branch this item said stays ambiguous. The newest-tier artifact gained a billing record **after** it was measured: **zero output tokens, 230,727 cache-creation tokens** (re-measured; see [`CORRECTIONS.md § W-17`](CORRECTIONS.md#w-17--superseded-the-newest-tier-artifact-carries-no-token-accounting)). Every later block in this evidence reads zero output tokens too: the three post-login arms, two more newest-tier blocks, and the two Fable blocks of 2026-10-09. **Each of those also shows the harness string saying the response was "stopped."** ⇒ **Either the block is pre-generation, or a cancelled stream is not billed as output.** The adjudicating party re-labelled the rows *pre-generation* at moderate confidence. **This item stays open, and the instrument that could close it is now known not to be this one.**
 
@@ -52,7 +52,7 @@ An honest open question, named as a specific thing to look for with a named cons
 
 **Whether the Cyber Verification Program is effective at all. The observed block does *not* establish that it fails.**
 
-**The facts, each verified.** The portal reads `approved`. The enrolment followed the vendor's own printed instruction — one tier's notice says, in terms, *"Apply to the Cyber Verification Program to reduce these interruptions."* Afterward, `what is 2 + 2?` — four neutral words, no persona line, no security noun, no confound of any kind — was blocked three times on the newest tier.
+**The facts, each verified.** The portal reads `approved`. The enrolment followed the vendor's own printed instruction: one tier's notice says, in terms, *"Apply to the Cyber Verification Program to reduce these interruptions."* Afterward, `what is 2 + 2?` (four neutral words, no persona line, no security noun, no confound of any kind) was blocked three times on the newest tier.
 
 **And it establishes nothing about the programme, on a hypothesis the account holder raised unprompted and before any analysis:**
 
@@ -62,11 +62,11 @@ An honest open question, named as a specific thing to look for with a named cons
 
 **And nobody knows which.** Whether an entitlement is evaluated server-side per request from the account record, or carried in a token minted at login, is a vendor implementation detail that no artifact available here discloses. The party asked to rule on it declined, in those terms.
 
-**A second, independent reason the status is not a measurement**, drawn by the account holder themselves in the same turn that reported the approval — *"(as long as this is shown to be effective)"*: **a portal field is a declaration about an account. It is not a measurement of classifier behaviour at the inference surface.** `approved` may not be read as `effective` until an arm says so, and no arm has been run.
+**A second, independent reason the status is not a measurement**, drawn by the account holder themselves in the same turn that reported the approval, *"(as long as this is shown to be effective)"*: **a portal field is a declaration about an account. It is not a measurement of classifier behaviour at the inference surface.** `approved` may not be read as `effective` until an arm says so, and no arm has been run.
 
-**What would settle it:** fully exit the CLI, re-authenticate, re-run the identical prompt. **And even that is confounded — see [OPEN-5](#open-5).**
+**What would settle it:** fully exit the CLI, re-authenticate, re-run the identical prompt. **And even that is confounded; see [OPEN-5](#open-5).**
 
-> **A sentence of the form "I am CVP-verified and it did not help" is not supported by this evidence.** The supported sentence is narrower: *the portal shows approved, and a block was still observed — in a session that may predate the grant. Whether the verification took effect at the inference surface is untested.*
+> **A sentence of the form "I am CVP-verified and it did not help" is not supported by this evidence.** The supported sentence is narrower: *the portal shows approved, and a block was still observed, in a session that may predate the grant. Whether the verification took effect at the inference surface is untested.*
 
 > **Amended 2026-10-15. The arm named above was run, and it did not settle this item. It made it harder.**
 >
@@ -103,10 +103,10 @@ These are therefore **two independent candidate mechanisms, not two points on on
 
 1. **The one-file-at-a-time arm has never been run.** It is the only design that attributes a trigger without editing any file. It is designed, costed, and unexecuted.
 2. **The observed block cannot be attributed to any one file.** Seven things were read in one command. Attributing the flag to whichever one a reader finds most striking is precisely the move this investigation convicted repeatedly.
-3. **Command text and returned content are still unseparated.** Both entered the same model call, and a turn structure cannot separate two things that arrive together. On *content volume*, the returned output is overwhelmingly the likelier contributor — **stated as an inference, not as a separation.**
-4. **The scoring instruments' own soundness is open.** One is a round old, uncalibrated, and was built against payloads its author had already read. Its author named that as *"precisely the self-built-corpus hazard"* — a corpus its author built is written in its author's own assumptions.
+3. **Command text and returned content are still unseparated.** Both entered the same model call, and a turn structure cannot separate two things that arrive together. On *content volume*, the returned output is overwhelmingly the likelier contributor, **stated as an inference, not as a separation.**
+4. **The scoring instruments' own soundness is open.** One is a round old, uncalibrated, and was built against payloads its author had already read. Its author named that as *"precisely the self-built-corpus hazard"*: a corpus its author built is written in its author's own assumptions.
 
-**What would settle it:** read the candidate files one at a time, same command shape each time, in a clean directory — four turns or fewer. **Including the two zero-content controls**, which is what makes it a discriminator rather than a demonstration.
+**What would settle it:** read the candidate files one at a time, same command shape each time, in a clean directory, in four turns or fewer. **Including the two zero-content controls**, which is what makes it a discriminator rather than a demonstration.
 
 ---
 
@@ -119,7 +119,7 @@ The arm: materialise the framework's single auto-loaded carrier **alone** into a
 | round | pre-registered prediction | ground |
 |---|---|---|
 | 3 | **Clean**, moderate confidence | whole-file token density |
-| 4 | **Blocks**, low-to-moderate confidence — **a reversal committed before the data** | absolute token mass at parity with the blocked payload; sliding-window passage maximum at an exact tie |
+| 4 | **Blocks**, low-to-moderate confidence: **a reversal committed before the data** | absolute token mass at parity with the blocked payload; sliding-window passage maximum at an exact tie |
 
 **The arm has never been run, and its two branches have opposite consequences:**
 
@@ -136,9 +136,9 @@ The arm: materialise the framework's single auto-loaded carrier **alone** into a
 
 **Nine days separate the one executed control arm from the verification grant.** The programme is not the only factor that changed in that window: the framework's own reference notes estimate that classifier specifics drift on a two-to-eight-week half-life, and any harness change is a live alternative. **A clean run after enrolment would therefore not establish that enrolment caused it.**
 
-**And the proposed fix was rejected on its merits — recorded because a rejected control is evidence of method.** The coordinator proposed routing the identical request through a third-party aggregator, which the reference notes say the programme does not propagate through, as a same-day one-factor separator. The specialist refused it: **routing through an aggregator varies the entire assembled prompt, and the assembly is the operative variable.** A control that changes the thing under test is not a control.
+**And the proposed fix was rejected on its merits, and it is recorded because a rejected control is evidence of method.** The coordinator proposed routing the identical request through a third-party aggregator, which the reference notes say the programme does not propagate through, as a same-day one-factor separator. The specialist refused it: **routing through an aggregator varies the entire assembled prompt, and the assembly is the operative variable.** A control that changes the thing under test is not a control.
 
-**The honest position: the confound cannot be eliminated with any instrument available today.** The only separator named is a **pre-registered re-run at +2 and +6 weeks** — which costs patience rather than money, and which has been pre-registered precisely so that it cannot be invented after the fact.
+**The honest position: the confound cannot be eliminated with any instrument available today.** The only separator named is a **pre-registered re-run at +2 and +6 weeks**, which costs patience rather than money, and which has been pre-registered precisely so that it cannot be invented after the fact.
 
 > **Amended 2026-10-15.** **The confound this item describes no longer exists in the form stated.** The grant turned out to be same-day (2026-09-30), not nine days after the control, so time drift between enrolment and the blocked arms is about zero. ⚠ **That does not help.** Removing an alternative explanation for an effect that did not happen explains nothing. **The +2-week re-run date (around 2026-10-14) has passed without a run as pre-registered.** The account holder's 2026-10-09 runs came early and now sit on the far side of a new tier-2 grant *(corrected 2026-10-18 from "tier-1")*, so they cannot stand in for it. **The +6-week date (around 2026-11-11) is still open, and the verification grant now sits inside its window as a second confound.**
 
@@ -158,7 +158,7 @@ The framework's own reference notes state that the verification programme is tie
 
 > **Relief for the verified account would make the defect invisible to the one person best placed to see it, while leaving it fully live for everyone who is not them.**
 
-**And the other half, which must be said with it or neither should be.** A user who binds their own security tooling, or whose own local context accrues security-engagement material exactly as this one's did, **re-creates the dense bundle.** Much of the work this framework is used for is security work, and its likely users are disproportionately the users whose local context is dense in these tokens. *(Reworded 2026-10-18 from "This is a security-domain framework; the users it is* for *are…"; [W-22](CORRECTIONS.md#w-22--softened-it-really-is-a-security-framework).)* So even if a bare clone runs clean, the exposure is real for the actual audience — **it simply arrives later, after the user has made the thing their own, which is a worse first impression than failing on day one, not a better one.**
+**And the other half, which must be said with it or neither should be.** A user who binds their own security tooling, or whose own local context accrues security-engagement material exactly as this one's did, **re-creates the dense bundle.** Much of the work this framework is used for is security work, and its likely users are disproportionately the users whose local context is dense in these tokens. *(Reworded 2026-10-18 from "This is a security-domain framework; the users it is* for *are…"; [W-22](CORRECTIONS.md#w-22--softened-it-really-is-a-security-framework).)* So even if a bare clone runs clean, the exposure is real for the actual audience. **It simply arrives later, after the user has made the thing their own, which is a worse first impression than failing on day one, not a better one.**
 
 > **Amended 2026-10-15. The hazard above was briefly inverted, and it may now be live again.** After the 2026-10-01 arms blocked on an enrolled account, the adjudicating party recorded that the account holder and a prospective unverified user were, for once, **on the same side of the wall**: the condition was *observable* to the one person best placed to see it, though not *solved*. **On 2026-10-09, under a tier-2 grant *(corrected 2026-10-18 from "tier 1"; [W-20](CORRECTIONS.md#w-20--corrected-the-account-holders-verification-tier-is-2-defensive-not-1))*, Opus 5.5 answered.** If the grant is what changed that, the account holder has moved back to the side this item warns about, and **nothing available here can tell.** The unverified baseline is still unrefreshable. **Twelve pre-enrolment artifacts are now preserved outside any repository** ([`CORRECTIONS.md § W-19`](CORRECTIONS.md#w-19--superseded-all-unpreserved)), and they remain the only unverified measurements this framework will ever hold of its own corpus.
 >
@@ -174,8 +174,8 @@ The framework's own inferential model distinguishes a **structure** classifier, 
 
 **The wording later arrived**, and the split was then licensed to the subject side at high confidence, on five supports, of which two were called decisive:
 
-1. **The vendor enumerates its false positives as domains, not shapes:** *"coding, cybersecurity, and biology."* A structure classifier's false positives are mis-shaped prompts, not subject areas — and *biology* standing beside *cyber* is the signature of a subject-safeguard suite keyed on domains of concern.
-2. **The prompt was structurally null.** `what is 2 + 2?` is about the most shape-innocent prompt available in any language. For a shape detector to have fired there, it would have to be firing on the assembled surrounding context — and it would then plausibly have emitted a *shape* category, not `cyber`.
+1. **The vendor enumerates its false positives as domains, not shapes:** *"coding, cybersecurity, and biology."* A structure classifier's false positives are mis-shaped prompts, not subject areas, and *biology* standing beside *cyber* is the signature of a subject-safeguard suite keyed on domains of concern.
+2. **The prompt was structurally null.** `what is 2 + 2?` is about the most shape-innocent prompt available in any language. For a shape detector to have fired there, it would have to be firing on the assembled surrounding context, and it would then plausibly have emitted a *shape* category, not `cyber`.
 
 **The bounds that still hold, and they are large:**
 
@@ -195,9 +195,9 @@ The framework's own inferential model distinguishes a **structure** classifier, 
 
 Both affected tiers' notices offer switching to an older tier as remedy option 1. **Nobody has ever tried it on the framework's corpus.**
 
-**And the evidence cuts both ways, which is why this is an open question and not a suggestion:** the recommended fallback tier **itself holds four `[cyber]` block artifacts** in the local store — all in unrelated offensive-tooling work, none on the framework corpus. ⇒ **The vendor's recommended escape hatch is a tier that is itself demonstrably blockable.** Whether it clears this corpus is unknown.
+**And the evidence cuts both ways, which is why this is an open question and not a suggestion:** the recommended fallback tier **itself holds four `[cyber]` block artifacts** in the local store, all in unrelated offensive-tooling work, none on the framework corpus. ⇒ **The vendor's recommended escape hatch is a tier that is itself demonstrably blockable.** Whether it clears this corpus is unknown.
 
-**And neither menu option is neutral for this research.** Option 2 — *edit prompt and retry* — is **the exact act that destroys the comparison**, because a prompt rewritten *because* the treatment refused it is a post-treatment variable, and no increase in sample size repairs it. Option 1 silently swaps the control model. **The product's happy path is this research's prohibited act** — which is a genuinely interesting problem in instrumenting any system whose interface is trying to help you.
+**And neither menu option is neutral for this research.** Option 2 (*edit prompt and retry*) is **the exact act that destroys the comparison**, because a prompt rewritten *because* the treatment refused it is a post-treatment variable, and no increase in sample size repairs it. Option 1 silently swaps the control model. **The product's happy path is this research's prohibited act**, which is a genuinely interesting problem in instrumenting any system whose interface is trying to help you.
 
 > **Amended 2026-10-15. Still untested on the framework corpus.** The remedy menu on all three tiers blocked on 2026-10-01 offered the same fallback tier, and it is still the one row in the internal tier table that nobody has filled. **One adjacent datum, which must not fill it:** in a separate live offensive engagement ([`01-TIMELINE.md` Phase 8](01-TIMELINE.md)), an older Opus tier **still tripped**, six times out of twelve block events. That is a different tier, a different workload and a different stimulus, and it says only that a fallback tier is a frequency, not an exemption.
 
@@ -215,20 +215,20 @@ Both affected tiers' notices offer switching to an older tier as remedy option 1
 
 **(a) Its scope is refuted. Stop artifacts do occur inside sub-contexts.** This analysis measures **7 injected-stop artifacts flagged as sub-context, across 4 distinct sub-context transcripts, plus 1 API-error artifact in a sub-context.**
 
-**(b) Its provenance is impeached.** A 42-quotation literal-match sweep over the investigation's own records returned 41 pass and 1 wrong — and the one failure is the sub-context verdict quotation itself, carried in two files **differing on the first character.** Traced to the originating primary artifact, the capital letter is original and one carrier **altered the quotation inside quotation marks.** The alteration changes no meaning — it is a lowercased initial, almost certainly made to fit a host sentence's grammar. **It is recorded anyway, because the altered copy is the one that was propagated forward as the reassurance.**
+**(b) Its provenance is impeached.** A 42-quotation literal-match sweep over the investigation's own records returned 41 pass and 1 wrong, and the one failure is the sub-context verdict quotation itself, carried in two files **differing on the first character.** Traced to the originating primary artifact, the capital letter is original and one carrier **altered the quotation inside quotation marks.** The alteration changes no meaning: it is a lowercased initial, almost certainly made to fit a host sentence's grammar. **It is recorded anyway, because the altered copy is the one that was propagated forward as the reassurance.**
 
 **Neither limb is sufficient alone and both are recorded.**
 
 **What survives, stated narrowly and with its bound:**
 
-- The **matched-control measurement stands untouched**: the identical corpus, at equal-or-greater dose on every content dimension measured, ran clean in a sub-context on the occasion it was measured — because the two surfaces **do not face the same assembly** (top level 13,138 characters in 16 blocks *with* a dual-use-security paragraph; sub-context 2,714 characters in 4 blocks *without* one).
-- **But all eight observed sub-context artifacts are in unrelated offensive-tooling work** — dispatched specialist roles doing offensive work. **None is in the framework-governance case.**
+- The **matched-control measurement stands untouched**: the identical corpus, at equal-or-greater dose on every content dimension measured, ran clean in a sub-context on the occasion it was measured, because the two surfaces **do not face the same assembly** (top level 13,138 characters in 16 blocks *with* a dual-use-security paragraph; sub-context 2,714 characters in 4 blocks *without* one).
+- **But all eight observed sub-context artifacts are in unrelated offensive-tooling work**: dispatched specialist roles doing offensive work. **None is in the framework-governance case.**
 
 ⇒ **"A sub-context is immune" is refuted. "A sub-context faces a smaller assembly and was measured clean on the framework corpus" survives.** The gap between those two sentences is the whole of this open question, and the first one is the one that was circulating.
 
-**And the counts do not agree across parties.** [`02-EVIDENCE.md § 4`](02-EVIDENCE.md) shows how they reconcile — but **one half of that reconciliation is an inference this analysis drew and the authoring party never confirmed**, and in this same investigation another party drew a structurally identical *"an epoch, not an error"* reconciliation, tested it rather than publishing it, and **found it false.** ⇒ **No total may be published. The honest form is `<count> under <predicate> over <N files> at <date>`.**
+**And the counts do not agree across parties.** [`02-EVIDENCE.md § 4`](02-EVIDENCE.md) shows how they reconcile, but **one half of that reconciliation is an inference this analysis drew and the authoring party never confirmed**, and in this same investigation another party drew a structurally identical *"an epoch, not an error"* reconciliation, tested it rather than publishing it, and **found it false.** ⇒ **No total may be published. The honest form is `<count> under <predicate> over <N files> at <date>`.**
 
-**What would settle it:** the sub-context arm has never been run on the framework corpus at an affected tier, and the sub-context assembly has never been measured at an affected tier — the 2,714-character figure is from the first episode, on a different model.
+**What would settle it:** the sub-context arm has never been run on the framework corpus at an affected tier, and the sub-context assembly has never been measured at an affected tier. The 2,714-character figure is from the first episode, on a different model.
 
 ---
 
@@ -238,13 +238,13 @@ Both affected tiers' notices offer switching to an older tier as remedy option 1
 
 | | open question | what would settle it | consequence if left open |
 |---|---|---|---|
-| **a** | **Is there a detection floor at all?** Everything that has ever *passed* scored **zero** on both harm vocabularies. | Read a file carrying a small **nonzero** dose and no offensive content. | **Until something nonzero passes, every statement about how close this corpus sits to the threshold is unbounded below.** Nothing licenses saying it is *near* anything. A two-sided bracket whose passing side scores zero is not a floor — it is a potency-free control. |
-| **b** | **Which of three readings of the clean tier holds** — it has no such safeguard; it has it at a higher threshold; it has it and this assembly passes. | Watch whether a clean-tier session ever surfaces a notice of any kind. | Decides whether the working configuration is **robust** or merely **sub-threshold**. |
+| **a** | **Is there a detection floor at all?** Everything that has ever *passed* scored **zero** on both harm vocabularies. | Read a file carrying a small **nonzero** dose and no offensive content. | **Until something nonzero passes, every statement about how close this corpus sits to the threshold is unbounded below.** Nothing licenses saying it is *near* anything. A two-sided bracket whose passing side scores zero is not a floor. It is a potency-free control. |
+| **b** | **Which of three readings of the clean tier holds**: it has no such safeguard; it has it at a higher threshold; it has it and this assembly passes. | Watch whether a clean-tier session ever surfaces a notice of any kind. | Decides whether the working configuration is **robust** or merely **sub-threshold**. |
 | **c** | **Is the observed onset date real?** Zero artifacts exist in the local store before one date. | A longer store, or vendor confirmation. | **A 34-day store cannot establish an onset**, and *persisting these notices to disk* may itself be new harness behaviour. **A trajectory claim would love this datum and must not be handed it.** |
-| **d** | **Is the retrospective detector sound?** | — | **No. Measured.** The zero-assistant-record signature has a mundane false-positive class (a session in which nothing was asked) and, worse, **a structural false-negative class that cost five days.** Token accounting restores specificity for one artifact class and **is entirely absent from the other.** |
-| **e** | **The vendor's stated intent to improve.** | Nothing in evidence. | The single most favourable datum for the *"will this be relaxed"* question — **and it is a statement of intent, not a forecast and not a mechanism. It must not be cited as a prediction, and it does not license waiting instead of reporting.** |
-| **f** | **One stop notice sits in the transcript of the very session that performed this analysis**, at `2026-10-01T00:56:45Z`, flagged as top-level, naming the newest tier. Nobody has explained it. | — | Recorded as observed and unresolved. **No reading is offered.** |
-| **g** | **What about other vendors?** | Never tested. | Explicitly named as the measurement that would *confirm* a trajectory claim — and it has not been made. Note also that on a different-premise engine these layers and this programme do not merely drift, **they do not exist**, so the comparison is not a simple one. |
+| **d** | **Is the retrospective detector sound?** | n/a | **No. Measured.** The zero-assistant-record signature has a mundane false-positive class (a session in which nothing was asked) and, worse, **a structural false-negative class that cost five days.** Token accounting restores specificity for one artifact class and **is entirely absent from the other.** |
+| **e** | **The vendor's stated intent to improve.** | Nothing in evidence. | The single most favourable datum for the *"will this be relaxed"* question, **and it is a statement of intent, not a forecast and not a mechanism. It must not be cited as a prediction, and it does not license waiting instead of reporting.** |
+| **f** | **One stop notice sits in the transcript of the very session that performed this analysis**, at `2026-10-01T00:56:45Z`, flagged as top-level, naming the newest tier. Nobody has explained it. | nothing named | Recorded as observed and unresolved. **No reading is offered.** |
+| **g** | **What about other vendors?** | Never tested. | Explicitly named as the measurement that would *confirm* a trajectory claim, and it has not been made. Note also that on a different-premise engine these layers and this programme do not merely drift, **they do not exist**, so the comparison is not a simple one. |
 
 ---
 
@@ -252,7 +252,7 @@ Both affected tiers' notices offer switching to an older tier as remedy option 1
 
 The only instrument that could detect a *trajectory* is a dated table of model tier against observed outcome. **No such table exists.**
 
-That is worth its own heading because of how it stayed missing. A review round recommended **`KEEP`**-ing such a table — when none had ever been built. **A maintenance verb applied to a nonexistent object is unfalsifiable by construction**, which is why nine days passed with nothing ever reading as wrong. Nobody can fail to maintain a thing that is not there.
+That is worth its own heading because of how it stayed missing. A review round recommended **`KEEP`**-ing such a table when none had ever been built. **A maintenance verb applied to a nonexistent object is unfalsifiable by construction**, which is why nine days passed with nothing ever reading as wrong. Nobody can fail to maintain a thing that is not there.
 
 **If anything ever claims that this condition is being tracked over time, the table has to exist first.**
 

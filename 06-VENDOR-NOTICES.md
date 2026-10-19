@@ -4,15 +4,15 @@
 
 Everything else in this corpus is **inferential.** The framework's safety model was reverse-engineered from refusal behaviour; the harm vocabularies were built by the investigating parties themselves; the mechanism diagnosis is derived from billing fields. **These notices are the only place in the entire corpus where the vendor describes its own safeguard in its own words.** A write-up that paraphrased them would be strictly less honest and strictly less useful.
 
-**They are product copy rendered on screen to any user who hits the condition** — not internal, not confidential, not obtained by any privileged means.
+**They are product copy rendered on screen to any user who hits the condition.** They are not internal, not confidential, and not obtained by any privileged means.
 
 **Two redactions apply throughout and are marked inline:** per-event request and message identifiers are stripped, and one absolute path is reduced to its relative form. See [`REDACTIONS.md`](REDACTIONS.md) for why.
 
-**One citation trap inside a publishable quote.** The first notice below says it *"flagged **this message**."* On the occasion it was captured, **the message was four neutral words containing zero domain content** — so *"this message"* cannot literally denote them. **Quote it; do not lean on it.** Citing it as evidence that the typed message was the trigger would be quoting interface copy as an architectural claim: the quote is verbatim, is correct, and supports none of what it appears to support.
+**One citation trap inside a publishable quote.** The first notice below says it *"flagged **this message**."* On the occasion it was captured, **the message was four neutral words containing zero domain content**, so *"this message"* cannot literally denote them. **Quote it; do not lean on it.** Citing it as evidence that the typed message was the trigger would be quoting interface copy as an architectural claim: the quote is verbatim, is correct, and supports none of what it appears to support.
 
 ---
 
-## Variant 1 — first affected tier, 2026-09-21
+## Variant 1 · first affected tier, 2026-09-21
 
 Read from the local transcript store. Two occurrences, identical.
 
@@ -28,7 +28,7 @@ Read from the local transcript store. Two occurrences, identical.
 
 ---
 
-## Variant 2 — an older tier, 2026-09-26 — **the primary-source evidence for the verification programme**
+## Variant 2 · an older tier, 2026-09-26 · **the primary-source evidence for the verification programme**
 
 Read from four separate transcripts, one of which is a sub-context. Identical in all four.
 
@@ -44,18 +44,18 @@ Read from four separate transcripts, one of which is a sub-context. Identical in
 
 > **This is the single most consequential fact in this file for understanding the account holder's own actions: the vendor's own notice instructed the reader, in terms, to apply to the Cyber Verification Program.** ⇒ **Enrolling was following a printed vendor instruction, not guessing.**
 >
-> **And the vendor-recommended remedy then did not prevent a block on the next tier tested.** Stated flatly, without heat — and **with [`03-OPEN-QUESTIONS.md § OPEN-2`](03-OPEN-QUESTIONS.md#open-2) attached, because that framing does not establish that the remedy failed.**
+> **And the vendor-recommended remedy then did not prevent a block on the next tier tested.** Stated flatly, without heat, and **with [`03-OPEN-QUESTIONS.md § OPEN-2`](03-OPEN-QUESTIONS.md#open-2) attached, because that framing does not establish that the remedy failed.**
 
 ---
 
-## Variant 3 — newest tier, 2026-10-01 — the rendered surface
+## Variant 3 · newest tier, 2026-10-01 · the rendered surface
 
 This class of notice is **never written to disk.** It exists on screen and nowhere else; the copy below is the account holder's own capture at the moment it appeared, and is the authoritative record of it. One path redacted.
 
 > **Amended 2026-10-15. "Never written to disk" is refuted in part** ([`CORRECTIONS.md § W-15`](CORRECTIONS.md#w-15--refuted-in-part-this-class-of-notice-is-never-written-to-disk)). This same event also has an on-disk notice record, and the two differ in four fields. Whether the on-disk record appears depends on whether the session produced anything after the stop. **The capture below is still the only copy of the remedy menu, which the disk does not carry.** The sentence is left as written.
 
 
-**This block is the rendered screen, including client chrome, and not only the vendor's notice text** — which is what the rest of this file is scoped to. The client build number is kept deliberately: it **dates the capture**, and on a subject whose specifics are estimated to drift on a two-to-eight-week half-life, a dated capture is the whole of what makes it citable later. **The subscription tier has been removed** — it is an account attribute and carries nothing the finding needs.
+**This block is the rendered screen, including client chrome, and not only the vendor's notice text** (which is what the rest of this file is scoped to). The client build number is kept deliberately: it **dates the capture**, and on a subject whose specifics are estimated to drift on a two-to-eight-week half-life, a dated capture is the whole of what makes it citable later. **The subscription tier has been removed**: it is an account attribute and carries nothing the finding needs.
 
 > ```
 >   Claude Code v2.1.286
@@ -87,7 +87,7 @@ This class of notice is **never written to disk.** It exists on screen and nowhe
 
 ---
 
-## Variant 4 — Fable 5.1 and Fable 5, rendered 2026-10-01 and on disk 2026-10-09 (added 2026-10-15)
+## Variant 4 · Fable 5.1 and Fable 5, rendered 2026-10-01 and on disk 2026-10-09 (added 2026-10-15)
 
 **Rendered, 2026-10-01T03:51Z, after a reported re-login.** This is the account holder's capture. Fable 5 rendered the same text with its own tier name. Reproduced with the same two reductions as Variant 3: the path, and the subscription tier.
 
@@ -150,7 +150,7 @@ These are emitted by the client, not the service, and they are included because 
 
 > `Your response above was stopped by a safety classifier — this is not a tool or API error. The rest of it was withheld, and tool calls in it that had not finished did not run. Do not produce that content again, even reworded.`
 
-> **The second string is not a measurement of any particular request.** It is **byte-invariant across all 19 of its occurrences in the local store**, and it carries no model name, no category token and no request identifier. Its wording reads as mid-stream truncation — *"the rest of it was withheld"* — and **that reading cannot be checked, because the artifact carries no token accounting at all.** This is the whole of why the input-side-versus-output-side question is open on the newest tier.
+> **The second string is not a measurement of any particular request.** It is **byte-invariant across all 19 of its occurrences in the local store**, and it carries no model name, no category token and no request identifier. Its wording reads as mid-stream truncation (*"the rest of it was withheld"*), and **that reading cannot be checked, because the artifact carries no token accounting at all.** This is the whole of why the input-side-versus-output-side question is open on the newest tier.
 
 ---
 
@@ -158,15 +158,15 @@ These are emitted by the client, not the service, and they are included because 
 
 | | first affected tier (09-21) | an older tier (09-26) | newest tier (10-01) |
 |---|---|---|---|
-| **framing of breadth** | *"**intentionally broad**… deliver more capabilities faster"* — **a declared trade** | same declared trade | *"We're **improving** these safeguards to reduce the amount of **incorrectly flagged** messages"* — **an error being worked on** |
+| **framing of breadth** | *"**intentionally broad**… deliver more capabilities faster"*: **a declared trade** | same declared trade | *"We're **improving** these safeguards to reduce the amount of **incorrectly flagged** messages"*: **an error being worked on** |
 | **false-positive domains named** | coding, cybersecurity, and **biology** | cybersecurity only | *non-cybersecurity work* |
 | **verification programme named as remedy** | no | **yes, in terms** | no |
 | **category token** | `[cyber]` | `[cyber]` | `[cyber]` |
-| **per-event identifiers persisted** | no | **yes** | not applicable — this class is not written to disk |
+| **per-event identifiers persisted** | no | **yes** | not applicable: this class is not written to disk |
 
 **Quote all three variants or none.** The variation across them is itself a finding: the false-positive domains named differ, the framing shifts from *"intentionally broad"* to *"we're improving these,"* and **the verification-programme pointer appears on exactly one tier.** Quoting one variant and generalising from it is the single easiest factual error available in this material.
 
-**And on that last point, a self-correction worth carrying.** The absence of the programme pointer from the newest tier's notice was briefly read as the notice being *verification-status-aware*. **It is not.** The pointer **varies by model variant** — present in all four occurrences on one tier, absent in both occurrences on another — which fully explains the pattern. **A status-awareness reading is unsupported.**
+**And on that last point, a self-correction worth carrying.** The absence of the programme pointer from the newest tier's notice was briefly read as the notice being *verification-status-aware*. **It is not.** The pointer **varies by model variant** (present in all four occurrences on one tier, absent in both occurrences on another), which fully explains the pattern. **A status-awareness reading is unsupported.**
 
 > **Amended 2026-10-15.** There are now four variants, and the rule above applies to all four. **The table above compares an on-disk notice (the first two columns) with a rendered one (the third)**, so any row that differs only between those instruments is not evidence of a difference between tiers ([`CORRECTIONS.md § W-15`](CORRECTIONS.md#w-15--refuted-in-part-this-class-of-notice-is-never-written-to-disk)). The rows that do survive on same-instrument evidence are **the false-positive domains and the programme pointer**. Both vary by tier. **The pointer is still absent from every Fable and Opus 5.5 notice observed, before enrolment and after it, including under the tier-1 grant on 2026-10-09.**
 
@@ -180,7 +180,7 @@ These are emitted by the client, not the service, and they are included because 
 
 **It is short, factual, non-creative product copy, quoted for the purpose of analysing the system it describes.**
 
-**And the vendor's own words are an asset here rather than a target.** The notices themselves state that the safeguards are *intentionally broad*, that they *can sometimes flag legitimate* work in named domains, and — on the newest tier — that the vendor is *improving these safeguards to reduce the amount of incorrectly flagged messages.*
+**And the vendor's own words are an asset here rather than a target.** The notices themselves state that the safeguards are *intentionally broad*, that they *can sometimes flag legitimate* work in named domains, and (on the newest tier) that the vendor is *improving these safeguards to reduce the amount of incorrectly flagged messages.*
 
 ⇒ **Nothing in this repository is a disclosure of something the vendor denies.** It is a precise, dated, reproducible instance of a false-positive class **the vendor has named in its own product copy and says it is working on**, with a public support article attached. That is exactly what an over-broad-safeguard programme exists to receive.
 

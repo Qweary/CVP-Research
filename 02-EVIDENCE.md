@@ -4,20 +4,20 @@
 
 **The rule this file is built on.** Every figure below is marked either:
 
-- **`RE-MEASURED`** — executed against the primary artifact, with the predicate stated; or
-- **`SINGLE-SOURCE`** — read in one party's report and **not** re-run, carried with that party's own confidence marker attached.
+- **`RE-MEASURED`**: executed against the primary artifact, with the predicate stated; or
+- **`SINGLE-SOURCE`**: read in one party's report and **not** re-run, carried with that party's own confidence marker attached.
 
-**No figure here is inherited from a relay or a summary.** That distinction exists because this investigation convicted relayed figures repeatedly, and because **nothing re-runs a number once it is written into prose** — one figure defect here had already been corrected in an earlier round and then drifted *back* into the records. See [`CORRECTIONS.md § W-8`](CORRECTIONS.md#w-8--three-figure-defects-found-by-re-measurement).
+**No figure here is inherited from a relay or a summary.** That distinction exists because this investigation convicted relayed figures repeatedly, and because **nothing re-runs a number once it is written into prose**. One figure defect here had already been corrected in an earlier round and then drifted *back* into the records. See [`CORRECTIONS.md § W-8`](CORRECTIONS.md#w-8--three-figure-defects-found-by-re-measurement).
 
-**Measurement precaution.** Every sweep below was driven from a script that parses JSON lines, **not** from a shell pipeline with an unquoted expansion. On the shell used here, an unquoted expansion used as a file list **silently collapses to one argument and returns a well-formed integer that is wrong.** Where a count is `0`, a **positive control on the same command shape** is reported beside it — because a positive control fires on the failing idiom too, where a null control cannot.
+**Measurement precaution.** Every sweep below was driven from a script that parses JSON lines, **not** from a shell pipeline with an unquoted expansion. On the shell used here, an unquoted expansion used as a file list **silently collapses to one argument and returns a well-formed integer that is wrong.** Where a count is `0`, a **positive control on the same command shape** is reported beside it, because a positive control fires on the failing idiom too, where a null control cannot.
 
 **Dollar figures (added 2026-10-18).** Every `cost` and `$` figure in this file is the client's own per-turn cost field, which prices usage at API rates. **The account is on a subscription plan, so these are API-rate equivalents, not charges.** *Billed* and *billing record* name the client's usage accounting. See [`CORRECTIONS.md § W-23`](CORRECTIONS.md#w-23--reframed-dollar-figures-are-api-rate-equivalents-not-spend).
 
-**Artifacts are cited by 8-character transcript-filename prefix.** These are local filename fragments; they address nothing remotely. Full paths are deliberately not published — see [`REDACTIONS.md`](REDACTIONS.md).
+**Artifacts are cited by 8-character transcript-filename prefix.** These are local filename fragments; they address nothing remotely. Full paths are deliberately not published; see [`REDACTIONS.md`](REDACTIONS.md).
 
 ---
 
-## 1 · The first episode — six blocked attempts, one model tier (`b58a80db`)
+## 1 · The first episode · six blocked attempts, one model tier (`b58a80db`)
 
 **Predicate:** file parsed line-by-line as JSON; 127 records, 0 unparseable; token figures read from the billing records' per-model usage map.
 
@@ -27,14 +27,14 @@
 | `inputTokens` | 49 | `RE-MEASURED` |
 | `cacheCreationInputTokens` | **246,333** | `RE-MEASURED` |
 | `cacheReadInputTokens` | **147,846** | `RE-MEASURED` |
-| cost | **$4.9641115** | `RE-MEASURED` — the raw JSON parses to `4.9641115000000005`; the shorter form is a faithful rendering of that float and is what the records publish. Stated so nobody "corrects" it later. |
+| cost | **$4.9641115** | `RE-MEASURED`. The raw JSON parses to `4.9641115000000005`; the shorter form is a faithful rendering of that float and is what the records publish. Stated so nobody "corrects" it later. |
 | a smaller model in the same session, same moment | `inputTokens 2,680` · **`outputTokens 15`** · cost `$0.002755` | `RE-MEASURED` |
 | `assistant` records in the whole file | **0** | `RE-MEASURED` |
 | `system` records in the whole file | **0** | `RE-MEASURED` |
 
-> **This is the decisive instrument in the entire corpus.** Six full ingestions were billed — a quarter of a million cache-creation tokens — and **not one output token was produced**, while a different model generated normally in the same session at the same moment. A disposition refusal is prose; prose is output tokens. **The model never spoke.**
+> **This is the decisive instrument in the entire corpus.** Six full ingestions were billed (a quarter of a million cache-creation tokens) and **not one output token was produced**, while a different model generated normally in the same session at the same moment. A disposition refusal is prose; prose is output tokens. **The model never spoke.**
 
-### The six stimuli — and a unit-label defect found by re-measurement
+### The six stimuli · and a unit-label defect found by re-measurement
 
 The records and every summary derived from them state the six stimuli as *"three of 4741 B and three of 233/151/153 B."* **Measured: those are character counts, not bytes.**
 
@@ -53,7 +53,7 @@ The records and every summary derived from them state the six stimuli as *"three
 
 ---
 
-## 2 · The newest-tier episode — three blocked attempts, post-verification (`b16031d2`)
+## 2 · The newest-tier episode · three blocked attempts, post-verification (`b16031d2`)
 
 **Predicate:** parsed line-by-line as JSON; 94 records.
 
@@ -65,12 +65,12 @@ The records and every summary derived from them state the six stimuli as *"three
 
 **The one instrument that settled § 1 is simply not present in this artifact.** That is the whole of why [`OPEN-1`](03-OPEN-QUESTIONS.md#open-1) is open.
 
-### The four `what is 2 + 2?` turns — three on the newest tier, one before the switch
+### The four `what is 2 + 2?` turns · three on the newest tier, one before the switch
 
 | # | timestamp (UTC) | chars / bytes | parent | model attached | stop notice |
 |---|---|---|---|---|---|
 | 0 | `01:52:35.885Z` | 14 / 14 | **none (session root)** | previous tier, May-2026 cutoff | **none** |
-| — | `01:52:47.771Z` | — | — | model switched to the newest tier | — |
+| n/a | `01:52:47.771Z` | n/a | n/a | model switched to the newest tier | none |
 | 1 | `01:52:52.073Z` | 14 / 14 | shared | newest tier, June-2026 cutoff | yes, `01:52:53.321Z` |
 | 2 | `01:53:11.450Z` | 14 / 14 | shared | newest tier | yes, `01:53:12.643Z` |
 | 3 | `01:54:21.796Z` | 14 / 14 | shared | newest tier | yes, `01:54:23.100Z` |
@@ -83,11 +83,11 @@ The records and every summary derived from them state the six stimuli as *"three
 
 ### The two harness strings, verbatim from disk
 
-**The system notice, ×3** — type `system`, subtype `informational`, level `notice`:
+**The system notice, ×3**: type `system`, subtype `informational`, level `notice`:
 
 > `Opus 5.5's safeguards stopped the response above · continuing once with that noted`
 
-**The harness-injected user-role turn, ×3** — flagged as meta, 224 characters / 226 bytes:
+**The harness-injected user-role turn, ×3**: flagged as meta, 224 characters / 226 bytes:
 
 > `Your response above was stopped by a safety classifier — this is not a tool or API error. The rest of it was withheld, and tool calls in it that had not finished did not run. Do not produce that content again, even reworded.`
 
@@ -97,15 +97,15 @@ Both `RE-MEASURED` from disk.
 
 ### One structural measurement that cuts against the seductive reading
 
-This analysis hypothesised that each injected stop turn's parent pointer might resolve to a **withheld** assistant object — which would have *proved* that generation began.
+This analysis hypothesised that each injected stop turn's parent pointer might resolve to a **withheld** assistant object, which would have *proved* that generation began.
 
 **Measured: all three parents resolve to records that exist inside the file. No record anywhere in the chain references an assistant message object at all.** The chain is `user prompt → attachments → system notice → injected user turn`. `RE-MEASURED`.
 
-⇒ **A structural witness for the output-side reading was formed and killed by execution before being written down.** It does not settle the question — it removes one argument for one side.
+⇒ **A structural witness for the output-side reading was formed and killed by execution before being written down.** It does not settle the question. It removes one argument for one side.
 
 ### The account was not blocked
 
-A session-titling model fired **four times** in this session. **Bound stated:** the title *text* is not retrievable from the field parsed here — four parses returned null. The records state the titles read *"Basic arithmetic question"*; **that string could not be confirmed at this hand and is marked `UNVERIFIED`.** What *is* confirmed is that four titling records exist, **which is congruent with a titling model having run. Congruent, not confirming.**
+A session-titling model fired **four times** in this session. **Bound stated:** the title *text* is not retrievable from the field parsed here: four parses returned null. The records state the titles read *"Basic arithmetic question"*; **that string could not be confirmed at this hand and is marked `UNVERIFIED`.** What *is* confirmed is that four titling records exist, **which is congruent with a titling model having run. Congruent, not confirming.**
 
 ---
 
@@ -129,31 +129,31 @@ A session-titling model fired **four times** in this session. **Bound stated:** 
 | time (UTC) | event |
 |---|---|
 | `03:18:02.005Z` | model set to the newest tier |
-| `03:18:05.239Z` | kickoff pasted — **5,547 characters / 5,677 bytes** |
-| `03:18:06.733Z` | **stop notice, naming the newest tier — 1.49 s after the paste** |
+| `03:18:05.239Z` | kickoff pasted: **5,547 characters / 5,677 bytes** |
+| `03:18:06.733Z` | **stop notice, naming the newest tier, 1.49 s after the paste** |
 | `03:21:15.332Z` | model set back to the older tier |
-| `03:22:21.296Z` | the kickoff re-pasted — **5,676 characters / 5,806 bytes** |
+| `03:22:21.296Z` | the kickoff re-pasted: **5,676 characters / 5,806 bytes** |
 | → 2 h 21 m | **the older tier ran the session to completion** |
 
-> **A figure checked and found differing from the record.** The record describes the second paste as *"the identical kickoff re-pasted."* **Measured: 5,547 versus 5,676 characters — a 129-character difference.** Both carry the same paste identifier, so it is **the same source document, not a byte-identical paste.** The 129 characters are uninvestigated, and no claim is made that the difference matters — but it **weakens the one-factor framing**, because the run that *succeeded* did not face byte-identical input. A one-factor claim is only as good as its held-constant side, and nothing else in the record checked this one.
+> **A figure checked and found differing from the record.** The record describes the second paste as *"the identical kickoff re-pasted."* **Measured: 5,547 versus 5,676 characters, a 129-character difference.** Both carry the same paste identifier, so it is **the same source document, not a byte-identical paste.** The 129 characters are uninvestigated, and no claim is made that the difference matters, but it **weakens the one-factor framing**, because the run that *succeeded* did not face byte-identical input. A one-factor claim is only as good as its held-constant side, and nothing else in the record checked this one.
 
 ---
 
-## 4 · The store-wide sweep — stated predicates, stated counts
+## 4 · The store-wide sweep · stated predicates, stated counts
 
 **Span, stated before the result:** every transcript file under the local session store, recursive, **721 files**, parsed line-by-line as JSON (not grepped). Run 2026-09-30 local / 2026-10-01 UTC.
 
-> **The file count drifts between sweeps and the drift is real, not error.** Three parties measured 712, 718 and **721** on the same day. **The store is growing while being measured** — the analysing session's own sub-contexts were writing into it. ⇒ **Any count over this store is epoch-bearing and must carry its own file count.**
+> **The file count drifts between sweeps and the drift is real, not error.** Three parties measured 712, 718 and **721** on the same day. **The store is growing while being measured**: the analysing session's own sub-contexts were writing into it. ⇒ **Any count over this store is epoch-bearing and must carry its own file count.**
 
 ### The first predicate was contaminated, and it is reported rather than only its replacement
 
-A naive predicate — *the notice literal appears anywhere in a record* — returned a badly inflated count, because **it matched records that merely *discussed* the notice**, including the analysing session's own transcript and **concurrently-running sibling sub-contexts that were analysing those exact literals at that moment.**
+A naive predicate (*the notice literal appears anywhere in a record*) returned a badly inflated count, because **it matched records that merely *discussed* the notice**, including the analysing session's own transcript and **concurrently-running sibling sub-contexts that were analysing those exact literals at that moment.**
 
 > **A party sweeping for a string it is simultaneously writing is measuring itself.**
 
 The strict predicates below require the record's **own message text to *begin* the notice.**
 
-### Result A — the system stop-notice record
+### Result A · the system stop-notice record
 
 **Predicate:** record type `system` **and** its own content contains `'s safeguards stopped the response above` **and** ends `with that noted`.
 
@@ -165,15 +165,15 @@ The strict predicates below require the record's **own message text to *begin* t
 | the **newest** tier | 5 | 2026-09-25 (×1), 2026-10-01 (×4) |
 | one **older** tier | 1 | 2026-09-26 |
 
-**Sub-context flag on all 12: false. Transcript filenames in the sub-context naming convention: zero.** ⇒ **This notice class is a top-level artifact. It does not appear in sub-context transcripts at all** — so it detects *and attributes*, but only at top level.
+**Sub-context flag on all 12: false. Transcript filenames in the sub-context naming convention: zero.** ⇒ **This notice class is a top-level artifact. It does not appear in sub-context transcripts at all**, so it detects *and attributes*, but only at top level.
 
-### Result B — the harness-injected stop turn
+### Result B · the harness-injected stop turn
 
 **Predicate:** a record whose **own message text begins** `Your response above was stopped by a safety classifier`.
 
 > **19 artifacts across 11 sessions. Sub-context flag false on 12; true on 7**, spread across **4 distinct sub-context transcripts**, all dated 2026-09-26.
 
-### Result C — the API-error notice
+### Result C · the API-error notice
 
 **Predicate:** a record whose own text **begins** `API Error:` **and** contains `safeguards flagged this message`.
 
@@ -183,16 +183,16 @@ The strict predicates below require the record's **own message text to *begin* t
 |---|---|---|---|
 | `2026-09-21T17:34:49Z` | first affected tier | **no** | article A |
 | `2026-09-21T19:40:08Z` | first affected tier | **no** | article A |
-| `2026-09-26` *(sub-context)* | an older tier | **YES** | article B — *real-time cyber safeguards on Claude* |
+| `2026-09-26` *(sub-context)* | an older tier | **YES** | article B, *real-time cyber safeguards on Claude* |
 | `2026-09-26` | an older tier | **YES** | same |
 | `2026-09-26` | an older tier | **YES** | same |
 | `2026-09-26` | an older tier | **YES** | same |
 
-**Two notes on the form of that table.** The four `2026-09-26` rows are four distinct events on one date; **their times of day are deliberately reduced to the date**, because the finding is that the verification-programme pointer varies by model variant and **the date carries that while the time of day carries nothing** — see [`REDACTIONS.md § 5`](REDACTIONS.md). The two 2026-09-21 rows keep their times because those events are the framework-governance case, which is this repository's own subject.
+**Two notes on the form of that table.** The four `2026-09-26` rows are four distinct events on one date; **their times of day are deliberately reduced to the date**, because the finding is that the verification-programme pointer varies by model variant and **the date carries that while the time of day carries nothing** (see [`REDACTIONS.md § 5`](REDACTIONS.md)). The two 2026-09-21 rows keep their times because those events are the framework-governance case, which is this repository's own subject.
 
 `RE-MEASURED`. ⇒ **The verification-programme pointer appears in all four notices on one tier and in neither notice on the other.** This confirms a self-correction the diagnosing party made: **the pointer varies by model variant, which fully explains the pattern, so its absence is *not* evidence that the notice is verification-status-aware.** A status-awareness reading is unsupported.
 
-### The reconciliation — three parties, one subject, different totals
+### The reconciliation · three parties, one subject, different totals
 
 | reported | by | predicate |
 |---|---|---|
@@ -207,7 +207,7 @@ The strict predicates below require the record's **own message text to *begin* t
 - **The coordinator's 12 versus the others** is a **different object**: that notice class is top-level-only, so it can never see the 7 sub-context events. **Settled structurally.**
 - **Class B: the specialist's 16 versus this analysis's 19.** The 2026-09-26 class-B count is **exactly 14**, matching its table row; plus the 2026-09-25 artifact (1) and the analysing session's (1) = **exactly its 16**, with the remaining 3 being the newest-tier artifacts that arrived while that document was being written. ⚠ **This limb invokes an *epoch* explanation, and it is marked PLAUSIBLE, NOT SETTLED.**
 
-> **Why that last limb is downgraded, and it is not a formality.** It is an inference this analysis drew; **the authoring party never stated its decomposition that way and has not confirmed it.** And in this same investigation another party drew a structurally identical *"an epoch, not an error"* reconciliation, **tested it instead of publishing it, and found it false** — one occurrence was attributable where five had been claimed. The durable from that episode is exact: ***a reconciliation that fits is not a reconciliation that holds, and "an epoch, not an error" is a template so available that it will be reached for whether or not it is true.*** See [`CORRECTIONS.md § W-9`](CORRECTIONS.md#w-9--a-false-reconciliation-drawn-and-then-withdrawn-by-its-own-author).
+> **Why that last limb is downgraded, and it is not a formality.** It is an inference this analysis drew; **the authoring party never stated its decomposition that way and has not confirmed it.** And in this same investigation another party drew a structurally identical *"an epoch, not an error"* reconciliation, **tested it instead of publishing it, and found it false**: one occurrence was attributable where five had been claimed. The durable from that episode is exact: ***a reconciliation that fits is not a reconciliation that holds, and "an epoch, not an error" is a template so available that it will be reached for whether or not it is true.*** See [`CORRECTIONS.md § W-9`](CORRECTIONS.md#w-9--a-false-reconciliation-drawn-and-then-withdrawn-by-its-own-author).
 
 ⇒ **No single total is published here, and none should be published anywhere.** The honest form is always **`<count> under <predicate> over <N files> at <date>`.**
 
@@ -217,7 +217,7 @@ A system stop notice naming the **newest tier** sits in the transcript of **the 
 
 ---
 
-## 5 · Attribution by workload — the bound that keeps the counts from being pooled
+## 5 · Attribution by workload · the bound that keeps the counts from being pooled
 
 **Predicate:** for each artifact-bearing session, its working directory and its first non-meta user turn, read from the transcript.
 
@@ -236,11 +236,11 @@ A system stop notice naming the **newest tier** sits in the transcript of **the 
 
 - **The offensive-tooling events are plausibly TRUE POSITIVES on consequence.** A session that opens with an explicit request to build offensive capability being stopped is **not** evidence of a false-positive problem. **Nothing here assesses whether those stops were correct**; the point is only that they are a different class and cannot be counted toward a false-positive claim.
 - **Only a small number of events are in the pure framework-governance case, and those are the whole of what this evidence says about the framework itself:** the first tier's four-word block, the first tier's empty-directory third turn, the 2026-09-25 newest-tier kickoff block, the three 2026-10-01 newest-tier four-word blocks, and the one unresolved notice.
-- **All six control-tier stops are in the offensive-tooling workload.** ⇒ **The framework corpus has *not* been shown to stop that tier.** The honest row is *clean on the framework corpus; stopped six times on offensive-tooling content* — never a bare *clean* and never a bare *blocked*.
+- **All six control-tier stops are in the offensive-tooling workload.** ⇒ **The framework corpus has *not* been shown to stop that tier.** The honest row is *clean on the framework corpus; stopped six times on offensive-tooling content*, never a bare *clean* and never a bare *blocked*.
 
 **This repository names those workloads only to the minimum needed to state this bound, and several of those engagements involve third parties.** What it states about them is the count, the working directory, the first-turn description and the workload class in the table above; the date, in § 4 of this file and in [`SOURCES.md`](SOURCES.md); and the bound, in [`REDACTIONS.md § 5`](REDACTIONS.md).
 
-> **Why four rows carry a neutral label where the others carry a prefix, stated rather than left as an inconsistency.** The framework-governance sessions are this repository's own subject and are cited by prefix because the method depends on a reader being able to tell two artifacts apart. **The unrelated-workload sessions are not this repository's subject**, their prefixes buy a reader nothing the labels do not, and a prefix paired with a workload class and a date is a locator for work belonging to other parties. ⇒ **The labels `session A`–`session D` are this repository's own, assigned here and meaningful nowhere else.** The **counts** are untouched — four top-level and four sub-context transcripts — and the counts are what the reconciliation in § 4 turns on.
+> **Why four rows carry a neutral label where the others carry a prefix, stated rather than left as an inconsistency.** The framework-governance sessions are this repository's own subject and are cited by prefix because the method depends on a reader being able to tell two artifacts apart. **The unrelated-workload sessions are not this repository's subject**, their prefixes buy a reader nothing the labels do not, and a prefix paired with a workload class and a date is a locator for work belonging to other parties. ⇒ **The labels `session A`–`session D` are this repository's own, assigned here and meaningful nowhere else.** The **counts** are untouched (four top-level and four sub-context transcripts), and the counts are what the reconciliation in § 4 turns on.
 
 ---
 
@@ -254,11 +254,11 @@ A system stop notice naming the **newest tier** sits in the transcript of **the 
 | organisation- and account-linked identifier fields | **0** | same control |
 | vendor per-event request and message identifiers | **0** | same control |
 
-`RE-MEASURED`. ⇒ **The framework repository's own hygiene is correct on these points today.** Those values live only in the untracked local session store — exactly where they belong. **That property is load-bearing for [`REDACTIONS.md`](REDACTIONS.md): the most likely single route by which any of it would escape is a raw transcript excerpt pasted into a draft to illustrate a structure.**
+`RE-MEASURED`. ⇒ **The framework repository's own hygiene is correct on these points today.** Those values live only in the untracked local session store, exactly where they belong. **That property is load-bearing for [`REDACTIONS.md`](REDACTIONS.md): the most likely single route by which any of it would escape is a raw transcript excerpt pasted into a draft to illustrate a structure.**
 
 ---
 
-## 7 · Figures carried as `SINGLE-SOURCE` — read in one report, **not** re-run
+## 7 · Figures carried as `SINGLE-SOURCE` · read in one report, **not** re-run
 
 **These were not re-executed, and the reason is stated rather than implied.** Each rests on one or both of **two custom harm vocabularies that one party built**, whose own soundness that party flags as an open question:
 
@@ -268,16 +268,16 @@ A system stop notice naming the **newest tier** sits in the transcript of **the 
 
 | figure | that party's own confidence marker |
 |---|---|
-| The auto-loaded carrier's densest 686-character window scores **7.29 evasion hits per thousand characters**, **exactly tying** the highest-scoring window of the payload that actually blocked. | Published as a measurement — **and in the same breath the party states that *"for this candidate the score is not the finding"* and that **the score is the weakest part of its own case**, because *"no vocabulary scores semantics."*** |
-| That window is the carrier's **own safety-governance prose.** | **The quoted passage itself is `RE-MEASURED`** — both fragments confirmed present verbatim in the carrier. |
-| The carrier matches the blocked payload on absolute mass — **14 / 12 / 84 versus 18 / 13 / 80** across offensive hits, evasion hits and control nouns. | Measurement; **three scoring models disagree and two say block.** |
+| The auto-loaded carrier's densest 686-character window scores **7.29 evasion hits per thousand characters**, **exactly tying** the highest-scoring window of the payload that actually blocked. | Published as a measurement, **and in the same breath the party states that *"for this candidate the score is not the finding"* and that **the score is the weakest part of its own case**, because *"no vocabulary scores semantics."*** |
+| That window is the carrier's **own safety-governance prose.** | **The quoted passage itself is `RE-MEASURED`**: both fragments confirmed present verbatim in the carrier. |
+| The carrier matches the blocked payload on absolute mass: **14 / 12 / 84 versus 18 / 13 / 80** across offensive hits, evasion hits and control nouns. | Measurement; **three scoring models disagree and two say block.** |
 | A stale untracked file scored **5.23 offensive hits per thousand characters**, and **94 tracked files sit at or above it**, maximum **15.99**; one security specialist template reads 146 hits at 6.80, over a corpus of 2,476 tracked files. | That party's own bound: ***"a density proxy, not a measured refusal rate — not one of those 94 files has ever been put in front of an affected tier at top level."*** |
 | The two vocabularies **score each other's top candidate at exactly zero.** | Structural, and that party calls it *"the strongest possible confirmation"* of its own method finding. |
-| A fresh clone auto-loads **the one carrier and nothing else**; the user memory index and all twelve bound tool names **do not ship.** | Grounded on the repository's own tracked-file list and ignore rules. **The repository-side half was independently re-confirmed — see § 6.** |
+| A fresh clone auto-loads **the one carrier and nothing else**; the user memory index and all twelve bound tool names **do not ship.** | Grounded on the repository's own tracked-file list and ignore rules. **The repository-side half was independently re-confirmed; see § 6.** |
 | Assembly for the four-word arm = **114,760 characters**, of which the typed prompt is **0.0122%**. | That party's own **corrected** figure, replacing an earlier `~210 KB / 0.07%` it had published and then convicted. |
 | Top-level system prompt **13,138 characters in 16 blocks, with** a dual-use-security paragraph, versus sub-context **2,714 in 4, without** one. | Measurement. **Units are characters**, per that party's own earlier correction. |
 
-> **Anything quoting the `7.29` without its author's own sentence that *"the score is not the finding"* is quoting half of it.** That is not a privacy hazard — it is an accuracy hazard, and it is the more dangerous of the two.
+> **Anything quoting the `7.29` without its author's own sentence that *"the score is not the finding"* is quoting half of it.** That is not a privacy hazard. It is an accuracy hazard, and it is the more dangerous of the two.
 
 ---
 
@@ -288,7 +288,7 @@ A system stop notice naming the **newest tier** sits in the transcript of **the 
 | **P1** | record type `system` **and** own content contains `'s safeguards stopped the response above` **and** ends `with that noted` | every transcript file under the local session store, recursive, **721 files**, parsed as JSON lines |
 | **P2** | a record whose **own message text begins** `Your response above was stopped by a safety classifier` | same |
 | **P3** | a record whose **own message text begins** `API Error:` **and** contains `safeguards flagged this message` | same |
-| **P4** | **REJECTED** — the notice literal appears **anywhere** in a record | same. **Contaminated: it matches records that merely *discuss* the notice, including the analysing session's own transcripts and concurrent sibling sub-contexts analysing those exact literals. Recorded so that nobody re-runs it believing it is the measurement.** |
+| **P4** | **REJECTED**: the notice literal appears **anywhere** in a record | same. **Contaminated: it matches records that merely *discuss* the notice, including the analysing session's own transcripts and concurrent sibling sub-contexts analysing those exact literals. Recorded so that nobody re-runs it believing it is the measurement.** |
 | **P5** | sub-context test, driven **two independent ways**: filename convention, **and** the record's own sidechain flag | same. **Both agreed on every artifact.** |
 | **P6** | literal-match count over tracked files, **always with a positive control on the same command shape** | the framework repository, tracked files only |
 
@@ -306,8 +306,8 @@ A system stop notice naming the **newest tier** sits in the transcript of **the 
 
 | date (UTC) | prefix | tier | client | verification status as read | outcome | output tokens | cache-creation | status |
 |---|---|---|---|---|---|---|---|---|
-| 2026-09-21T17:13Z | `6655058f` | Fable 5.1 | `2.1.278` | not enrolled | ⛔ **blocked** | — | — | carried from § 1–§ 3 |
-| 2026-09-21T19:40Z | `8de8d042` | Fable 5.1 | `2.1.278` | not enrolled | ⭐ **answered** *(empty directory)* | — | — | carried; file verified present |
+| 2026-09-21T17:13Z | `6655058f` | Fable 5.1 | `2.1.278` | not enrolled | ⛔ **blocked** | not recorded here | not recorded here | carried from § 1–§ 3 |
+| 2026-09-21T19:40Z | `8de8d042` | Fable 5.1 | `2.1.278` | not enrolled | ⭐ **answered** *(empty directory)* | not recorded here | not recorded here | carried; file verified present |
 | 2026-10-01T01:52:35Z | `b16031d2` | Opus 5.5 | `2.1.286` | portal `approved` | ⛔ **blocked** (×3 submissions) | **0** | 230,727 | `RE-MEASURED` |
 | 2026-10-01T03:26:31Z | `5a33e50a` | Opus 5.5 | `2.1.286` | `approved` | ⛔ **blocked** | **0** | 84,643 | `RE-MEASURED` |
 | 2026-10-01T03:51:17Z | `80410c26` | Opus 5.5 | `2.1.286` | `approved`, after a reported re-login | ⛔ **blocked** *(Arm 0c)* | **0** | 84,721 | `RE-MEASURED`; re-login `SINGLE-SOURCE` (account holder's report, unwitnessed on disk) |

@@ -75,7 +75,7 @@ The agent session cannot call Ollama by itself. A small **MCP server** (Model Co
 
 **A launcher records provenance without content.** It writes one line per network connection the bridge opens: time, event, address family, address, port. No prompt, no response, no header.
 
-**The bridge's source is not published here.** It is part of the account holder's framework. **The pattern is all a reader needs:** any MCP server that forwards a prompt to an Ollama or OpenAI-compatible endpoint, configured with no fallback, does the same job.
+**The bridge's source is not published here.** It is part of the account holder's framework. **The pattern is all a reader needs:** any MCP server that forwards a prompt to an Ollama or OpenAI-compatible endpoint, configured with no fallback, does the same job. A fresh, minimal example of the pattern (written for this repository, not taken from the framework) is in [examples/](examples/).
 
 ---
 
